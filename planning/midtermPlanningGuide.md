@@ -1,7 +1,8 @@
 # Midterm Framework
-1. REST
-2. User Stories
-3. Website Requirements (nouns from user stories)
-4. ERD
+
+1. User Stories
+2. Website Requirements (nouns from user stories)
+3. ERD
+4. REST
 5. Wireframes
 6. Proof of Concept with Twillio
