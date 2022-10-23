@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page</title>
+
+  <!-- Meta Information -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <!-- External Scripts -->
+  <script src="https://kit.fontawesome.com/c2a9ff36d4.js" crossorigin="anonymous"></script>
+
+  <!-- App JS -->
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <button type="submit" class="back-to">
+        Back to Restaurants
+      </button>
+      <button type="submit" class="back-to-home">
+        <img src="/images/OmitThePlates_logo.png" alt="Logo" width="300" height="100">
+      </button>
+      <section>
+        <div>
+          <button type="submit" class="cart">
+
+          </button>
+          <button type="submit" class="help">
+
+          </button>
+        </div>
+        <form method="POST" action="/menu">
+          <input placeholder="Search menu items..." name="search">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </section>
+    </nav>
+  </header>
+  <main>
+    <h1>Have fun! 🥔</h1>
+  </main>
+</body>
+
+</html>

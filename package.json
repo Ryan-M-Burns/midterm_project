@@ -1,11 +1,11 @@
 {
-  "name": "node-skeleton",
+  "name": "omit-the-plates-food-delivery-app",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "node server/index.js",
     "local": "./node_modules/.bin/nodemon -L --ignore public/",
     "db:reset": "node bin/resetdb.js"
   },
@@ -14,9 +14,10 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "dotenv": "^2.0.0",
-    "ejs": "^2.6.2",
+    "ejs": "^3.1.8",
     "express": "^4.17.1",
     "morgan": "^1.9.1",
+    "path": "^0.12.7",
     "pg": "^8.5.0",
     "sass": "^1.35.1",
     "serve-favicon": "^2.5.0"
