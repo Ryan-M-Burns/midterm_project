@@ -9,7 +9,9 @@ const express = require('express');
 const router  = express.Router();
 
 router.get('/', (req, res) => {
-  res.render('users');
-}); 
+  // res.render('users');
+  // console.log("called");
+  res.json({"test": "yes"});
+});
 
 module.exports = router;
