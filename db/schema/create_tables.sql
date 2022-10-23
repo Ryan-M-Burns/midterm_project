@@ -67,10 +67,11 @@ CREATE TABLE order_items (
 
 CREATE TABLE operation_hours (
   id SERIAL PRIMARY KEY NOT NULL,
-  from_time TIMESTAMP,
-  to_time TIMESTAMP,
+  from_time TIME,
+  to_time TIME,
   business_day VARCHAR(255) NOT NULL,
-  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE
+  restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE,
+  status VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE favorite_restaurants (
