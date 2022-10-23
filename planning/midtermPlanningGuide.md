@@ -5,4 +5,4 @@
 3. ERD
 4. REST
 5. Wireframes
-6. Proof of Concept with Twillio
+<!-- 6. Proof of Concept with Twillio -->
