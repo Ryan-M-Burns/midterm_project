@@ -1,38 +1,42 @@
 header {
-  background-color: #fff;
-  width: 100%;
-  height: 100px;
-  z-index: 6;
-  position: sticky;
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
-  box-shadow: rgb(0 0 0 / 17%) 0px 5px 20px;
-  font-weight: 500;
-  padding: 10px 25px;
-  margin-bottom: 20px;
-
-  button {
-    background: none;
-    border: none;
-    color: #f1803a;
-  }
-
+  position: fixed;
+  width:100%;
   section {
-    vertical-align: middle;
-  }
-
-  div {
+    background-color: #fff;
+    width: 100%;
+    height: 100px;
+    z-index: 6;
+    position: sticky;
     display: flex;
-    justify-content: flex-end;
-    align-content: space-around;
-  }
+    align-content: center;
+    justify-content: space-between;
+    box-shadow: rgb(0 0 0 / 17%) 0px 5px 20px;
+    font-weight: 500;
+    padding: 10px 25px;
+    margin-bottom: 20px;
 
-  form {
-    font-size: 24px;
-  }
+    button {
+      background: none;
+      border: none;
+      color: #f1803a;
+    }
 
-  input {
-    font-size:18px;
+    div {
+      vertical-align: middle;
+    }
+
+    span {
+      display: flex;
+      justify-content: flex-end;
+      align-content: space-around;
+    }
+
+    form {
+      font-size: 24px;
+    }
+
+    input {
+      font-size: 18px;
+    }
   }
 }

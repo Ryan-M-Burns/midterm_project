@@ -35,26 +35,28 @@
 <body>
   <!-- Nav Bar -->
   <header>
-    <button type="submit" class="back-to">
-      <i class="fa-solid fa-arrow-left"></i> Back to Restaurants
-    </button>
-    <button type="submit" class="back-to-home">
-      <img src="/images/OmitThePlates_logo.png" alt="Logo" width="250" height="80">
-    </button>
     <section>
+      <button type="submit" class="back-to">
+        <i class="fa-solid fa-arrow-left"></i> Back to Restaurants
+      </button>
+      <button type="submit" class="back-to-home">
+        <img src="/images/OmitThePlates_logo.png" alt="Logo" width="250" height="80">
+      </button>
       <div>
-        <button type="submit" class="cart">
-          <output name="items" class="item-count" for="cart">0</output>
-          <i class="fa-solid fa-cart-shopping"></i>
-        </button>
-        <button type="submit" class="help">
-          <i class="fa-solid fa-circle-question"></i>
-        </button>
+        <span>
+          <button type="submit" class="cart">
+            <output name="items" class="item-count" for="cart">0</output>
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+          <button type="submit" class="help">
+            <i class="fa-solid fa-circle-question"></i>
+          </button>
+        </span>
+        <form method="POST" action="/menu">
+          <input placeholder="Search menu items..." name="search">
+          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
       </div>
-      <form method="POST" action="/menu">
-        <input placeholder="Search menu items..." name="search">
-        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
     </section>
   </header>
   <main>

@@ -1,6 +1,18 @@
 .order-section {
+  border-left: 2px solid rgb(0 0 0 / 17%);
+  justify-content: center;
+
   .cart-container {
+    position: fixed;
     border-radius: 20px;
     border: 2px solid rgb(0 0 0 / 17%);
+    margin: 20px;
+    padding: 30px;
+    min-width: 360px;
+
+    display: flex;
+    flex-flow: column;
+
   }
+
 }
