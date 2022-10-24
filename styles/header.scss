@@ -1,24 +1,43 @@
 header {
   position: fixed;
-  width:100%;
+  width: 100%;
+
   section {
     background-color: #fff;
+    color: #f1803a;
     width: 100%;
-    height: 100px;
-    z-index: 6;
+    height: 80px;
     position: sticky;
     display: flex;
     align-content: center;
     justify-content: space-between;
     box-shadow: rgb(0 0 0 / 17%) 0px 5px 20px;
-    font-weight: 500;
-    padding: 10px 25px;
+    font-weight: 400;
+    padding: 5px 25px;
     margin-bottom: 20px;
 
-    button {
+    .cart,
+    .search,
+    .back-to-home,
+    .back-to  {
       background: none;
       border: none;
       color: #f1803a;
+
+      :hover {
+        color: #dad7d5;
+      }
+    }
+
+
+    .help {
+      background: none;
+      border: none;
+      color: #f1803a;
+
+      :hover {
+        font-weight: 500;
+      }
     }
 
     div {
@@ -33,6 +52,15 @@ header {
 
     form {
       font-size: 24px;
+      input:not(focus) {
+        outline:none;
+        border-radius: 5px;
+        border: 1px solid rgb(0 0 0 / 17%);
+      }
+      :focus {
+        outline: none;
+        border: 1px solid #f1803a;
+      }
     }
 
     input {
