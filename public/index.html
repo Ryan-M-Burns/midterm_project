@@ -37,15 +37,15 @@
   <header>
     <section>
       <button type="submit" class="back-to">
-        <i class="fa-solid fa-arrow-left"></i> Back to Restaurants
+        <p class><i class="fa-solid fa-arrow-left"></i> Back to Restaurants</p>
       </button>
       <button type="submit" class="back-to-home">
-        <img src="/images/OmitThePlates_logo.png" alt="Logo" width="250" height="80">
+        <img src="/images/OmitThePlates_logo.png" alt="Logo" width="250" height="75">
       </button>
       <div>
         <span>
+          <output name="items" class="item-count" for="cart">0</output>
           <button type="submit" class="cart">
-            <output name="items" class="item-count" for="cart">0</output>
             <i class="fa-solid fa-cart-shopping"></i>
           </button>
           <button type="submit" class="help">
@@ -54,7 +54,7 @@
         </span>
         <form method="POST" action="/menu">
           <input placeholder="Search menu items..." name="search">
-          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button type="submit" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
     </section>
