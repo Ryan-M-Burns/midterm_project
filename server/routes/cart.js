@@ -1,4 +1,5 @@
 const express = require('express');
+const db = require('../../db/connection');
 const router  = express.Router();
 const userQueries = require('../../db/queries/dbhelpers');
 
@@ -8,8 +9,13 @@ router.get('/', (req, res) => {
     'cart_id': 1, // should come from browser/req.body
   };
   userQueries.getCarts(insertInfo)
-  .then((varInput) => {
-    res.json({ varInput });
+  .then((varInputs) => {
+    const cartAllItems = [];
+    for (const varInput of varInputs) {
+      console.log("varInput", varInput);
+
+    }
+    res.json({ varInputs });
   })
   .catch(err => {
     res
@@ -41,5 +47,15 @@ router.post('/', (req, res) => {
       .json({ error: err.message });
   });
 });
+
+router.post('/delete', (req, res) => {
+  const insertInfo = {
+    'cart_items.id': 18 //should come from browser/req.body
+  }
+  return userQueries.deleteCartItems(insertInfo)
+    .then((infoReceived) => {
+      res.json({ infoReceived })
+    })
+})
 
 module.exports = router;
