@@ -9,6 +9,8 @@ DROP TABLE IF EXISTS orders CASCADE;
 DROP TABLE IF EXISTS menu_items CASCADE;
 DROP TABLE IF EXISTS nutrition_facts CASCADE;
 DROP TABLE IF EXISTS order_items CASCADE;
+DROP TABLE IF EXISTS carts CASCADE;
+DROP TABLE IF EXISTS cart_items CASCADE;
 
 -- CREATE DATABASE omitThePlates;
 
@@ -44,9 +46,23 @@ CREATE TABLE menu_items (
   name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE orders (
+CREATE TABLE carts (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  note VARCHAR(255),
+  price INTEGER NOT NULL
+);
+
+CREATE TABLE cart_items (
+  id SERIAL PRIMARY KEY NOT NULL,
+  cart_id INTEGER REFERENCES carts(id) ON DELETE CASCADE,
+  quantity INTEGER NOT NULL,
+  menu_item_id INTEGER REFERENCES menu_items(id) ON DELETE CASCADE
+);
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY NOT NULL,
+  cart_id INTEGER REFERENCES carts(id) ON DELETE CASCADE,
   creation_time TIMESTAMP NOT NULL,
   accepted_time TIMESTAMP NOT NULL,
   ready_time TIMESTAMP,
@@ -62,7 +78,7 @@ CREATE TABLE order_items (
   id SERIAL PRIMARY KEY NOT NULL,
   order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
   quantity INTEGER NOT NULL,
-  menu_item_id INTEGER REFERENCES menu_items(id) ON DELETE CASCADE
+  menu_item_id INTEGER NOT NULL
 );
 
 CREATE TABLE operation_hours (
