@@ -46,8 +46,23 @@ const addCartItems = (insertInfo) => {
     [insertInfo['cart_id'], insertInfo['menu_item_id'], insertInfo['quantity']])
 }
 
+const deleteCartItems = (insertInfo) => {
+  return db.query(
+    'DELETE FROM cart_items WHERE cart_items.id = $1;',
+    [insertInfo['cart_items.id']]
+  )
+    .then(() => {
+      return db.query('SELECT SUM(price) as item_price, COUNT(*) as item_quantity, menu_item_id FROM cart_items JOIN carts ON cart_id = carts.id WHERE carts.id = 1 GROUP BY menu_item_id;')
+    })
+    .then((data) => {
+      return data.rows;
+   })
+   .catch((err) => {
+    console.log("err", err.message);
+  })
+}
 
 
 
 
-module.exports = { getUsers, getRestaurants, getAllMenuItems, getMenuItems, getCarts, addCartItems };
+module.exports = { getUsers, getRestaurants, getAllMenuItems, getMenuItems, getCarts, addCartItems, deleteCartItems };
