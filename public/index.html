@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/buttons.css" />
 
   <!-- External Scripts -->
   <script src="https://kit.fontawesome.com/c2a9ff36d4.js" crossorigin="anonymous"></script>
@@ -25,6 +26,7 @@
 </head>
 
 <body>
+  <!-- Nav Bar -->
   <header>
     <nav>
       <button type="submit" class="back-to">
@@ -52,7 +54,7 @@
   </header>
   <main>
     <!-- Restaurant Info Banner -->
-    <section>
+    <section class="restaurant-banner">
       <img src="/images/restaurant_banner.png" alt="Logo" width="600" height="300">
       <h1 class="restaurant-name"> Succulent Gang Cafe </h1>
       <div>
@@ -63,10 +65,10 @@
         <i class="fa-solid fa-star"></i>
         <p>Canadian, Burgers - 4.6km away - $$$ - phone number</p>
       </div>
-      <span class="switcher switcher-1">
-        <input type="checkbox" id="switcher-1">
-        <label for="switcher-1"></label>
-      </span>
+      <label class="delivery">
+        <input type="checkbox" name="color_mode" id="toggle" value="1">
+        <label data-on="Delivery" data-off="Pickup" class="pickup"></label>
+    </label>
     </section>
     <!-- Order Summary -->
     <section>
