@@ -9,12 +9,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- External CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+    rel="stylesheet">
+
   <!-- App CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/buttons.css" />
+  <link rel="stylesheet" href="/styles/order-section.css" />
 
   <!-- External Scripts -->
   <script src="https://kit.fontawesome.com/c2a9ff36d4.js" crossorigin="anonymous"></script>
@@ -25,16 +33,17 @@
 </head>
 
 <body>
+  <!-- Nav Bar -->
   <header>
-    <nav>
+    <section>
       <button type="submit" class="back-to">
-        Back to Restaurants
+        <i class="fa-solid fa-arrow-left"></i> Back to Restaurants
       </button>
       <button type="submit" class="back-to-home">
-        <img src="/images/OmitThePlates_logo.png" alt="Logo" width="300" height="100">
+        <img src="/images/OmitThePlates_logo.png" alt="Logo" width="250" height="80">
       </button>
-      <section>
-        <div>
+      <div>
+        <span>
           <button type="submit" class="cart">
             <output name="items" class="item-count" for="cart">0</output>
             <i class="fa-solid fa-cart-shopping"></i>
@@ -42,181 +51,176 @@
           <button type="submit" class="help">
             <i class="fa-solid fa-circle-question"></i>
           </button>
-        </div>
+        </span>
         <form method="POST" action="/menu">
           <input placeholder="Search menu items..." name="search">
           <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
-      </section>
-    </nav>
+      </div>
+    </section>
   </header>
   <main>
     <!-- Restaurant Info Banner -->
-    <section>
-      <img src="/images/restaurant_banner.png" alt="Logo" width="600" height="300">
-      <h1 class="restaurant-name"> Succulent Gang Cafe </h1>
-      <div>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <i class="fa-solid fa-star"></i>
-        <p>Canadian, Burgers - 4.6km away - $$$ - phone number</p>
-      </div>
-      <span class="switcher switcher-1">
-        <input type="checkbox" id="switcher-1">
-        <label for="switcher-1"></label>
-      </span>
-    </section>
-    <!-- Order Summary -->
-    <section>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div>
-        <button type="submit" class="checkout"></button>
-      </div>
-    </section>
-    <section>
-      <div class="carousel">
-        <div class="Item bar">
-          Popular Items
-          <div>
-            <button type="button" class="scroll">
-              <i class="fa-solid fa-circle-arrow-left"></i>
-            </button>
-            <button type="button" class="scroll">
-              <i class="fa-solid fa-circle-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-        <div class="carousel-box">
-          <div class="menu-items">
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="carousel">
-        <div class="Item bar">
-          Popular Items
-          <div>
-            <button type="button" class="scroll">
-              <i class="fa-solid fa-circle-arrow-left"></i>
-            </button>
-            <button type="button" class="scroll">
-              <i class="fa-solid fa-circle-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-        <div class="carousel-box">
-          <div class="menu-items">
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="carousel">
-        <div class="Item bar">
-          Popular Items
-          <div>
-            <button type="button" class="scroll">
-              <i class="fa-solid fa-circle-arrow-left"></i>
-            </button>
-            <button type="button" class="scroll">
-              <i class="fa-solid fa-circle-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-        <div class="carousel-box">
-          <div class="menu-items">
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-            <button type="submit" class="expand-food">
-              <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
-              <p class="food-name">Menu Item Name</p>
-              <p class="price">$19.99</p>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="cart-container">
-      <div class="cart-header">
-        <p>Succulent Gang Cafe</p>
-        <p>Your Cart</p>
-      </div>
-      <div class="order-summary">
-        <p>1 - Chicken Wings</p>
-        <p>$19.99</p>
+    <section class="website-body">
+      <div class="restaurant-banner">
+        <img src="/images/restaurant_banner.png" alt="Logo" width="600" height="300">
+        <h1 class="restaurant-name"> Succulent Gang Cafe </h1>
         <div>
-          <button type="button">
-            <i class="fa-solid fa-trash-can"></i>
-          </button>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <p>Canadian, Burgers - 4.6km away - $$$ - phone number</p>
+        </div>
+        <label class="delivery">
+          <input type="checkbox" name="color_mode" id="toggle" value="1">
+          <label data-on="Delivery" data-off="Pickup" class="pickup"></label>
+        </label>
+      </div>
+      <div class="dynamic-menu">
+        <div class="carousel">
+          <div class="Item bar">
+            Popular Items
+            <div>
+              <button type="button" class="scroll">
+                <i class="fa-solid fa-circle-arrow-left"></i>
+              </button>
+              <button type="button" class="scroll">
+                <i class="fa-solid fa-circle-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="carousel-box">
+            <div class="menu-items">
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel">
+          <div class="Item bar">
+            Popular Items
+            <div>
+              <button type="button" class="scroll">
+                <i class="fa-solid fa-circle-arrow-left"></i>
+              </button>
+              <button type="button" class="scroll">
+                <i class="fa-solid fa-circle-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="carousel-box">
+            <div class="menu-items">
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="carousel">
+          <div class="Item bar">
+            Popular Items
+            <div>
+              <button type="button" class="scroll">
+                <i class="fa-solid fa-circle-arrow-left"></i>
+              </button>
+              <button type="button" class="scroll">
+                <i class="fa-solid fa-circle-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="carousel-box">
+            <div class="menu-items">
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+              <button type="submit" class="expand-food">
+                <img src="/images/chicken_burger.png" alt="food" width="100" height="100">
+                <p class="food-name">Menu Item Name</p>
+                <p class="price">$19.99</p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="order-section">
+      <div class="cart-container">
+        <div class="cart-header">
+          <p>Succulent Gang Cafe</p>
+          <p>Your Cart</p>
+        </div>
+        <div class="order-summary">
+          <p>1 - Chicken Wings</p>
+          <p>$19.99</p>
+          <div>
+            <button type="button">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
         </div>
       </div>
     </section>
