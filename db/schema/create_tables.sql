@@ -49,35 +49,36 @@ CREATE TABLE menu_items (
 CREATE TABLE carts (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  note VARCHAR(255),
-  price INTEGER NOT NULL
+  price INTEGER
 );
 
 CREATE TABLE cart_items (
   id SERIAL PRIMARY KEY NOT NULL,
   cart_id INTEGER REFERENCES carts(id) ON DELETE CASCADE,
-  quantity INTEGER NOT NULL,
+  quantity INTEGER DEFAULT 1,
+  note VARCHAR(255),
   menu_item_id INTEGER REFERENCES menu_items(id) ON DELETE CASCADE
 );
 
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY NOT NULL,
-  cart_id INTEGER REFERENCES carts(id) ON DELETE CASCADE,
-  creation_time TIMESTAMP NOT NULL,
-  accepted_time TIMESTAMP NOT NULL,
+  cart_id INTEGER,
+  creation_time TIMESTAMP,
+  accepted_time TIMESTAMP,
   ready_time TIMESTAMP,
-  pickup_time TIMESTAMP NOT NULL,
+  pickup_time TIMESTAMP,
   note VARCHAR(255),
-  price INTEGER NOT NULL,
+  price INTEGER,
   tips INTEGER,
   delivery_charge INTEGER,
-  tax INTEGER NOT NULL
+  tax INTEGER
 );
 
 CREATE TABLE order_items (
   id SERIAL PRIMARY KEY NOT NULL,
   order_id INTEGER REFERENCES orders(id) ON DELETE CASCADE,
   quantity INTEGER NOT NULL,
+  note VARCHAR(255),
   menu_item_id INTEGER NOT NULL
 );
 

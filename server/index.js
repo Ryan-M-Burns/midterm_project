@@ -30,7 +30,7 @@ app.use(favicon(path.join(__dirname, '../public', 'images', 'favicon.ico')));
 // Note: Feel free to replace the example routes below with your own
 const menuRoutes = require('./routes/menu');
 const cartRoutes = require('./routes/cart');
-// const orderRoutes = require('./routes/order');
+const orderRoutes = require('./routes/order');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -38,7 +38,7 @@ const cartRoutes = require('./routes/cart');
 
 app.use('/menu', menuRoutes);
 app.use('/cart', cartRoutes);
-// app.use('/omitThePlates/order', orderRoutes);
+app.use('/order', orderRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page

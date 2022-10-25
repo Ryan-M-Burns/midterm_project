@@ -1,10 +1,6 @@
-INSERT INTO carts (price, note, user_id) VALUES (
-  10000,
-  'no cilantro',
+INSERT INTO carts (user_id) VALUES (
   1
 );
-INSERT INTO carts (price, note, user_id) VALUES (
-  20000,
-  'more cilantro',
-  1
+INSERT INTO carts (user_id) VALUES (
+  2
 )
