@@ -1,8 +1,10 @@
 header {
   position: fixed;
   width: 100%;
+  min-width: 1024px;
 
   section {
+    position:relative;
     background-color: #fff;
     color: #f1803a;
     width: 100%;
@@ -22,12 +24,30 @@ header {
     }
 
     .cart {
-      background: none;
+      align-self: center;
+      height: 25px;
+      padding: 0;
+      background:  #f1803a;
+      border-radius: 15px;
       border: none;
-      color: #f1803a;
-      font-size: 22px;
+      color: #fff;
+      font-size: 14px;
+      i {
+        padding-left: 1px;
+      }
+
       :hover {
-        color: #dad7d5;
+        i {
+          border:none;
+        }
+        background: #fff;
+        color:#f1803a;
+        border-radius: 15px;
+        border: 2px solid #f1803a;
+      }
+
+      output{
+        padding:3px 7px;
       }
     }
 
