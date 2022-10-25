@@ -1,25 +1,61 @@
 header {
   position: fixed;
   width: 100%;
+  min-width: 1024px;
 
   section {
+    position:relative;
     background-color: #fff;
     color: #f1803a;
     width: 100%;
-    height: 80px;
+    height: 70px;
     position: sticky;
     display: flex;
     align-content: center;
     justify-content: space-between;
     box-shadow: rgb(0 0 0 / 17%) 0px 5px 20px;
     font-weight: 400;
-    padding: 5px 25px;
+    padding: 3px 40px;
     margin-bottom: 20px;
 
-    .cart,
+    p {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .cart {
+      align-self: center;
+      height: 25px;
+      padding: 0;
+      background:  #f1803a;
+      border-radius: 15px;
+      border: none;
+      color: #fff;
+      font-size: 14px;
+      i {
+        padding-left: 1px;
+      }
+
+      :hover {
+        i {
+          border:none;
+        }
+        background: #fff;
+        color:#f1803a;
+        border-radius: 15px;
+        border: 2px solid #f1803a;
+      }
+
+      output{
+        padding:3px 7px;
+      }
+    }
+
+
+
     .search,
     .back-to-home,
-    .back-to  {
+    .back-to {
       background: none;
       border: none;
       color: #f1803a;
@@ -34,6 +70,7 @@ header {
       background: none;
       border: none;
       color: #f1803a;
+      font-size: 22px;
 
       :hover {
         font-weight: 500;
@@ -45,18 +82,21 @@ header {
     }
 
     span {
+      padding-top: 2px;
       display: flex;
       justify-content: flex-end;
       align-content: space-around;
     }
 
     form {
-      font-size: 24px;
+      font-size: 18px;
+
       input:not(focus) {
-        outline:none;
+        outline: none;
         border-radius: 5px;
         border: 1px solid rgb(0 0 0 / 17%);
       }
+
       :focus {
         outline: none;
         border: 1px solid #f1803a;
@@ -64,7 +104,7 @@ header {
     }
 
     input {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 }
