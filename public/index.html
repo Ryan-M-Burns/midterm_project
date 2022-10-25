@@ -55,7 +55,7 @@
         <form method="POST" action="/menu">
           <input placeholder="Search menu items..." name="search">
           <button type="submit" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
+          </form>
       </div>
     </section>
   </header>
@@ -210,21 +210,20 @@
     <section class="order-section">
       <div class="cart-container">
         <div class="cart-header">
-          <p>Succulent Gang Cafe</p>
-          <p>Your Cart</p>
+          <p>Your Order</p>
         </div>
         <div class="order-summary">
           <p>1 - Chicken Wings</p>
-          <p>$19.99</p>
           <div>
-            <button type="button">
+            <span>$19.99</span>
+            <button type="button" class="remove-item">
               <i class="fa-solid fa-trash-can"></i>
             </button>
           </div>
         </div>
         <div>
-          <button type="submit">
-            $40.00 CHECKOUT
+          <button type="submit" class="checkout">
+            <p>Checkout</p>
           </button>
         </div>
       </div>
