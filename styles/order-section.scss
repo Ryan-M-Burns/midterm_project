@@ -1,6 +1,6 @@
 .order-section {
   border-left: 2px solid rgb(0 0 0 / 17%);
-  color: rgb(0 0 0 / 75%);
+  color: rgb(0 0 0 / 50%);
 
 
 
@@ -70,6 +70,7 @@
     .checkout {
       justify-self:flex-end;
       margin: 0 5px;
+      padding: 5px;
       margin-top: 10px;
       background-color: #f1803a;
       color: white;
@@ -79,7 +80,7 @@
       display: flex;
       justify-content: center;
       align-content: center;
-      border-radius: 5px;
+      border-radius: 20px;
 
       p {
         margin: 0;
