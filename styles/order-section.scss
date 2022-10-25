@@ -64,6 +64,9 @@
           background: none;
           border: none;
           color: #f1803a;
+          :hover {
+            color: #ea6410;
+          }
         }
       }
     }
@@ -84,6 +87,11 @@
       align-content: center;
       border-radius: 20px;
       box-shadow: 0px 0px 5px 0px rgba(17, 17, 17, 0.15) inset;
+
+      :hover {
+        background-color: #ea6410;
+      }
+
       p {
         margin: 0;
       }

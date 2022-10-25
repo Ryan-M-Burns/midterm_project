@@ -68,6 +68,17 @@
       .item-bar {
         flex-flow: row;
         justify-content: space-between;
+
+        .scroll-left, .scroll-right {
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: #f1803a;
+
+            :hover {
+              color: #ea6410;
+            }
+        }
       }
 
       .menu-items {
