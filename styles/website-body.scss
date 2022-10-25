@@ -2,6 +2,7 @@
   display: flex;
   flex-flow: column;
 
+  // Fixed Restaurant Banner
   .restaurant-banner {
     border-bottom: 2px solid rgb(0 0 0 / 17%);
     height: 400px;
@@ -49,7 +50,9 @@
         }
       }
     }
-
-
   }
+
+  // Menu Carousel
+
+
 }

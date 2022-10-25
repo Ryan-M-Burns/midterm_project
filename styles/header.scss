@@ -25,6 +25,7 @@ header {
     }
 
     .cart {
+      cursor: pointer;
       align-self: center;
       height: 25px;
       padding: 0;
@@ -57,6 +58,7 @@ header {
     .search,
     .back-to-home,
     .back-to {
+      cursor: pointer;
       background: none;
       border: none;
       color: #f1803a;
@@ -68,6 +70,7 @@ header {
 
 
     .help {
+      cursor: pointer;
       background: none;
       border: none;
       color: #f1803a;
