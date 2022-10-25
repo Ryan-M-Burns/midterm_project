@@ -1,17 +1,24 @@
 .order-section {
   border-left: 2px solid rgb(0 0 0 / 17%);
-  justify-content: center;
   color: rgb(0 0 0 / 75%);
+
+
 
   .cart-container {
     position: fixed;
     border-radius: 20px;
     border: 2px solid rgb(0 0 0 / 17%);
-    margin: 20px;
+    margin: 0 20px;
     padding: 15px;
-    min-width: 310px;
+    width: 310px;
+    max-width: 310px;
+    height: 400px;
+    max-height: 400px;
     display: flex;
     flex-flow: column;
+    align-content: space-between;
+    background-color: #fff;
+
 
 
     .cart-header {
@@ -27,30 +34,43 @@
     }
 
     .order-summary {
-      display: flex;
-      align-content: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 14px;
-      justify-content: space-between;
+      height: 300px;
+      max-height: 300px;
+      overflow: auto;
+      border-bottom: 2px solid rgb(0 0 0 / 17%);
 
-      p {
-        margin: 0;
-      }
+      .order-items {
+        display: flex;
+        flex-flow: row;
+        align-content: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        justify-content: space-between;
+        border-bottom: 2px solid rgb(0 0 0 / 17%);
+        padding: 20px 5px;
 
-      span {
-        font-size: 12px;
-        font-weight: 600;
-      }
+        p {
+          margin: 0;
+        }
 
-      .remove-item {
-        background: none;
-        border: none;
-        color: #f1803a;
+        span {
+          font-size: 12px;
+          font-weight: 600;
+        }
+
+        .remove-item {
+          background: none;
+          border: none;
+          color: #f1803a;
+        }
       }
     }
 
     .checkout {
+      justify-self:flex-end;
+      margin: 0 5px;
+      margin-top: 10px;
       background-color: #f1803a;
       color: white;
       border: none;
@@ -58,13 +78,13 @@
       font-weight: 700;
       display: flex;
       justify-content: center;
-
+      align-content: center;
+      border-radius: 5px;
 
       p {
         margin: 0;
       }
     }
-
   }
 
 }
