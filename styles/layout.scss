@@ -9,14 +9,16 @@ main {
   justify-content: space-between;
   padding: 0% 2%;
   padding-top: 100px;
+
   .website-body {
-    margin-right:auto;
+    margin-right: auto;
     margin-left: auto;
     min-width: 680px;
-    width:100%;
+    width: 100%;
     max-width: 1000px;
     padding-right: 2%;
-
+    display: flex;
+    flex-flow: column;
   }
 
   .order-section {
