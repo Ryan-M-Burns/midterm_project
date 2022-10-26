@@ -23,5 +23,8 @@ cart info:
 price total
 food picture_url/quantity + 1
 
-{"infoReceived":
-SELECT SUM(price) as item_price, COUNT(*) as item_quantity, menu_item_id FROM cart_items JOIN carts ON cart_id = carts.id WHERE carts.id = 1 GROUP BY menu_item_id;
+
+INSERT INTO order_items (order_id, quantity, menu_item_id) SELECT cart_id, quantity, menu_item_id FROM cart_items WHERE cart_items.id =1
+INSERT INTO order_items (creation_time, accepted_time, )
+INSERT INTO orders (cart_id, note, price) SELECT carts.id, note, price FROM carts WHERE carts.id = 1;
+
