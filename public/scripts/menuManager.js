@@ -1,9 +1,6 @@
 const renderMenu = (menu) => {
   const $menuArea = $(".dynamic-menu");
   $menuArea.empty();
-  console.log($menuArea);
-
-  console.log("menu", menu);
 
   for (const section in menu) {
     let sectionName = toTitle(section);
@@ -22,8 +19,9 @@ const renderMenu = (menu) => {
       </div>`;
     $carousel += createMenuSection(menu[section]);
     $menuArea.append($carousel);
+    $menuArea.append('</div>');
   }
-  $menuArea.append('</div>');
+
 };
 
 const createMenuSection = (menuItems) => {
@@ -41,7 +39,7 @@ const createMenuSection = (menuItems) => {
             </div>
             <div class="menu-item-text">
               <p class="food-name">${item.name}</p>
-              <p class="price">$${item.price / 100}</p>
+              <p class="price">$${parseFloat(item.price / 100).toFixed(2)}</p>
             </div>
           </button>`;
 
@@ -60,7 +58,7 @@ const toTitle = (str) => {
   let string = str.split('_');
 
   string.forEach(word => {
-    let wordArr = word.split('');
+    let wordArr = word.toLowerCase().split('');
     let letter = wordArr.shift().toUpperCase();
     wordArr.unshift(letter);
     result += wordArr.join('') + ' ';
