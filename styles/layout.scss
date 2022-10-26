@@ -4,6 +4,13 @@ html {
   margin: 0;
 }
 
+body {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  background: #f5f3f1;
+}
+
 main {
   display: flex;
   justify-content: space-between;
@@ -22,6 +29,8 @@ main {
   }
 
   .order-section {
+    border-left: 2px solid rgb(0 0 0 / 17%);
+    color: rgb(0 0 0 / 40%);
     min-width: 344px;
   }
 }
