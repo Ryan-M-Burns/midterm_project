@@ -1,137 +1,140 @@
 .website-body {
   display: flex;
   flex-flow: column;
+}
 
-  // Fixed Restaurant Banner
-  .restaurant-banner {
-    border-bottom: 2px solid rgb(0 0 0 / 17%);
-    height: 400px;
+// Fixed Restaurant Banner
+.restaurant-banner {
+  border-bottom: 2px solid rgb(0 0 0 / 17%);
+  height: 400px;
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 20px;
+
+
+  .image-holder {
+    align-self: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 250px;
+    border-radius: 25px;
+  }
+
+  .banner-image {
+    width: auto;
+    height: auto;
+  }
+
+  .restaurant-name {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-weight: 800;
+    font-size: 40px;
+  }
+
+  .banner-body {
     display: flex;
-    flex-flow: column;
-    padding-bottom: 20px;
+    align-content: space-around;
+    justify-content: space-between;
+    height: 100px;
 
-
-    .image-holder {
-      align-self: center;
-      overflow: hidden;
-      width: 100%;
-      max-width: 1000px;
-      min-height: 250px;
-      border-radius: 25px;
-    }
-
-    .banner-image {
-      width: auto;
-      height: auto;
-    }
-
-    .restaurant-name {
+    p {
       margin: 0;
-      padding-top: 20px;
-      padding-bottom: 10px;
-      font-weight: 800;
-      font-size: 40px;
-    }
+      font-weight: 500;
+      font-size: 16px;
+      color: rgb(0 0 0 / 50%);
 
-    .banner-body {
-      display: flex;
-      align-content: space-around;
-      justify-content: space-between;
-      height: 100px;
+      i {
+        color: #f1803a;
 
-      p {
-        margin: 0;
-        font-weight: 500;
-        font-size: 16px;
-        color: rgb(0 0 0 / 50%);
-
-        i {
-          color: #f1803a;
-
-        }
       }
     }
   }
+}
 
-  // Menu Carousel
-  .dynamic-menu {
+// Menu Carousel
+.dynamic-menu {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+
+  .carousel {
     display: flex;
-    width: 100%;
     flex-flow: column;
+    padding: 10px 0px;
+    border-bottom: 2px solid rgb(0 0 0 / 17%);
 
-    .carousel {
+    .item-bar {
       display: flex;
-      flex-flow: column;
-      padding: 10px 0px;
-      border-bottom: 2px solid rgb(0 0 0 / 17%);
+      flex-flow: row;
+      justify-content: space-between;
+      padding-bottom: 10px;
 
-      .item-bar {
-        flex-flow: row;
-        justify-content: space-between;
-
-        h2 {
-          margin: 0;
-          font-size: 24px;
-          font-weight: 700;
-        }
-
-        .scroll-left,
-        .scroll-right {
-          cursor: pointer;
-          background: none;
-          border: none;
-          color: #f1803a;
-
-          :hover {
-            color: #ea6410;
-          }
-        }
+      h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 700;
       }
 
-      .menu-items {
-        display: flex;
-        height: 220px;
-        overflow-x: scroll;
-        overscroll-behavior: contain;
+      .scroll-left,
+      .scroll-right {
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #f1803a;
+
+        :hover {
+          color: #ea6410;
+        }
+      }
+    }
+
+    .menu-items {
+      display: flex;
+      height: 220px;
+      overflow-x: scroll;
+      overscroll-behavior: contain;
 
 
-        .expand-food {
-          width: 170px;
-          border: none;
+      .expand-food {
+        width: 170px;
+        border: none;
+        padding: 0 6px;
 
-          .food-picture-box {
-            min-width: 150px;
-            max-width: 150px;
-            min-height: 150px;
-            max-height: 150px;
-            overflow: hidden;
-            border-radius: 10px;
+        .food-picture-box {
+          min-width: 150px;
+          max-width: 150px;
+          min-height: 150px;
+          max-height: 150px;
+          overflow: hidden;
+          border-radius: 10px;
 
 
-            .food-picture {
-              height: 150px;
-            }
+          .food-picture {
+            height: 150px;
+          }
+        }
+
+        .menu-item-text {
+          min-height: 70px;
+          display: flex;
+          flex-flow: column;
+          justify-content: space-between;
+
+          .food-name {
+            margin: 0;
+            font-size: 13px;
+            font-weight: 500;
+            text-align: left;
           }
 
-          .menu-item-text {
-            height: 170px;
-            display: flex;
-            flex-flow: column;
-            align-content: space-between;
-
-            .food-name {
-              margin: 0;
-              font-size: 14px;
-              font-weight: 500;
-              text-align: left;
-            }
-
-            .price {
-              margin: 0;
-              font-size: 14px;
-              font-weight: 300;
-              text-align: left;
-            }
+          .price {
+            margin: 0;
+            font-size: 13px;
+            font-weight: 300;
+            text-align: left;
           }
         }
       }
