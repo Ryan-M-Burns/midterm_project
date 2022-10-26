@@ -93,7 +93,7 @@
 
     .menu-items {
       display: flex;
-      height: 220px;
+      height: 230px;
       overflow-x: scroll;
       overscroll-behavior: contain;
 
@@ -118,21 +118,23 @@
         }
 
         .menu-item-text {
-          min-height: 70px;
+          min-height: 80px;
+          max-height: 80px;
           display: flex;
           flex-flow: column;
           justify-content: space-between;
 
           .food-name {
+            padding-top: 5px;
             margin: 0;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
             text-align: left;
           }
 
           .price {
             margin: 0;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 300;
             text-align: left;
           }
