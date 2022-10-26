@@ -40,18 +40,55 @@
   <script type="text/javascript" src="/scripts/checkout.js"></script>
 </head>
 
-
 <body>
+  <!-- Menu Item Popout -->
+  <section class="popout-section">
+    <div class="popout">
+      <div class="food-info-popout">
+        <h2>Chicken Tenders</h2>
+        <p class="rating"> <i class="fa-regular fa-thumbs-up"></i> 95%</p>
+        <h3 class="food-description"></h3>
+        <img src="/images/chicken-tenders.jpg" alt="Yum!" class="food-image-large">
+        <h3>Preferences:</h3>
+        <textarea placeholder="Please let the restaurant know of any allergies, dietary, or religious restrictions!"
+          name="text" id="preferences-text"></textarea>
+      </div>
+      <div class="add-to-order">
+        <div class="change-quantity">
+          <button type="button" class="scroll-left">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+          </button>
+          <textarea class="order-quantity">1</textarea>
+          <button type="button" class="scroll-right">
+            <i class="fa-solid fa-circle-arrow-right"></i>
+          </button>
+        </div>
+        <button type="submit" class="checkout">
+          <p>Add to order: $15.50</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout Page-->
+  <!-- options: show/hide or z index -->
+
+  <!-- Nav Bar -->
   <header>
     <section>
       <button type="submit" class="back-to">
-        <p class><i class="fa-solid fa-arrow-left"></i> Back to Restaurant</p>
+        <p class><i class="fa-solid fa-arrow-left"></i> Back to Restaurants</p>
       </button>
       <button type="submit" class="back-to-home">
         <img src="/images/OmitThePlates_logo.png" alt="Logo" width="225" height="70">
       </button>
       <div>
         <span>
+          <button type="submit" class="cart">
+            <output name="items" class="item-count" for="cart">0
+              <i class="fa-solid fa-cart-shopping"></i>
+            </output>
+          </button>
           <button type="submit" class="help">
             <i class="fa-solid fa-circle-question"></i>
           </button>
@@ -64,7 +101,8 @@
     </section>
   </header>
   <main>
-    <section class="checkout-website-body">
+    <section class="website-body">
+
       <!-- Fixed Restaurant Banner -->
       <div class="restaurant-banner">
         <div class="image-holder">
@@ -81,23 +119,55 @@
           </label>
         </div>
       </div>
-      <div class="account-details">
-        <h2>Account Details</h2>
-      </div>
-      <div class="shipping-details">
-        <h2>Shipping Details</h2>
 
-      </div>
-      <div class="payment-details">
-        <h2>Payment Details</h2>
-
+      <!-- Menu Carousel -->
+      <div class="dynamic-menu">
       </div>
     </section>
-    <section class="checkout-order-summary">
-      <div class="checkout-order-box">
-        <h1>Order Summary</h1>
-        <h4>This is a Delivery Order</h4>
-        <div class="checkout-order-items">
+
+    <!-- Order Summary -->
+    <section class="order-section">
+      <div class="cart-container">
+        <div class="cart-header">
+          <p>Your Order</p>
+        </div>
+        <div class="order-summary">
+          <div class="order-items">
+            <p>1 - Chicken Wings</p>
+            <div>
+              <span>$19.99</span>
+              <button type="button" class="remove-item">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+          <div class="order-items">
+            <p>1 - Chicken Wings</p>
+            <div>
+              <span>$19.99</span>
+              <button type="button" class="remove-item">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+          <div class="order-items">
+            <p>1 - Chicken Wings</p>
+            <div>
+              <span>$19.99</span>
+              <button type="button" class="remove-item">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+          <div class="order-items">
+            <p>1 - Chicken Wings</p>
+            <div>
+              <span>$19.99</span>
+              <button type="button" class="remove-item">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
           <div class="order-items">
             <p>1 - Chicken Wings</p>
             <div>
@@ -117,32 +187,9 @@
             </div>
           </div>
         </div>
-        <div class="full-price">
-          <h4></h4>
-          <div class="tip-buttons">
-            <button>10%</button>
-            <button>15%</button>
-            <button>20%</button>
-            <button>Other</button>
-          </div>
-          <textarea name="custom-tip" id="custom-tip" placeholder="Please enter tip % amount"></textarea>
-          <div class="label-price">
-            <p>Tip</p>
-            <p class="currency">$8.00</p>
-          </div>
-          <div class="label-price">
-            <p>Subtotal</p>
-            <p class="currency">$40.00</p>
-          </div>
-          <div class="label-price">
-            <p>Taxes</p>
-            <p class="currency">$2.00</p>
-          </div>
-        </div>
-        <div class="total-submit-button">
-          <p>Total</p>
-          <p class="currency">$50.00</p>
-        </div>
+        <button type="submit" class="checkout">
+          <p>Checkout</p>
+        </button>
       </div>
     </section>
   </main>

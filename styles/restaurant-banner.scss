@@ -1,0 +1,50 @@
+// Fixed Restaurant Banner
+.restaurant-banner {
+  border-bottom: 2px solid rgb(0 0 0 / 17%);
+  height: 400px;
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 20px;
+
+
+  .image-holder {
+    align-self: center;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 250px;
+    border-radius: 25px;
+  }
+
+  .banner-image {
+    width: auto;
+    height: auto;
+  }
+
+  .restaurant-name {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-weight: 800;
+    font-size: 40px;
+  }
+
+  .banner-body {
+    display: flex;
+    align-content: space-around;
+    justify-content: space-between;
+    height: 100px;
+
+    p {
+      margin: 0;
+      font-weight: 500;
+      font-size: 16px;
+      color: rgb(0 0 0 / 50%);
+
+      i {
+        color: #f1803a;
+
+      }
+    }
+  }
+}
