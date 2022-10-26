@@ -185,4 +185,32 @@ const orderConfirmation = (insertInfo) => {
   })
 }
 
-module.exports = { getUsers, getRestaurants, getAllMenuItems, getMenuItems, getCarts, addCartItems, getCartPrice, removeCartItems, deleteCartItems, placeOrder, orderConfirmation};
+const getMenuIdByName = (selectedName) => {
+  return db.query('SELECT menu_items.id FROM menu_items WHERE name = $1;', [selectedName])
+    .then((data) => {
+      return data.rows;
+    })
+}
+
+const getcartIdByUserId = (userID) => {
+  return db.query('SELECT carts.id FROM carts WHERE user_id = $1;', [userID])
+    .then((data) => {
+      return data.rows;
+    })
+}
+
+module.exports = {
+  getUsers,
+  getRestaurants,
+  getAllMenuItems,
+  getMenuItems,
+  getCarts,
+  addCartItems,
+  getCartPrice,
+  removeCartItems,
+  deleteCartItems,
+  placeOrder,
+  orderConfirmation,
+  getMenuIdByName,
+  getcartIdByUserId
+};

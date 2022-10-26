@@ -1,7 +1,6 @@
 const renderMenu = (menu) => {
   const $menuArea = $(".dynamic-menu");
   $menuArea.empty();
-
   for (const section in menu) {
     let sectionName = toTitle(section);
     let $carousel = `
