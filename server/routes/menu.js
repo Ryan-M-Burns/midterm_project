@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
     for(const allMenuItem of allMenuItems) {
       const test = allMenuItem.feature_item;
       if(test) {
-        console.log(allMenuItem, "allMenuItem")
         feature_items.push(allMenuItem);
       }
     };

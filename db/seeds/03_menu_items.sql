@@ -1,17 +1,5 @@
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
 (
-  'https://thegirlonbloor.com/wp-content/uploads/2020/07/Chilis-Santa-Fe-Burger-13.webp',
-  1999,
-  'Chili''s Santa Fe Burger',
-  'This Chili''s Santa Fe Burger is a perfect copycat, stacked with avocado, Monterey Jack, red onion, jalapenos, tomato, cilantro & spicy sauce.',
-  '00:15:00',
-  1,
-  TRUE,
-  'BURGERS',
-  TRUE
-);
-INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
-(
   'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/357e8eb1-f755-4936-b28d-8232910a2435-retina-large.jpg',
   2125,
   'SZECHUAN CHICKEN LETTUCE WRAPS',
