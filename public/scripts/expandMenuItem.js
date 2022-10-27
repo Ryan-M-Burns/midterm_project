@@ -42,14 +42,17 @@ const generatePopout = (menuItem) => {
           <button type="button" class="toggle-less">
             <i class="fa-solid fa-circle-arrow-left"></i>
           </button>
-          <textarea class="order-quantity">1</textarea>
+          <div class="order-quantity">
+            1
+          </div>
           <button type="button" class="toggle-more">
             <i class="fa-solid fa-circle-arrow-right"></i>
           </button>
         </div>
         <button type="submit" class="add-to-order-button">
-          <p>Add to order: $${(menuItem.price / 100).toFixed(2)}</p>
+          <p>Add to order: $<span class="add-to-order-popout">${(menuItem.price / 100).toFixed(2)}</span></p>
         </button>
+        <input class="OG-price" type="hidden" value="${(menuItem.price / 100).toFixed(2)}"></input>
       </div>
     </div>
   </div>`;
@@ -59,3 +62,4 @@ const convertToUpperSnakeCase = (str) => {
   let result = str.toUpperCase().split(' ');
   return result.join('_');
 };
+
