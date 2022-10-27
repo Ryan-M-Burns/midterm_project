@@ -24,7 +24,6 @@ router.get('/', (req, res) => {
     return items;
   })
   .then((data) => {
-    console.log(data,'data');
     res.json({ data });
   })
   .catch(err => {
