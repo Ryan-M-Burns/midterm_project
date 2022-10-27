@@ -115,10 +115,12 @@
     font-size: 16px;
     font-weight: 600;
     color: rgb(0 0 0 / 60%);
+
     p {
       margin: 8px 0;
     }
   }
+
   .label-price-total {
 
     border-top: 2px solid rgb(0 0 0 / 17%);
@@ -128,8 +130,32 @@
     font-size: 20px;
     font-weight: 700;
     color: rgb(0 0 0 / 75%);
+
     p {
       margin: 10px 0;
+    }
+  }
+}
+
+.website-body {
+
+  .account-details,
+  .shipping-details,
+  .payment-details {
+    border: 2px solid rgb(0 0 0 / 17%);
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(0 0 0 / 75%);
+    border-radius: 25px;
+    background: white;
+    margin: 20px 0;
+    padding: 10px 20px;
+
+    h2{
+      margin: 0;
     }
   }
 }
