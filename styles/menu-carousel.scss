@@ -6,7 +6,6 @@
 
   .carousel {
     display: flex;
-    position:relative;
     flex-flow: column;
     padding: 10px 0px;
     border-bottom: 2px solid rgb(0 0 0 / 17%);
@@ -34,7 +33,6 @@
         font-weight: 700;
       }
     }
-
 
     .menu-items {
       display: flex;
