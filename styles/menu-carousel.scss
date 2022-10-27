@@ -11,6 +11,17 @@
     padding: 10px 0px;
     border-bottom: 2px solid rgb(0 0 0 / 17%);
 
+    .scroll-left, .scroll-right {
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #f1803a;
+
+      :hover {
+        color: #ea6410;
+      }
+    }
+
     .item-bar {
       display: flex;
       flex-flow: row;
@@ -22,28 +33,6 @@
         font-size: 24px;
         font-weight: 700;
       }
-
-      .scroll-left {
-        cursor: pointer;
-        background: none;
-        border: none;
-        color: #f1803a;
-
-        :hover {
-          color: #ea6410;
-        }
-      }
-
-      .scroll-right {
-        cursor: pointer;
-        background: none;
-        border: none;
-        color: #f1803a;
-
-        :hover {
-          color: #ea6410;
-        }
-      }
     }
 
 
@@ -51,7 +40,7 @@
       display: flex;
       height: 230px;
       overflow-x: scroll;
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
       overscroll-behavior: contain;
 
       .expand-food {
