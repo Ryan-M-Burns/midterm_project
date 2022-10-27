@@ -1,5 +1,5 @@
-const renderMenu = (menu) => {
-  console.log("menu", menu)
+const renderMenu = (data) => {
+  menu = data.data;
   const $menuArea = $(".dynamic-menu");
   $menuArea.empty();
   for (const section in menu) {

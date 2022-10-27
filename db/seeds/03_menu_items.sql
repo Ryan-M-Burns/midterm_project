@@ -7,7 +7,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:05:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -43,7 +43,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -55,7 +55,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:07:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -151,7 +151,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:06:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -175,7 +175,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:05:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -187,7 +187,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:06:30',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -223,7 +223,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:04:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -331,7 +331,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:04:30',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -355,7 +355,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:04:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -439,7 +439,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -451,7 +451,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -463,7 +463,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -475,7 +475,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -487,7 +487,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -499,7 +499,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -511,7 +511,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -523,7 +523,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
