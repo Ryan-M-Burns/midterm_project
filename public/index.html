@@ -34,9 +34,10 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
 
+
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/menuManager.js"></script>
-  <script type="text/javascript" src="/scripts/orderCheckOut_test.js"></script>
+  <!-- <script type="text/javascript" src="/scripts/orderCheckOut_test.js"></script> -->
   <script type="text/javascript" src="/scripts/scroll-buttons.js"></script>
   <script type="text/javascript" src="/scripts/order-summary.js"></script>
   <script type="text/javascript" src="/scripts/checkout.js"></script>
@@ -88,39 +89,50 @@
       </div>
       <div class="shipping-details">
         <h2>Shipping Details</h2>
-
       </div>
       <div class="payment-details">
         <h2>Payment Details</h2>
-
       </div>
     </section>
+    <!-- Checkout Summary -->
     <section class="order-section">
-      <div class="checkout-order-box">
-        <h1>Order Summary</h1>
-        <h4>This is a Delivery Order</h4>
-        <div class="checkout-order-items">
-          <div class="order-items">
-            <p>1 - Chicken Wings</p>
-            <div>
-              <span>$19.99</span>
-              <button type="button" class="remove-item">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
+      <div class="checkout-cart-container">
+        <div class="checkout-cart-header">
+          <h1>Order Summary</h1>
+          <h4>This is a Delivery Order</h4>
+          <div class="order-summary">
+            <div class="order-items">
+              <div class="quantity-item">
+                <div>
+                  <span>1</span><span>x</span>
+                </div>
+                <p>Rob's Crispy Chicken Sandwich</p>
+              </div>
+              <div class="price-delete">
+                <span>$19.99</span>
+                <button type="button" class="remove-item">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="order-items">
-            <p>1 - Chicken Wings</p>
-            <div>
-              <span>$19.99</span>
-              <button type="button" class="remove-item">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
+            <div class="order-items">
+              <div class="quantity-item">
+                <div>
+                  <span>1</span><span>x</span>
+                </div>
+                <p>Rob's Crispy Chicken Sandwich</p>
+              </div>
+              <div class="price-delete">
+                <span>$19.99</span>
+                <button type="button" class="remove-item">
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
         <div class="full-price">
-          <h4></h4>
+          <h3>Tip the Restaurant?</h3>
           <div class="tip-buttons">
             <button>10%</button>
             <button>15%</button>
@@ -141,10 +153,9 @@
             <p class="currency">$2.00</p>
           </div>
         </div>
-        <div class="total-submit-button">
-          <p>Total</p>
-          <p class="currency">$50.00</p>
-        </div>
+        <button type="submit" class="checkout">
+          <p>Checkout</p>
+        </button>
       </div>
     </section>
   </main>
