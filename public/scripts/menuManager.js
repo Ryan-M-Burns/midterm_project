@@ -1,4 +1,5 @@
-const renderMenu = (menu) => {
+const renderMenu = (data) => {
+  menu = data.data;
   console.log("menu", menu)
   const $menuArea = $(".dynamic-menu");
   $menuArea.empty();
@@ -18,8 +19,8 @@ const renderMenu = (menu) => {
         </div>
       </div>`;
     $carousel += createMenuSection(menu[section]);
+    $carousel += `</div>`
     $menuArea.append($carousel);
-    $menuArea.append('</div>');
   }
 
 };

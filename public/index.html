@@ -22,10 +22,10 @@
     <link rel="stylesheet" href="/styles/header.css" />
     <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
     <link rel="stylesheet" href="/styles/order-section.css" />
-    <link rel="stylesheet" href="/styles/menu-carousel.css" />
     <link rel="stylesheet" href="/styles/item-popout.css" />
     <link rel="stylesheet" href="/styles/checkout-page.css" />
     <link rel="stylesheet" href="/styles/restaurant-banner.css" />
+    <link rel="stylesheet" href="/styles/menu-carousel.css" />
 
     <!-- External Scripts -->
     <script src="https://kit.fontawesome.com/c2a9ff36d4.js" crossorigin="anonymous"></script>
@@ -33,12 +33,11 @@
     <!-- App JS -->
     <script src="/vendor/jquery-3.0.0.js"></script>
     <script defer src="/scripts/app.js"></script>
-
-
+    <script type="text/javascript" src="/scripts/scroll-buttons.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/menuManager.js"></script>
-    <script type="text/javascript" src="/scripts/orderCheckOut_test.js"></script>
-    <script type="text/javascript" src="/scripts/scroll-buttons.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/orderCheckOut_test.js"></script> -->
+
     <script type="text/javascript" src="/scripts/order-summary.js"></script>
     <script type="text/javascript" src="/scripts/checkout.js"></script>
   </head>
@@ -58,11 +57,11 @@
       </div>
       <div class="add-to-order">
         <div class="change-quantity">
-          <button type="button" class="scroll-left">
+          <button type="button" class="toggle-less">
             <i class="fa-solid fa-circle-arrow-left"></i>
           </button>
           <textarea class="order-quantity">1</textarea>
-          <button type="button" class="scroll-right">
+          <button type="button" class="toggle-more">
             <i class="fa-solid fa-circle-arrow-right"></i>
           </button>
         </div>
@@ -125,6 +124,7 @@
 
       <!-- Menu Carousel -->
       <div class="dynamic-menu">
+
       </div>
     </section>
 

@@ -6,6 +6,7 @@
 
   .carousel {
     display: flex;
+    position:relative;
     flex-flow: column;
     padding: 10px 0px;
     border-bottom: 2px solid rgb(0 0 0 / 17%);
@@ -22,7 +23,17 @@
         font-weight: 700;
       }
 
-      .scroll-left,
+      .scroll-left {
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #f1803a;
+
+        :hover {
+          color: #ea6410;
+        }
+      }
+
       .scroll-right {
         cursor: pointer;
         background: none;
@@ -35,12 +46,13 @@
       }
     }
 
+
     .menu-items {
       display: flex;
       height: 230px;
       overflow-x: scroll;
+      scroll-behavior: smooth;
       overscroll-behavior: contain;
-
 
       .expand-food {
         width: 170px;
