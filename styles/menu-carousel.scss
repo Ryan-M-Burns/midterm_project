@@ -39,9 +39,10 @@
       height: 230px;
       overflow-x: scroll;
       scroll-behavior: auto;
-      overscroll-behavior: contain;
+      overscroll-behavior-x: contain;
 
       .expand-food {
+        cursor: pointer;
         width: 170px;
         border: none;
         padding: 0 6px;
