@@ -1,4 +1,8 @@
 const expandMenuItem = e => {
   const $menuItem = $(e.target);
-  console.log($menuItem.text());
+  loadPopout($menuItem);
 }
+const generatePopout = (searchItem) => {
+  console.log(searchItem);
+}
+const loadPopout = () => $.get('/menu', expandMenuItem)
