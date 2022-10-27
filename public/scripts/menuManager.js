@@ -7,7 +7,7 @@ const renderMenu = (data) => {
     let $carousel = `
     <div class="carousel">
       <div class="item-bar">
-        <h2>${sectionName}</h2>
+        <h2 class="section-name">${sectionName}</h2>
         <div>
           <button type="button" class="scroll-left">
             <i class="fa-solid fa-circle-arrow-left"></i>

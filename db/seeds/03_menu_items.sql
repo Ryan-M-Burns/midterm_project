@@ -12,6 +12,30 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
 (
+  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/c28b67ab-9faf-44f1-b60c-901e103c13d9-retina-large.jpg',
+  1925,
+  'RAINCOAST GREENS',
+  'Choice of protein or vegetarian. Fresh greens, avocado, tomatoes, feta, spicy pecans, cucumber, egg, lemon-thyme vinaigrette.',
+  '00:06:00',
+  1,
+  TRUE,
+  'GREENS',
+  TRUE
+);
+INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
+(
+  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/43866755-3377-4fa9-8776-ed587434f22c-retina-large.jpg',
+  1725,
+  'PRAWN CRUNCH ROLL',
+  'Crispy prawn, mango, avocado, cucumber, sesame soy paper, sriracha mayo, soy glaze.',
+  '00:10:00',
+  1,
+  TRUE,
+  'SUSHI',
+  TRUE
+);
+INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
+(
   'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/68980836-e69f-4889-b73d-faaa38f5d785-retina-large.jpg',
   2025,
   'CAJUN CHICKEN SANDWICH',
@@ -24,14 +48,14 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
 (
-  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/c28b67ab-9faf-44f1-b60c-901e103c13d9-retina-large.jpg',
-  1925,
-  'RAINCOAST GREENS',
-  'Choice of protein or vegetarian. Fresh greens, avocado, tomatoes, feta, spicy pecans, cucumber, egg, lemon-thyme vinaigrette.',
-  '00:06:00',
+  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/8b36402a-c1c1-4d74-a21e-fe4a77cabe86-retina-large.jpg',
+  2175,
+  'TERIYAKI CHICKEN RICE BOWL',
+  'Peppers, broccoli, red cabbage, bean sprouts, spicy yogurt.',
+  '00:04:00',
   1,
   TRUE,
-  'GREENS',
+  'BOWLS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -56,18 +80,6 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   1,
   TRUE,
   'APPETIZERS',
-  TRUE
-);
-INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
-(
-  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/43866755-3377-4fa9-8776-ed587434f22c-retina-large.jpg',
-  1725,
-  'PRAWN CRUNCH ROLL',
-  'Crispy prawn, mango, avocado, cucumber, sesame soy paper, sriracha mayo, soy glaze.',
-  '00:10:00',
-  1,
-  TRUE,
-  'SUSHI',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -104,18 +116,6 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   1,
   TRUE,
   'MAINS',
-  TRUE
-);
-INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
-(
-  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/8b36402a-c1c1-4d74-a21e-fe4a77cabe86-retina-large.jpg',
-  2175,
-  'TERIYAKI CHICKEN RICE BOWL',
-  'Peppers, broccoli, red cabbage, bean sprouts, spicy yogurt.',
-  '00:04:00',
-  1,
-  TRUE,
-  'BOWLS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES

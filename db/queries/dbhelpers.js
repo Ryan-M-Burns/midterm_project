@@ -44,7 +44,7 @@ const getAllMenuItems = () => {
           feature_items.push(allMenuItem);
         }
       };
-      items["feature_items"] = feature_items;
+      items["FEATURE_ITEMS"] = feature_items;
       for(const allMenuItem of allMenuItems) {
         let curr_type = allMenuItem['type'];
         if(items.hasOwnProperty(curr_type)) {
