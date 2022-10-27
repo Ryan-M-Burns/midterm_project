@@ -1,4 +1,5 @@
 const renderMenu = (menu) => {
+  console.log("menu", menu)
   const $menuArea = $(".dynamic-menu");
   $menuArea.empty();
   for (const section in menu) {

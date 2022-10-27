@@ -5,14 +5,23 @@ const userQueries = require('../../db/queries/dbhelpers');
 router.get('/', (req, res) => {
   userQueries.getAllMenuItems()
   .then((allMenuItems) => {
+    const items = [];
     const feature_items = [];
     for(const allMenuItem of allMenuItems) {
-      const test = allMenuItem.feature_item;
-      if(test) {
+      if(allMenuItem.feature_item) {
         feature_items.push(allMenuItem);
       }
     };
-    res.json({ feature_items });
+    items["feature_items"] = feature_items;
+    for(const allMenuItem of allMenuItems) {
+      let curr_type = allMenuItem['type'];
+      if(items.hasOwnProperty(curr_type)) {
+        items[curr_type].push(allMenuItem);
+      } else {
+        items[curr_type] = [allMenuItem];
+      }
+    };
+    res.json({ items });
   })
   .catch(err => {
     res
