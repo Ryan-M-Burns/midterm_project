@@ -1,13 +1,13 @@
-const renderMenu = (menu) => {
+const renderMenu = (data) => {
+  menu = data.data;
   const $menuArea = $(".dynamic-menu");
   $menuArea.empty();
-
   for (const section in menu) {
     let sectionName = toTitle(section);
     let $carousel = `
     <div class="carousel">
       <div class="item-bar">
-        <h2>${sectionName}</h2>
+        <h2 class="section-name">${sectionName}</h2>
         <div>
           <button type="button" class="scroll-left">
             <i class="fa-solid fa-circle-arrow-left"></i>
@@ -18,8 +18,8 @@ const renderMenu = (menu) => {
         </div>
       </div>`;
     $carousel += createMenuSection(menu[section]);
+    $carousel += `</div>`
     $menuArea.append($carousel);
-    $menuArea.append('</div>');
   }
 
 };

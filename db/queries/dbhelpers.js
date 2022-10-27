@@ -1,5 +1,7 @@
 const db = require('../connection');
 
+
+//GET Info helpers
 const getUsers = () => {
   return db.query('SELECT * FROM users;')
     .then((data) => {
@@ -14,11 +16,45 @@ const getRestaurants = () => {
     });
 };
 
+const getMenuIdByName = (selectedName) => {
+  return db.query('SELECT menu_items.id FROM menu_items WHERE name = $1;', [selectedName])
+    .then((data) => {
+      return data.rows;
+    })
+}
+
+const getcartIdByUserId = (userID) => {
+  return db.query('SELECT carts.id FROM carts WHERE user_id = $1;', [userID])
+    .then((data) => {
+      return data.rows;
+    })
+}
+
+//menu routes section
 const getAllMenuItems = () => {
   return db.query('SELECT * FROM menu_items;')
     .then((data) => {
       return data.rows;
-    });
+    })
+    .then((allMenuItems) => {
+      let items = {};
+      let feature_items = [];
+      for(const allMenuItem of allMenuItems) {
+        if(allMenuItem.feature_item) {
+          feature_items.push(allMenuItem);
+        }
+      };
+      items["FEATURE_ITEMS"] = feature_items;
+      for(const allMenuItem of allMenuItems) {
+        let curr_type = allMenuItem['type'];
+        if(items.hasOwnProperty(curr_type)) {
+          items[curr_type].push(allMenuItem);
+        } else {
+          items[curr_type] = [allMenuItem];
+        }
+      };
+      return items;
+    })
 };
 
 const getMenuItems = (inputVar) => {
@@ -28,6 +64,7 @@ const getMenuItems = (inputVar) => {
     });
 };
 
+//cart routes section
 const getCartPrice = (insertInfo) => {
   return db.query('SELECT cart_id, SUM(menu_items.price * cart_items.quantity) AS total_price FROM carts JOIN cart_items on carts.id = cart_id JOIN menu_items ON menu_item_id = menu_items.id WHERE cart_id = $1 GROUP BY cart_id;',
   [insertInfo['cart_id']]
@@ -95,9 +132,13 @@ const getCarts = (insertInfo) => {
 const removeCartItems = (insertInfo) => {
   db.query('SELECT quantity FROM cart_items WHERE cart_id = $1 AND menu_item_id = $2 AND ( note = $3 OR $3 IS NULL);', [insertInfo['cart_id'], insertInfo['menu_item_id'], insertInfo['note']])
   .then((data) => {
-    const verifyInfos = data.rows;
-    const verifyQuantity = verifyInfos[0]['quantity'];
-    return verifyQuantity;
+    if(Array.isArray(data.rows) && data.rows.length === 0) {
+      return null;
+    } else {
+      const verifyInfos = data.rows;
+      const verifyQuantity = verifyInfos[0]['quantity'];
+      return verifyQuantity;
+      }
   })
   .then((dataTwo) => {
     if ( Number(dataTwo) - Number(insertInfo['quantity']) > 0 ) {
@@ -136,6 +177,7 @@ const deleteCartItems = (insertInfo) => {
 })
 }
 
+//order routes section
 const placeOrder = (insertInfo) => {
   return db.query('SELECT cart_items.*, carts.*, menu_items.* FROM carts JOIN cart_items on carts.id = cart_id JOIN menu_items ON menu_items.id = menu_item_id WHERE cart_id = $1;', [insertInfo['cart_id']])
     .then((data) => {
@@ -185,4 +227,20 @@ const orderConfirmation = (insertInfo) => {
   })
 }
 
-module.exports = { getUsers, getRestaurants, getAllMenuItems, getMenuItems, getCarts, addCartItems, getCartPrice, removeCartItems, deleteCartItems, placeOrder, orderConfirmation};
+
+
+module.exports = {
+  getUsers,
+  getRestaurants,
+  getAllMenuItems,
+  getMenuItems,
+  getCarts,
+  addCartItems,
+  getCartPrice,
+  removeCartItems,
+  deleteCartItems,
+  placeOrder,
+  orderConfirmation,
+  getMenuIdByName,
+  getcartIdByUserId
+};

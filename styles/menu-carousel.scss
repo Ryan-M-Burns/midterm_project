@@ -10,28 +10,27 @@
     padding: 10px 0px;
     border-bottom: 2px solid rgb(0 0 0 / 17%);
 
+    .scroll-left, .scroll-right {
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #f1803a;
+
+      :hover {
+        color: #ea6410;
+      }
+    }
+
     .item-bar {
       display: flex;
       flex-flow: row;
       justify-content: space-between;
       padding-bottom: 10px;
 
-      h2 {
+      .section-name {
         margin: 0;
         font-size: 24px;
         font-weight: 700;
-      }
-
-      .scroll-left,
-      .scroll-right {
-        cursor: pointer;
-        background: none;
-        border: none;
-        color: #f1803a;
-
-        :hover {
-          color: #ea6410;
-        }
       }
     }
 
@@ -39,10 +38,11 @@
       display: flex;
       height: 230px;
       overflow-x: scroll;
-      overscroll-behavior: contain;
-
+      scroll-behavior: auto;
+      overscroll-behavior-x: contain;
 
       .expand-food {
+        cursor: pointer;
         width: 170px;
         border: none;
         padding: 0 6px;

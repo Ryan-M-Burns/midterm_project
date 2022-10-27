@@ -1,17 +1,5 @@
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
 (
-  'https://thegirlonbloor.com/wp-content/uploads/2020/07/Chilis-Santa-Fe-Burger-13.webp',
-  1999,
-  'Chili''s Santa Fe Burger',
-  'This Chili''s Santa Fe Burger is a perfect copycat, stacked with avocado, Monterey Jack, red onion, jalapenos, tomato, cilantro & spicy sauce.',
-  '00:15:00',
-  1,
-  TRUE,
-  'BURGERS',
-  TRUE
-);
-INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
-(
   'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/357e8eb1-f755-4936-b28d-8232910a2435-retina-large.jpg',
   2125,
   'SZECHUAN CHICKEN LETTUCE WRAPS',
@@ -19,19 +7,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:05:00',
   1,
   TRUE,
-  'STARTS',
-  TRUE
-);
-INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
-(
-  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/68980836-e69f-4889-b73d-faaa38f5d785-retina-large.jpg',
-  2025,
-  'CAJUN CHICKEN SANDWICH',
-  'Blackened cajun chicken, aged cheddar, lettuce, tomato, mayonnaise, brioche bun.',
-  '00:08:00',
-  1,
-  TRUE,
-  'BURGERS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -48,6 +24,42 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
 (
+  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/43866755-3377-4fa9-8776-ed587434f22c-retina-large.jpg',
+  1725,
+  'PRAWN CRUNCH ROLL',
+  'Crispy prawn, mango, avocado, cucumber, sesame soy paper, sriracha mayo, soy glaze.',
+  '00:10:00',
+  1,
+  TRUE,
+  'SUSHI',
+  TRUE
+);
+INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
+(
+  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/68980836-e69f-4889-b73d-faaa38f5d785-retina-large.jpg',
+  2025,
+  'CAJUN CHICKEN SANDWICH',
+  'Blackened cajun chicken, aged cheddar, lettuce, tomato, mayonnaise, brioche bun.',
+  '00:08:00',
+  1,
+  TRUE,
+  'BURGERS',
+  TRUE
+);
+INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
+(
+  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/8b36402a-c1c1-4d74-a21e-fe4a77cabe86-retina-large.jpg',
+  2175,
+  'TERIYAKI CHICKEN RICE BOWL',
+  'Peppers, broccoli, red cabbage, bean sprouts, spicy yogurt.',
+  '00:04:00',
+  1,
+  TRUE,
+  'BOWLS',
+  TRUE
+);
+INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
+(
   'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/932a825f-f540-41b2-9c45-1f7152692d02-retina-large.jpg',
   1750,
   'PESTO CHICKEN QUESADILLA',
@@ -55,7 +67,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -67,19 +79,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:07:00',
   1,
   TRUE,
-  'STARTS',
-  TRUE
-);
-INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
-(
-  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/43866755-3377-4fa9-8776-ed587434f22c-retina-large.jpg',
-  1725,
-  'PRAWN CRUNCH ROLL',
-  'Crispy prawn, mango, avocado, cucumber, sesame soy paper, sriracha mayo, soy glaze.',
-  '00:10:00',
-  1,
-  TRUE,
-  'SUSHI',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -120,18 +120,6 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
 (
-  'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/8b36402a-c1c1-4d74-a21e-fe4a77cabe86-retina-large.jpg',
-  2175,
-  'TERIYAKI CHICKEN RICE BOWL',
-  'Peppers, broccoli, red cabbage, bean sprouts, spicy yogurt.',
-  '00:04:00',
-  1,
-  TRUE,
-  'BOWLS',
-  TRUE
-);
-INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
-(
   'https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/d500b3cb-eab1-4924-b350-651471f8e5c6-retina-large.jpg',
   2450,
   'TUNA POKE BOWL',
@@ -163,7 +151,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:06:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -187,7 +175,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:05:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -199,7 +187,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:06:30',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -235,7 +223,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:04:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -343,7 +331,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:04:30',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -367,7 +355,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:04:00',
   1,
   TRUE,
-  'STARTS',
+  'APPETIZERS',
   TRUE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -451,7 +439,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -463,7 +451,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -475,7 +463,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -487,7 +475,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -499,7 +487,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -511,7 +499,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -523,7 +511,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES
@@ -535,7 +523,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
   '00:03:00',
   1,
   TRUE,
-  'ALCOHOLS',
+  'ALCOHOL',
   FALSE
 );
 INSERT INTO menu_items (image_url, price, name, description, preparation_time, restaurant_id, isactive, type, feature_item) VALUES

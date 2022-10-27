@@ -4,16 +4,8 @@ const userQueries = require('../../db/queries/dbhelpers');
 
 router.get('/', (req, res) => {
   userQueries.getAllMenuItems()
-  .then((allMenuItems) => {
-    const feature_items = [];
-    for(const allMenuItem of allMenuItems) {
-      const test = allMenuItem.feature_item;
-      if(test) {
-        console.log(allMenuItem, "allMenuItem")
-        feature_items.push(allMenuItem);
-      }
-    };
-    res.json({ feature_items });
+  .then((data) => {
+    res.json({ data });
   })
   .catch(err => {
     res
