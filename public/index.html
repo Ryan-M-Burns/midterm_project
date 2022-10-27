@@ -100,7 +100,7 @@
         <div class="checkout-cart-header">
           <h1>Order Summary</h1>
           <h4>This is a Delivery Order</h4>
-          <div class="order-summary">
+          <div class="checkout-order-summary">
             <div class="order-items">
               <div class="quantity-item">
                 <div>
@@ -133,11 +133,11 @@
         </div>
         <div class="full-price">
           <h3>Tip the Restaurant?</h3>
-          <div class="tip-buttons">
-            <button>10%</button>
-            <button>15%</button>
-            <button>20%</button>
-            <button>Other</button>
+          <div >
+            <button type="button" class="tip-button1"><p>10%</p></button>
+            <button type="button" class="tip-button2"><p>15%</p></button>
+            <button type="button" class="tip-button3"><p>20%</p></button>
+            <button type="button" class="tip-button4"><p>Other</p></button>
           </div>
           <textarea name="custom-tip" id="custom-tip" placeholder="Please enter tip % amount"></textarea>
           <div class="label-price">
@@ -152,9 +152,13 @@
             <p>Taxes</p>
             <p class="currency">$2.00</p>
           </div>
+          <div class="label-price-total">
+            <p>Total</p>
+            <p class="currency">$50.00</p>
+          </div>
         </div>
         <button type="submit" class="checkout">
-          <p>Checkout</p>
+          <p>Place Order</p>
         </button>
       </div>
     </section>
