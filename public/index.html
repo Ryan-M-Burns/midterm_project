@@ -22,22 +22,24 @@
   <link rel="stylesheet" href="/styles/header.css" />
   <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
   <link rel="stylesheet" href="/styles/order-section.css" />
-  <link rel="stylesheet" href="/styles/menu-carousel.css" />
   <link rel="stylesheet" href="/styles/item-popout.css" />
   <link rel="stylesheet" href="/styles/checkout-page.css" />
   <link rel="stylesheet" href="/styles/restaurant-banner.css" />
   <link rel="stylesheet" href="/styles/cart_summary.css" />
+  <link rel="stylesheet" href="/styles/menu-carousel.css" />
+
 
   <!-- External Scripts -->
   <script src="https://kit.fontawesome.com/c2a9ff36d4.js" crossorigin="anonymous"></script>
+  <script> history.scrollRestoration = 'manual' </script>
 
   <!-- App JS -->
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/app.js"></script>
-
+  <script type="text/javascript" src="/scripts/scroll-buttons.js"></script>
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/menuManager.js"></script>
-  <script type="text/javascript" src="/scripts/scroll-buttons.js"></script>
+  <!-- <script type="text/javascript" src="/scripts/orderCheckOut_test.js"></script> -->
   <script type="text/javascript" src="/scripts/order-summary.js"></script>
   <script type="text/javascript" src="/scripts/checkout.js"></script>
   <script type="text/javascript" src="/scripts/orderCheckOut.js"></script>
@@ -45,30 +47,39 @@
 
 <body>
   <!-- Menu Item Popout -->
-  <section class="popout-section">
+  <section class="popout-section" scroll="no">
     <div class="popout">
       <div class="food-info-popout">
-        <h2>Chicken Tenders</h2>
-        <p class="rating"> <i class="fa-regular fa-thumbs-up"></i> 95%</p>
-        <h3 class="food-description"></h3>
-        <img src="/images/chicken-tenders.jpg" alt="Yum!" class="food-image-large">
-        <h3>Preferences:</h3>
-        <textarea placeholder="Please let the restaurant know of any allergies, dietary, or religious restrictions!"
-          name="text" id="preferences-text"></textarea>
-      </div>
-      <div class="add-to-order">
-        <div class="change-quantity">
-          <button type="button" class="scroll-left">
-            <i class="fa-solid fa-circle-arrow-left"></i>
-          </button>
-          <textarea class="order-quantity">1</textarea>
-          <button type="button" class="scroll-right">
-            <i class="fa-solid fa-circle-arrow-right"></i>
+        <button type="button" class="close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="popout-body">
+          <h2>Chicken Tenders</h2>
+          <p class="rating"> <i class="fa-regular fa-thumbs-up"></i> 95%</p>
+          <h3 class="food-description">
+            Congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras adipiscing
+          </h3>
+          <div class="popout-img-box">
+          <img src="/images/chicken-tenders.jpg" alt="Yum!" class="food-image-large">
+        </div>
+          <h3>Preferences:</h3>
+          <textarea placeholder="Please let the restaurant know of any allergies, dietary, or religious restrictions!"
+            name="text" id="preferences-text"></textarea>
+        </div>
+        <div class="add-to-order">
+          <div class="change-quantity">
+            <button type="button" class="toggle-less">
+              <i class="fa-solid fa-circle-arrow-left"></i>
+            </button>
+            <textarea class="order-quantity">1</textarea>
+            <button type="button" class="toggle-more">
+              <i class="fa-solid fa-circle-arrow-right"></i>
+            </button>
+          </div>
+          <button type="submit" class="add-to-order-button">
+            <p>Add to order: $15.50</p>
           </button>
         </div>
-        <button type="submit" class="checkout">
-          <p>Add to order: $15.50</p>
-        </button>
       </div>
     </div>
   </section>
@@ -125,6 +136,7 @@
 
       <!-- Menu Carousel -->
       <div class="dynamic-menu">
+
       </div>
     </section>
 
@@ -149,7 +161,7 @@
               </button>
             </div>
           </div>
-            <div class="order-items">
+          <div class="order-items">
             <div class="quantity-item">
               <div>
                 <span>1</span><span>x</span>
@@ -163,7 +175,7 @@
               </button>
             </div>
           </div>
-            <div class="order-items">
+          <div class="order-items">
             <div class="quantity-item">
               <div>
                 <span>1</span><span>x</span>
@@ -177,7 +189,7 @@
               </button>
             </div>
           </div>
-            <div class="order-items">
+          <div class="order-items">
             <div class="quantity-item">
               <div>
                 <span>1</span><span>x</span>
@@ -191,7 +203,7 @@
               </button>
             </div>
           </div>
-            <div class="order-items">
+          <div class="order-items">
             <div class="quantity-item">
               <div>
                 <span>1</span><span>x</span>
@@ -205,7 +217,7 @@
               </button>
             </div>
           </div>
-            <div class="order-items">
+          <div class="order-items">
             <div class="quantity-item">
               <div>
                 <span>1</span><span>x</span>

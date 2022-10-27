@@ -18,8 +18,8 @@ const renderMenu = (data) => {
         </div>
       </div>`;
     $carousel += createMenuSection(menu[section]);
+    $carousel += `</div>`
     $menuArea.append($carousel);
-    $menuArea.append('</div>');
   }
 
 };
