@@ -59,22 +59,35 @@ router.post('/', (req, res) => {
 });
 
 router.post('/delete', (req, res) => {
-  const insertInfo = {
-    'quantity': 15, //should come from browser/req.body
-    'cart_id': 1,  // should come from browser/req.body
-    'menu_item_id': 7, // should come from browser/req.body
-    'note': null,
-    'user_id': 1
-  }
-  return userQueries.deleteCartItems(insertInfo)
-    .then((infoReceived) => {
-      res.json({ infoReceived })
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
+  let getMenuId;
+  let getCartId;
+  const selectedName = req.body['name'];
+  userQueries.getMenuIdByName(selectedName)
+  .then((val1) => {
+    getMenuId = val1[0]['id'];
+    return userQueries.getcartIdByUserId(Number(req.cookies['user_id']))
+  })
+  .then((val2) => {
+    getCartId = val2[0]['id'];
+  })
+  .then(() => {
+    const insertInfo = {
+      'quantity': req.body['quantity'],
+      'cart_id': getCartId,
+      'menu_item_id': getMenuId,
+      'note': null,
+      'user_id': Number(req.cookies['user_id'])
+    }
+    return userQueries.removeCartItems(insertInfo)
+  })
+  .then((varInput) => {
+    res.json({ 'info': varInput });
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
 })
 
 router.post('/update', (req, res) => {
