@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <title>Home Page</title>
+  <head>
+    <title>Home Page</title>
 
-  <!-- Meta Information -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- External CSS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap"
-    rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap"
+      rel="stylesheet">
 
-  <!-- App CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/header.css" />
-  <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
-  <link rel="stylesheet" href="/styles/order-section.css" />
-  <link rel="stylesheet" href="/styles/menu-carousel.css" />
-  <link rel="stylesheet" href="/styles/item-popout.css" />
-  <link rel="stylesheet" href="/styles/checkout-page.css" />
-  <link rel="stylesheet" href="/styles/restaurant-banner.css" />
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
+    <link rel="stylesheet" href="/styles/order-section.css" />
+    <link rel="stylesheet" href="/styles/item-popout.css" />
+    <link rel="stylesheet" href="/styles/checkout-page.css" />
+    <link rel="stylesheet" href="/styles/restaurant-banner.css" />
+    <link rel="stylesheet" href="/styles/menu-carousel.css" />
 
-  <!-- External Scripts -->
-  <script src="https://kit.fontawesome.com/c2a9ff36d4.js" crossorigin="anonymous"></script>
+    <!-- External Scripts -->
+    <script src="https://kit.fontawesome.com/c2a9ff36d4.js" crossorigin="anonymous"></script>
 
-  <!-- App JS -->
-  <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/app.js"></script>
-
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/menuManager.js"></script>
-  <script type="text/javascript" src="/scripts/scroll-buttons.js"></script>
-  <script type="text/javascript" src="/scripts/order-summary.js"></script>
-  <script type="text/javascript" src="/scripts/checkout.js"></script>
-</head>
+    <!-- App JS -->
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/scroll-buttons.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/menuManager.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/orderCheckOut_test.js"></script> -->
+    <script type="text/javascript" src="/scripts/order-summary.js"></script>
+    <script type="text/javascript" src="/scripts/checkout.js"></script>
+  </head>
 
 <body>
   <!-- Menu Item Popout -->
@@ -56,11 +56,11 @@
       </div>
       <div class="add-to-order">
         <div class="change-quantity">
-          <button type="button" class="scroll-left">
+          <button type="button" class="toggle-less">
             <i class="fa-solid fa-circle-arrow-left"></i>
           </button>
           <textarea class="order-quantity">1</textarea>
-          <button type="button" class="scroll-right">
+          <button type="button" class="toggle-more">
             <i class="fa-solid fa-circle-arrow-right"></i>
           </button>
         </div>
@@ -123,6 +123,7 @@
 
       <!-- Menu Carousel -->
       <div class="dynamic-menu">
+      
       </div>
     </section>
 
