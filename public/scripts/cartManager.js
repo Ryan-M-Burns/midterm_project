@@ -9,8 +9,6 @@ const addToCart = (e) => {
   $.post(`/cart/${user_id}`, postData, renderCart(user_id));
 };
 
-const renderCart = (id) => $.get(`/cart/${id}`, generateCart);
-
 const generateCart = (infoInputs) => {
   console.log('infoInput', infoInputs);
   const $cartContainer = $('.order-summary');
@@ -40,54 +38,4 @@ const generateCartItems = (infoInput) => {
   $cartContainer.append(cartItem);
 };
 
-
-//const postItemToCart = $.post('/cart', searchKeyValue, callback, "json");
-
-
-
-// const deleteItem = () => {
-//   const deleteMenuName = $(this).parent().children(".food-name-incart").text();
-//   const deleteItemQuantity = $(this).parent().children(".food-quantity-incart").text();
-//   const infoInsert = {};
-//   infoInsert['name'] = deleteMenuName;
-//   infoInsert['quantity'] = deleteItemQuantity;
-//   function callback(val) {
-//     $(".order-summary").empty();
-//     const infoInputs = val['info'][1].rows;
-//     let cartSection = ``;
-//     cartSection += orderListItems(infoInputs);
-//     $(".order-summary").append(cartSection);
-//   }
-//   $.post('/cart/delete', infoInsert, callback, "json");
-// };
-
-// $(document).ready(function(){
-//   //jQuery methods go here...]
-//   $(".order-summary").empty();
-//   $.get('/order', function(infoReceived){
-//     const infoInputs = infoReceived['infoReceived'];
-//     console.log('infoInputs', infoInputs)
-//   let cartSection = ``;
-//   cartSection += orderListItems(infoInputs);
-//   $(".order-summary").append(cartSection);
-//   });
-
-//   $(document).on("click", '.remove-item', function(){
-//     const deleteMenuName = $(this).parent().children(".food-name-incart").text();
-//     const deleteItemQuantity = $(this).parent().children(".food-quantity-incart").text();
-//     const infoInsert = {};
-//     infoInsert['name'] = deleteMenuName;
-//     infoInsert['quantity'] = deleteItemQuantity;
-//     function callback(val){
-//       $(".order-summary").empty();
-//       const infoInputs = val['info'][1].rows;
-//       let cartSection = ``;
-//       cartSection += orderListItems(infoInputs);
-//       $(".order-summary").append(cartSection);
-//     }
-//     $.post('/cart/delete', infoInsert, callback, "json");
-//   })
-// })
-
-//helper function
-
+const renderCart = (id) => $.get(`/cart/${id}`, generateCart);
