@@ -1,34 +1,17 @@
-const renderPopout = e => {
-  const itemID = $(e.currentTarget).find('.expand-food').attr("id");
-  //const itemSection = convertToUpperSnakeCase($(e.currentTarget).closest('.carousel').find('.section-name').text());
-  createPopoutElement(itemID);
+const renderPopout = (e) => {
+  const id = $(e.target).closest('.expand-food').attr('id');
+  console.log(id);
+  $.get(`/menu/${id}`, generatePopout);
 };
 
-
-const createPopoutElement = (arr) => $.get('/menu/:id', menu, getMenuItem(menu, arr));
-
-const getMenuItem = (data, itemObject) => {
+const generatePopout = (data) => {
   const $popoutBox = $('.popout-section');
-  const menuItem = e;
   $popoutBox.empty();
-  $popoutBox.append(generatePopout(menuItem));
+  $popoutBox.append(createPopout(data[0]));
   $popoutBox.css("visibility", "visible");
 };
 
-
-// const createPopoutElement = (arr) => $.get('/menu', menu, getMenuItem(menu, arr));
-
-// const getMenuItem = (data, itemObject) => {
-//   const $popoutBox = $('.popout-section');
-//   const menuSection = data[itemObject[0]];
-//   const menuItem = menuSection.find((item) => (item.name === itemObject[1]));
-//   $popoutBox.empty();
-//   $popoutBox.append(generatePopout(menuItem));
-//   $popoutBox.css("visibility", "visible");
-// };
-
-const generatePopout = (menuItem) => {
-  console.log("menuItem", JSON.stringify(menuItem));
+const createPopout = (menuItem) => {
   return `
   <div class="popout">
     <div class="food-info-popout">
@@ -69,9 +52,3 @@ const generatePopout = (menuItem) => {
     </div>
   </div>`;
 };
-
-const convertToUpperSnakeCase = (str) => {
-  let result = str.toUpperCase().split(' ');
-  return result.join('_');
-};
-

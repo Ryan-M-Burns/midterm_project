@@ -18,7 +18,7 @@ router.get('/:id', (req, res) => {
   const inputVar = req.params.id;
   userQueries.getMenuItems(inputVar)
   .then((menuItem) => {
-    res.json({ menuItem });
+    res.json( menuItem );
   })
   .catch(err => {
     res
