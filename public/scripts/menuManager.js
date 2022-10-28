@@ -34,6 +34,7 @@ const createMenuSection = (menuItems) => {
     if (item.isactive) {
       const menuItem = `
           <button type="button" class="expand-food">
+         <!-- <button type="button" class="expand-food" onclick='renderPopout(${JSON.stringify(item)})'> -->
             <div class="food-picture-box">
               <img src="${item.image_url}" alt="food" class="food-picture">
             </div>

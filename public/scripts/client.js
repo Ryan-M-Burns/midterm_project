@@ -12,6 +12,7 @@ $(() => {
   $popout.on('click', '.toggle-less', decreaseQuantity);
   $popout.on('click', '.toggle-more', increaseQuantity);
   $popout.on('click', '.close', () => $('.popout-section').css("visibility", "hidden"));
+
   $('.checkout').on('submit', checkout);
 });
 // research nodemon docs
