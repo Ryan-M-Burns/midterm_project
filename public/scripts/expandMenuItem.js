@@ -1,4 +1,12 @@
 const renderPopout = e => {
+  const itemID = $(e.currentTarget).find('.expand-food').attr("id");
+  createPopoutElement(itemID);
+};
+
+
+const createPopoutElement = (id) => $.get('/menu/:id', menu, getMenuItem(id));
+
+const getMenuItem = (data, itemObject) => {
   const $popoutBox = $('.popout-section');
   const menuItem = e;
   $popoutBox.empty();
