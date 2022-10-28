@@ -16,6 +16,21 @@ const postItemToCart = $.post('/cart', searchKeyValue, callback, "json");
 
 
 
+const deleteItem = () => {
+  const deleteMenuName = $(this).parent().children(".food-name-incart").text();
+  const deleteItemQuantity = $(this).parent().children(".food-quantity-incart").text();
+  const infoInsert = {};
+  infoInsert['name'] = deleteMenuName;
+  infoInsert['quantity'] = deleteItemQuantity;
+  function callback(val) {
+    $(".order-summary").empty();
+    const infoInputs = val['info'][1].rows;
+    let cartSection = ``;
+    cartSection += orderListItems(infoInputs);
+    $(".order-summary").append(cartSection);
+  }
+  $.post('/cart/delete', infoInsert, callback, "json");
+};
 
 $(document).ready(function(){
   //jQuery methods go here...]
