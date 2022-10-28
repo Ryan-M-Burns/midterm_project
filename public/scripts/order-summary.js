@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
   $(".checkout-order-summary").empty();
   $(".full-price").empty();
