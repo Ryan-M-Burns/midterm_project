@@ -21,16 +21,19 @@ const renderMenu = (data) => {
     $carousel += `</div>`
     $menuArea.append($carousel);
   }
+
 };
 
 const createMenuSection = (menuItems) => {
+
   let menuSection = `
     <div class="carousel-box">
       <div class="menu-items">`;
+
   for (const item of menuItems) {
     if (item.isactive) {
       const menuItem = `
-          <button type="button" class="expand-food" id="${item.id}">
+          <button type="submit" class="expand-food" onclick='renderPopout(${JSON.stringify(item)})'>
             <div class="food-picture-box">
               <img src="${item.image_url}" alt="food" class="food-picture">
             </div>
@@ -39,11 +42,13 @@ const createMenuSection = (menuItems) => {
               <p class="price">$${parseFloat(item.price / 100).toFixed(2)}</p>
             </div>
           </button>`;
+
       menuSection += menuItem;
     }
   }
   menuSection += `</div>
   </div>`;
+
   return menuSection;
 };
 
@@ -58,6 +63,7 @@ const toTitle = (str) => {
     wordArr.unshift(letter);
     result += wordArr.join('') + ' ';
   })
+
   return result.trim();
 }
 

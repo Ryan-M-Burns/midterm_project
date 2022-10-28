@@ -1,6 +1,8 @@
-const addToCart = () => {
-  const searchKey = $(this).parent().siblings(".menu-item-text").children(".food-name");
-  const searchKeyValue = searchKey.text();
+function add_to_cart(menu_item) {
+  const $popoutBox = $('.popout-section');
+  $popoutBox.css("visibility", "hidden");
+  $.post('/cart', menu_item.name, callback, "json");
+
   function callback(val) {
     $(".order-summary").empty();
     const infoInputs = val['varInput'][1][1].rows;
@@ -9,28 +11,7 @@ const addToCart = () => {
     cartSection += orderListItems(infoInputs);
     $(".order-summary").append(cartSection);
   };
-  $.post('/cart', searchKeyValue, callback, "json");
-};
-
-const postItemToCart = $.post('/cart', searchKeyValue, callback, "json");
-
-
-
-const deleteItem = () => {
-  const deleteMenuName = $(this).parent().children(".food-name-incart").text();
-  const deleteItemQuantity = $(this).parent().children(".food-quantity-incart").text();
-  const infoInsert = {};
-  infoInsert['name'] = deleteMenuName;
-  infoInsert['quantity'] = deleteItemQuantity;
-  function callback(val) {
-    $(".order-summary").empty();
-    const infoInputs = val['info'][1].rows;
-    let cartSection = ``;
-    cartSection += orderListItems(infoInputs);
-    $(".order-summary").append(cartSection);
-  }
-  $.post('/cart/delete', infoInsert, callback, "json");
-};
+}
 
 $(document).ready(function(){
   //jQuery methods go here...]
@@ -43,6 +24,22 @@ $(document).ready(function(){
   $(".order-summary").append(cartSection);
   });
 
+  // $(".food-picture").on("click", function(){
+  //   const searchKey = $(this).parent().siblings(".menu-item-text").children(".food-name");
+  //   const searchKeyValue = searchKey.text();
+    // function callback(val) {
+    //   $(".order-summary").empty();
+    //   // console.log('val', val['varInput'][0][0]['total_price'])
+    //   // console.log('val', val['varInput'][0][0]['cart_id'])
+    //   // console.log('val', val['varInput'][1][0])
+    //   // console.log('val', val['varInput'][1][1].rows)
+    //   const infoInputs = val['varInput'][1][1].rows;
+    //   let cartSection = ``;
+    //   cartSection += orderListItems(infoInputs);
+    //   $(".order-summary").append(cartSection);
+    // };
+  //   $.post('/cart', searchKeyValue, callback, "json");
+  // })
   $(document).on("click", '.remove-item', function(){
     const deleteMenuName = $(this).parent().children(".food-name-incart").text();
     const deleteItemQuantity = $(this).parent().children(".food-quantity-incart").text();

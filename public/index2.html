@@ -32,12 +32,19 @@
 
   <!-- App JS -->
   <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/app.js"></script>
+
+
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/menuManager.js"></script>
+  <script type="text/javascript" src="/scripts/orderCheckOut_test.js"></script>
+  <script type="text/javascript" src="/scripts/scroll-buttons.js"></script>
+  <script type="text/javascript" src="/scripts/order-summary.js"></script>
   <script type="text/javascript" src="/scripts/checkout.js"></script>
 </head>
 
 
-<div class="checkout-page">
+<body>
   <header>
     <section>
       <button type="submit" class="back-to">
@@ -89,6 +96,7 @@
     </section>
     <!-- Checkout Summary -->
     <section class="order-section">
+<!-- edit from here -->
       <div class="checkout-cart-container">
         <div class="checkout-cart-header" id="order-summary-right">
           <h1>Order Summary</h1>
@@ -150,12 +158,13 @@
             <p class="currency" class="order-total">$50.00</p>
           </div>
         </div>
+
         <button type="submit" class="checkout">
           <p>Place Order</p>
         </button>
       </div>
     </section>
   </main>
-</div>
+</body>
 
 </html>

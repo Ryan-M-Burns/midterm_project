@@ -1,17 +1,25 @@
-const renderPopout = (e) => {
-  const id = $(e.target).closest('.expand-food').attr('id');
-  console.log(id);
-  $.get(`/menu/${id}`, generatePopout);
-};
-
-const generatePopout = (data) => {
+const renderPopout = e => {
   const $popoutBox = $('.popout-section');
+  const menuItem = e;
   $popoutBox.empty();
-  $popoutBox.append(createPopout(data[0]));
+  $popoutBox.append(generatePopout(menuItem));
   $popoutBox.css("visibility", "visible");
 };
 
-const createPopout = (menuItem) => {
+
+// const createPopoutElement = (arr) => $.get('/menu', menu, getMenuItem(menu, arr));
+
+// const getMenuItem = (data, itemObject) => {
+//   const $popoutBox = $('.popout-section');
+//   const menuSection = data[itemObject[0]];
+//   const menuItem = menuSection.find((item) => (item.name === itemObject[1]));
+//   $popoutBox.empty();
+//   $popoutBox.append(generatePopout(menuItem));
+//   $popoutBox.css("visibility", "visible");
+// };
+
+const generatePopout = (menuItem) => {
+  console.log("menuItem", JSON.stringify(menuItem));
   return `
   <div class="popout">
     <div class="food-info-popout">
@@ -36,19 +44,20 @@ const createPopout = (menuItem) => {
           <button type="button" class="toggle-less">
             <i class="fa-solid fa-circle-arrow-left"></i>
           </button>
-          <div class="order-quantity">
-            1
-          </div>
+          <textarea class="order-quantity" id="${menuItem.id}">1</textarea>
           <button type="button" class="toggle-more">
             <i class="fa-solid fa-circle-arrow-right"></i>
           </button>
         </div>
-
         <button class="add-to-order-button" onclick='add_to_cart(${JSON.stringify(menuItem)})'>
-          <p>Add to order: $<span class="add-to-order-popout">${(menuItem.price / 100).toFixed(2)}</span></p>
+          Add to order: $${(menuItem.price / 100).toFixed(2)}
         </button>
-        <input class="OG-price" type="hidden" value="${(menuItem.price / 100).toFixed(2)}"></input>
       </div>
     </div>
   </div>`;
+};
+
+const convertToUpperSnakeCase = (str) => {
+  let result = str.toUpperCase().split(' ');
+  return result.join('_');
 };
