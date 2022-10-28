@@ -1,7 +1,6 @@
-const checkout = (data) => {
+$(() => {
+  console.log("alert checkout");
 
-};
 
-const menuItemCounter = () =>{
-
-};
+  $('.checkout').on('submit', checkout);
+});
