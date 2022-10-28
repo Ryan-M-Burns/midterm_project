@@ -1,4 +1,13 @@
 const renderPopout = e => {
+  const itemID = $(e.currentTarget).find('.expand-food').attr("id");
+  //const itemSection = convertToUpperSnakeCase($(e.currentTarget).closest('.carousel').find('.section-name').text());
+  createPopoutElement(itemID);
+};
+
+
+const createPopoutElement = (arr) => $.get('/menu/:id', menu, getMenuItem(menu, arr));
+
+const getMenuItem = (data, itemObject) => {
   const $popoutBox = $('.popout-section');
   const menuItem = e;
   $popoutBox.empty();
