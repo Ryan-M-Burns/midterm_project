@@ -131,15 +131,19 @@ const getCarts = (insertInfo) => {
 
 const getCartItems = (insertInfo) => {
   return db.query(
-    `Select cart_items.*, carts.user_id as user_id
+    `SELECT cart_items.*, users.id as user_id
     FROM cart_items
-    JOIN carts ON carts.id = cart_items.cart_id
-    WHERE carts.user_id = $1;`,
-    [insertInfo]
-  )
-    .then(data => {
-      console.log(data);
-    });
+    JOIN carts ON carts.id = cart_id
+    JOIN users ON users.id = user_id
+    WHERE user_id = $1;
+    `,
+    [insertInfo])
+    .then((data) => {
+      return data.rows;
+    })
+    .catch((err) => {
+      console.log("err", err.message);
+    })
 };
 
 const removeCartItems = (insertInfo) => {
