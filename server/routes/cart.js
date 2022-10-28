@@ -6,6 +6,20 @@ const cookieParser = require('cookie-parser');
 const app = express();
 app.use(cookieParser());
 
+router.get('/:id', (req, res) => {
+  const insertInfo = req.cookies['user_id'];
+
+  userQueries.getCartItems(insertInfo)
+  .then((varInputs) => {
+    res.json({ varInputs });
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
+});
+
 router.get('/', (req, res) => {
   const insertInfo = {
     'user_id': req.cookies['user_id'], //should come from browser/req.body

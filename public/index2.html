@@ -16,15 +16,18 @@
     rel="stylesheet">
 
   <!-- App CSS -->
+  <!-- App CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/header.css" />
-  <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
-  <link rel="stylesheet" href="/styles/order-section.css" />
-  <link rel="stylesheet" href="/styles/menu-carousel.css" />
-  <link rel="stylesheet" href="/styles/item-popout.css" />
+
+  <link rel="stylesheet" href="/styles/cart_summary.css" />
   <link rel="stylesheet" href="/styles/checkout-page.css" />
+  <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
+  <link rel="stylesheet" href="/styles/item-popout.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/menu-carousel.css" />
+  <link rel="stylesheet" href="/styles/order-section.css" />
   <link rel="stylesheet" href="/styles/restaurant-banner.css" />
 
   <!-- External Scripts -->
@@ -32,16 +35,19 @@
 
   <!-- App JS -->
   <script src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/buttons.js"></script>
   <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/checkout.js"></script>
+  <script type="text/javascript" src="/scripts/expandMenuManager.js"></script>
+  <script type="text/javascript" src="/scripts/menuManager.js"></script>
+  <script type="text/javascript" src="/scripts/order-summary.js"></script>
+  <script type="text/javascript" src="/scripts/orderCheckOut.js"></script>
+
 </head>
 
-
-<div class="checkout-page">
   <header>
     <section>
-      <button type="submit" class="back-to">
-        <p class><i class="fa-solid fa-arrow-left"></i><a href="http://localhost:8080/index.html"> Back to Restaurant</a></p>
+      <button type="button" class="back-to-homepage">
+        <p class><i class="fa-solid fa-arrow-left"></i>Back to Restaurant</p>
       </button>
       <button type="submit" class="back-to-home">
         <img src="/images/OmitThePlates_logo.png" alt="Logo" width="225" height="70">
@@ -158,6 +164,5 @@
       </div>
     </section>
   </main>
-</div>
 
 </html>

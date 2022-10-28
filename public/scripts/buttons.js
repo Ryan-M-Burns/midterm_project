@@ -19,3 +19,7 @@ const increaseQuantity = (e) => {
   const $textArea = $(e.currentTarget).find('.order-quantity').text();
   console.log("$textArea", $textArea);
 };
+
+const backToRestaurant = () => {
+  location.replace("http://localhost:8080/index.html");
+};

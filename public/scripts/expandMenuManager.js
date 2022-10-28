@@ -36,9 +36,9 @@ const createPopout = (menuItem) => {
           <button type="button" class="toggle-less">
             <i class="fa-solid fa-circle-arrow-left"></i>
           </button>
-          <div class="order-quantity">
+          <textarea class="order-quantity">
             1
-          </div>
+          </textarea>
           <button type="button" class="toggle-more">
             <i class="fa-solid fa-circle-arrow-right"></i>
           </button>
