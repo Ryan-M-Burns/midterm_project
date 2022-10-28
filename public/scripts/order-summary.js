@@ -1,5 +1,3 @@
-
-
 $(document).ready(function(){
   $(".checkout-order-summary").empty();
   $(".full-price").empty();
@@ -10,9 +8,13 @@ $(document).ready(function(){
     $(".checkout-order-summary").append(orderSummary);
     $(".full-price").append(orderTotalToShow);
   });
+  $(document).on("click", ".orderPLaced", function(){
+    const user_id = document.cookie.split("=")[1];
+    $.post('/order', {'val': user_id}, function(){
+      alert("message will be sent to your contact_phone!");
+    })
+  })
 })
-
-
 
 //helper function
 const order = (infoInputs) => {

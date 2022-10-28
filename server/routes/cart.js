@@ -32,10 +32,12 @@ router.post('/', (req, res) => {
   const selectedName = Object.keys(req.body)[0];
   userQueries.getMenuIdByName(selectedName)
   .then((val1) => {
+    console.log("val2", val1)
     getMenuId = val1[0]['id'];
     return userQueries.getcartIdByUserId(Number(req.cookies['user_id']))
   })
   .then((val2) => {
+    console.log("val2", val2)
     getCartId = val2[0]['id'];
   })
   .then(() => {
