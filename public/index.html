@@ -37,9 +37,9 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
 
   <script type="text/javascript" src="/scripts/buttons.js"></script>
-  <script type="text/javascript" src="/scripts/checkout.js"></script>
+  <script type="text/javascript" src="/scripts/cartManager.js"></script>
   <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/expandMenuItem.js"></script>
+  <script type="text/javascript" src="/scripts/expandMenuManager.js"></script>
   <script type="text/javascript" src="/scripts/menuManager.js"></script>
   <script type="text/javascript" src="/scripts/order-summary.js"></script>
   <script type="text/javascript" src="/scripts/orderCheckOut.js"></script>
@@ -59,7 +59,7 @@
   <header>
     <section>
       <button type="submit" class="back-to">
-        <p class><i class="fa-solid fa-arrow-left" ></i>Back to Restaurants</p>
+        <p class><i class="fa-solid fa-arrow-left"></i>Back to Restaurants</p>
       </button>
       <button type="submit" class="back-to-home">
         <img src="/images/OmitThePlates_logo.png" alt="Logo" width="225" height="70">
@@ -83,8 +83,56 @@
     </section>
   </header>
   <main>
-    <section class="website-body">
 
+
+
+
+
+
+    <!-- Display 1 -->
+    <div id="display1">
+      <section class="website-body">
+        <!-- Fixed Restaurant Banner -->
+        <div class="restaurant-banner">
+          <div class="image-holder">
+            <img src="/images/restaurant_banner.jpg" alt="Logo" class="banner-image">
+          </div>
+          <div class="banner-body">
+            <div>
+              <h3 class="restaurant-name"> Succulent Society Cafe </h3>
+              <p>Canadian, Burgers - 4.6<i class="fa-solid fa-star"></i> - 4.6km away - $$$ - (604) 123-4567</p>
+            </div>
+            <label class="delivery">
+              <input type="checkbox" name="color_mode" id="toggle" value="1">
+              <label data-on="Delivery" data-off="Pickup" class="pickup"></label>
+            </label>
+          </div>
+        </div>
+
+        <!-- Menu Carousel -->
+        <div class="dynamic-menu">
+
+        </div>
+      </section>
+
+      <!-- Order Summary -->
+      <section class="order-section">
+        <div class="cart-container">
+          <div class="cart-header">
+            <p>Your Order</p>
+          </div>
+          <div class="order-summary">
+          </div>
+          <button type="button" class="checkout">
+            <p>Checkout</p>
+          </button>
+        </div>
+    </div>
+
+
+
+    <!-- Display 2 -->
+    <div id="display2">
       <!-- Fixed Restaurant Banner -->
       <div class="restaurant-banner">
         <div class="image-holder">
@@ -102,109 +150,95 @@
         </div>
       </div>
 
-      <!-- Menu Carousel -->
-      <div class="dynamic-menu">
-
+      <div class="account-details">
+        <h2>Account Details</h2>
       </div>
-    </section>
-
-    <!-- Order Summary -->
-    <section class="order-section">
-      <div class="cart-container">
-        <div class="cart-header">
-          <p>Your Order</p>
-        </div>
-        <div class="order-summary">
-          <div class="order-items">
-            <div class="quantity-item">
-              <div>
-                <span>1</span><span>x</span>
-              </div>
-              <p>Rob's Crispy Chicken Sandwich</p>
-            </div>
-            <div class="price-delete">
-              <span>$19.99</span>
-              <button type="button" class="remove-item">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
-            </div>
-          </div>
-          <div class="order-items">
-            <div class="quantity-item">
-              <div>
-                <span>1</span><span>x</span>
-              </div>
-              <p>Chicken Wings</p>
-            </div>
-            <div class="price-delete">
-              <span>$19.99</span>
-              <button type="button" class="remove-item">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
-            </div>
-          </div>
-          <div class="order-items">
-            <div class="quantity-item">
-              <div>
-                <span>1</span><span>x</span>
-              </div>
-              <p>Rob's Crispy Chicken Sandwich</p>
-            </div>
-            <div class="price-delete">
-              <span>$19.99</span>
-              <button type="button" class="remove-item">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
-            </div>
-          </div>
-          <div class="order-items">
-            <div class="quantity-item">
-              <div>
-                <span>1</span><span>x</span>
-              </div>
-              <p>Rob's Crispy Chicken Sandwich</p>
-            </div>
-            <div class="price-delete">
-              <span>$19.99</span>
-              <button type="button" class="remove-item">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
-            </div>
-          </div>
-          <div class="order-items">
-            <div class="quantity-item">
-              <div>
-                <span>1</span><span>x</span>
-              </div>
-              <p>Rob's Crispy Chicken Sandwich</p>
-            </div>
-            <div class="price-delete">
-              <span>$19.99</span>
-              <button type="button" class="remove-item">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
-            </div>
-          </div>
-          <div class="order-items">
-            <div class="quantity-item">
-              <div>
-                <span>1</span><span>x</span>
-              </div>
-              <p>Rob's Crispy Chicken Sandwich</p>
-            </div>
-            <div class="price-delete">
-              <span>$19.99</span>
-              <button type="button" class="remove-item">
-                <i class="fa-solid fa-trash-can"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <button onclick="location.href = 'http://localhost:8080/index2.html';"  type="submit" class="checkout">
-          <p>Checkout</p>
-        </button>
+      <div class="shipping-details">
+        <h2>Shipping Details</h2>
       </div>
-    </section>
+      <div class="payment-details">
+        <h2>Payment Details</h2>
+      </div>
+
+      <!-- Checkout Summary -->
+      <section class="order-section">
+        <!-- edit from here -->
+        <div class="checkout-cart-container">
+          <div class="checkout-cart-header" id="order-summary-right">
+            <h1>Order Summary</h1>
+            <h4>This is a Pickup Order</h4>
+            <div class="checkout-order-summary">
+              <div class="order-items">
+                <div class="quantity-item">
+                  <div>
+                    <span>1</span><span>x</span>
+                  </div>
+                  <p>Rob's Crispy Chicken Sandwich</p>
+                </div>
+                <div class="price-delete">
+                  <span>$19.99</span>
+                  <button type="button" class="remove-item">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="order-items">
+                <div class="quantity-item">
+                  <div>
+                    <span>1</span><span>x</span>
+                  </div>
+                  <p>Rob's Crispy Chicken Sandwich</p>
+                </div>
+                <div class="price-delete">
+                  <span>$19.99</span>
+                  <button type="button" class="remove-item">
+                    <i class="fa-solid fa-trash-can"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="full-price">
+            <h3>Tip the Restaurant?</h3>
+            <div>
+              <button type="button" class="tip-button1">
+                <p>10%</p>
+              </button>
+              <button type="button" class="tip-button2">
+                <p>15%</p>
+              </button>
+              <button type="button" class="tip-button3">
+                <p>20%</p>
+              </button>
+              <button type="button" class="tip-button4">
+                <p>Other</p>
+              </button>
+            </div>
+            <textarea name="custom-tip" id="custom-tip" placeholder="Please enter tip % amount"></textarea>
+            <div class="label-price">
+              <p>Tip</p>
+              <p class="currency" class="order-tips">$0.00</p>
+            </div>
+            <div class="label-price">
+              <p>Subtotal</p>
+              <p class="currency" class="order-subtotal">$40.00</p>
+            </div>
+            <div class="label-price">
+              <p>Taxes</p>
+              <p class="currency" class="order-tax">$2.00</p>
+            </div>
+            <div class="label-price-total">
+              <p>Total</p>
+              <p class="currency" class="order-total">$50.00</p>
+            </div>
+          </div>
+          <!-- edit ends here -->
+          <button type="submit" class="checkout">
+            <p>Place Order</p>
+          </button>
+        </div>
+      </section>
+    </div>
   </main>
 </body>
 

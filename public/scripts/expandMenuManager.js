@@ -27,13 +27,13 @@ const generatePopout = (menuItem) => {
         <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="popout-body">
-        <h2 id="menu_${menuItem.name}">${menuItem.name}</h2>
+        <h2>${menuItem.name}</h2>
         <p class="rating"> <i class="fa-regular fa-thumbs-up"></i> 95%</p>
         <h3 class="food-description" >
           ${menuItem.description}
         </h3>
         <div class="popout-img-box">
-        <img id="${menuItem.image_url}" src="${menuItem.image_url}">
+        <img src="${menuItem.image_url}">
       </div>
         <h3>Preferences:</h3>
         <textarea placeholder="Please let the restaurant know of any allergies, dietary, or religious restrictions!"
@@ -44,13 +44,14 @@ const generatePopout = (menuItem) => {
           <button type="button" class="toggle-less">
             <i class="fa-solid fa-circle-arrow-left"></i>
           </button>
-          <textarea class="order-quantity" id="${menuItem.id}">1</textarea>
+          <textarea class="order-quantity">1</textarea>
           <button type="button" class="toggle-more">
             <i class="fa-solid fa-circle-arrow-right"></i>
           </button>
         </div>
-        <button class="add-to-order-button" onclick='add_to_cart(${JSON.stringify(menuItem)})'>
-          Add to order: $${(menuItem.price / 100).toFixed(2)}
+        <button type="button" class="add-to-order-button">
+          <p>Add to order: $<span class="add-to-order-popout">${(menuItem.price / 100).toFixed(2)}</span></p>
+          <input class="hidden-values" type="hidden" id="${menuItem.id}" value="${(menuItem.price / 100).toFixed(2)}"></input>
         </button>
       </div>
     </div>

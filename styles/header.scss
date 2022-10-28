@@ -2,7 +2,6 @@ header {
   position: fixed;
   width: 100%;
   min-width: 1024px;
-  z-index: 20;
 
   section {
     position: relative;
@@ -58,7 +57,8 @@ header {
 
     .search,
     .back-to-home,
-    .back-to {
+    .back-to,
+    .back-to-homepage {
       cursor: pointer;
       background: none;
       border: none;

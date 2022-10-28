@@ -20,7 +20,7 @@ CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   address VARCHAR(255) NOT NULL,
-  phone_number CHAR(10) NOT NULL
+  phone_number VARCHAR(15) NOT NULL
 );
 
 CREATE TABLE restaurants (
@@ -29,7 +29,7 @@ CREATE TABLE restaurants (
   address VARCHAR(255) NOT NULL,
   image_url VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
-  contact_number CHAR(10) NOT NULL,
+  contact_number VARCHAR(15) NOT NULL,
   owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
@@ -37,7 +37,7 @@ CREATE TABLE menu_items (
   id SERIAL PRIMARY KEY NOT NULL,
   image_url VARCHAR(255) NOT NULL,
   price INTEGER NOT NULL,
-  description VARCHAR(255) NOT NULL,
+  description TEXT NOT NULL,
   preparation_time TIME NOT NULL,
   restaurant_id INTEGER REFERENCES restaurants(id) ON DELETE CASCADE,
   isactive BOOLEAN DEFAULT TRUE,

@@ -4,6 +4,19 @@ const router  = express.Router();
 const userQueries = require('../../db/queries/dbhelpers');
 const twilio = require('../routes/twilio')
 
+router.get('/:1', (req, res) => {
+  const userId = req.cookies['user_id']; // user_id = 1;
+  return userQueries.placeOrder(userId)
+    .then((infoReceived) => {
+      res.json({ infoReceived }) //array-inside multiple objects
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
 router.get('/', (req, res) => {
   const userId = req.cookies['user_id']; // user_id = 1;
   return userQueries.placeOrder(userId)
