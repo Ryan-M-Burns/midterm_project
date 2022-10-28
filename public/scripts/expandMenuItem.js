@@ -42,10 +42,8 @@ const createPopout = (menuItem) => {
           </button>
         </div>
 
-        <button type="submit" class="add-to-order-button">
+        <button class="add-to-order-button" onclick='add_to_cart(${JSON.stringify(menuItem)})'>
           <p>Add to order: $<span class="add-to-order-popout">${(menuItem.price / 100).toFixed(2)}</span></p>
-          <!-- <button class="add-to-order-button" onclick='add_to_cart(${JSON.stringify(menuItem)})'> -->
-          Add to order: $${(menuItem.price / 100).toFixed(2)}
         </button>
         <input class="OG-price" type="hidden" value="${(menuItem.price / 100).toFixed(2)}"></input>
       </div>
