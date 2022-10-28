@@ -21,15 +21,12 @@ const renderMenu = (data) => {
     $carousel += `</div>`
     $menuArea.append($carousel);
   }
-
 };
 
 const createMenuSection = (menuItems) => {
-
   let menuSection = `
     <div class="carousel-box">
       <div class="menu-items">`;
-
   for (const item of menuItems) {
     if (item.isactive) {
       const menuItem = `
@@ -42,13 +39,11 @@ const createMenuSection = (menuItems) => {
               <p class="price">$${parseFloat(item.price / 100).toFixed(2)}</p>
             </div>
           </button>`;
-
       menuSection += menuItem;
     }
   }
   menuSection += `</div>
   </div>`;
-
   return menuSection;
 };
 
@@ -63,7 +58,6 @@ const toTitle = (str) => {
     wordArr.unshift(letter);
     result += wordArr.join('') + ' ';
   })
-
   return result.trim();
 }
 

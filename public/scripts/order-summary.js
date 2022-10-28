@@ -70,7 +70,7 @@ const ordertotal = (infoInputs) => {
     </div>
     <div class="label-price-total">
       <p>Total</p>
-      <p class="currency" class="order-total">$${totalPrice}</p>
+      <p class="currency" class="order-total">$${totalPrice.toFixed(2)}</p>
     </div>
   </div>
   `;
