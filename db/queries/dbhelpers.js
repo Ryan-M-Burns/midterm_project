@@ -179,7 +179,7 @@ const deleteCartItems = (insertInfo) => {
 
 //order routes section
 const placeOrder = (insertInfo) => {
-  return db.query('SELECT cart_items.*, carts.*, menu_items.* FROM carts JOIN cart_items on carts.id = cart_id JOIN menu_items ON menu_items.id = menu_item_id WHERE cart_id = $1;', [insertInfo['cart_id']])
+  return db.query('SELECT cart_items.*, menu_items.* FROM cart_items JOIN menu_items ON menu_items.id = menu_item_id JOIN carts ON carts.id = cart_id WHERE user_id = $1;', [insertInfo])
     .then((data) => {
       return data.rows
     })
@@ -226,8 +226,6 @@ const orderConfirmation = (insertInfo) => {
     return dataFour.rows;
   })
 }
-
-
 
 module.exports = {
   getUsers,

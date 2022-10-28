@@ -1,23 +1,17 @@
-const renderPopout = e => {
-  const itemName = $(e.currentTarget).find('.food-name').text();
-  const itemSection = convertToUpperSnakeCase($(e.currentTarget).closest('.carousel').find('.section-name').text());
-  const itemObject = [itemSection, itemName];
-  createPopoutElement(itemObject);
+const renderPopout = (e) => {
+  const id = $(e.target).closest('.expand-food').attr('id');
+  console.log(id);
+  $.get(`/menu/${id}`, generatePopout);
 };
 
-
-const createPopoutElement = (arr) => $.get('/menu', menu, getMenuItem(menu, arr));
-
-const getMenuItem = (data, itemObject) => {
+const generatePopout = (data) => {
   const $popoutBox = $('.popout-section');
-  const menuSection = data[itemObject[0]];
-  const menuItem = menuSection.find((item) => (item.name === itemObject[1]));
   $popoutBox.empty();
-  $popoutBox.append(generatePopout(menuItem));
+  $popoutBox.append(createPopout(data[0]));
   $popoutBox.css("visibility", "visible");
 };
 
-const generatePopout = (menuItem) => {
+const createPopout = (menuItem) => {
   return `
   <div class="popout">
     <div class="food-info-popout">
@@ -27,7 +21,7 @@ const generatePopout = (menuItem) => {
       <div class="popout-body">
         <h2>${menuItem.name}</h2>
         <p class="rating"> <i class="fa-regular fa-thumbs-up"></i> 95%</p>
-        <h3 class="food-description">
+        <h3 class="food-description" >
           ${menuItem.description}
         </h3>
         <div class="popout-img-box">
@@ -47,15 +41,12 @@ const generatePopout = (menuItem) => {
             <i class="fa-solid fa-circle-arrow-right"></i>
           </button>
         </div>
-        <button type="submit" class="add-to-order-button">
-          <p>Add to order: $${(menuItem.price / 100).toFixed(2)}</p>
+
+        <button type="button" class="add-to-order-button">
+          <p>Add to order: $<span class="add-to-order-popout">${(menuItem.price / 100).toFixed(2)}</span></p>
+          <input class="hidden-values" type="hidden" id="${menuItem.id}" value="${(menuItem.price / 100).toFixed(2)}"></input>
         </button>
       </div>
     </div>
   </div>`;
-};
-
-const convertToUpperSnakeCase = (str) => {
-  let result = str.toUpperCase().split(' ');
-  return result.join('_');
 };
