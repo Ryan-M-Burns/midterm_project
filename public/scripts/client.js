@@ -15,6 +15,7 @@ $(() => {
   $carousel.on('click', '.expand-food', renderPopout);
   $popout.on('click', '.toggle-less', decreaseQuantity);
   $popout.on('click', '.toggle-more', increaseQuantity);
+  $popout.on('click', 'add-to-order-button', addToCart);
   $popout.on('click', '.close', () => $('.popout-section').css("visibility", "hidden"));
   $checkout.on("click", '.remove-item', deleteItem);
 $
