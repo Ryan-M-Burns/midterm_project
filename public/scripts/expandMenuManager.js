@@ -36,9 +36,7 @@ const createPopout = (menuItem) => {
           <button type="button" class="toggle-less">
             <i class="fa-solid fa-circle-arrow-left"></i>
           </button>
-          <textarea class="order-quantity">
-            1
-          </textarea>
+          <textarea class="order-quantity">1</textarea>
           <button type="button" class="toggle-more">
             <i class="fa-solid fa-circle-arrow-right"></i>
           </button>
@@ -46,8 +44,8 @@ const createPopout = (menuItem) => {
 
         <button type="button" class="add-to-order-button">
           <p>Add to order: $<span class="add-to-order-popout">${(menuItem.price / 100).toFixed(2)}</span></p>
+          <input class="hidden-values" type="hidden" id="${menuItem.id}" value="${(menuItem.price / 100).toFixed(2)}"></input>
         </button>
-        <input class="hidden-values" type="hidden" id="${menuItem.id}" value="${(menuItem.price / 100).toFixed(2)}"></input>
       </div>
     </div>
   </div>`;
