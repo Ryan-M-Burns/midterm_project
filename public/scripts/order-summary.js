@@ -44,7 +44,7 @@ const ordertotal = (infoInputs) => {
     totalSubPrice += valuecheck;
   }
   totalSubPrice = (totalSubPrice / 100).toFixed(2);
-  totalPrice = (Number(totalSubPrice) + Number((totalSubPrice * 0.05)));
+  totalPrice = (Number(totalSubPrice) + Number((totalSubPrice * 0.12)));
   orderTotalSection += `
   <h3>Tip the Restaurant?</h3>
     <div >
@@ -64,7 +64,7 @@ const ordertotal = (infoInputs) => {
     </div>
     <div class="label-price">
       <p>Taxes</p>
-      <p class="currency" class="order-tax">$${(totalSubPrice * 0.05).toFixed(2)}</p>
+      <p class="currency" class="order-tax">$${(totalSubPrice * 0.12).toFixed(2)}</p>
     </div>
     <div class="label-price-total">
       <p>Total</p>
