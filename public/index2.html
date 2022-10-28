@@ -48,7 +48,7 @@
   <header>
     <section>
       <button type="submit" class="back-to">
-        <p class><i class="fa-solid fa-arrow-left"></i> Back to Restaurant</p>
+        <p class><i class="fa-solid fa-arrow-left"></i><a href="http://localhost:8080/index.html"> Back to Restaurant</a></p>
       </button>
       <button type="submit" class="back-to-home">
         <img src="/images/OmitThePlates_logo.png" alt="Logo" width="225" height="70">
@@ -96,10 +96,11 @@
     </section>
     <!-- Checkout Summary -->
     <section class="order-section">
+<!-- edit from here -->
       <div class="checkout-cart-container">
-        <div class="checkout-cart-header">
+        <div class="checkout-cart-header" id="order-summary-right">
           <h1>Order Summary</h1>
-          <h4>This is a Delivery Order</h4>
+          <h4>This is a Pickup Order</h4>
           <div class="checkout-order-summary">
             <div class="order-items">
               <div class="quantity-item">
@@ -142,21 +143,22 @@
           <textarea name="custom-tip" id="custom-tip" placeholder="Please enter tip % amount"></textarea>
           <div class="label-price">
             <p>Tip</p>
-            <p class="currency">$8.00</p>
+            <p class="currency" class="order-tips">$0.00</p>
           </div>
           <div class="label-price">
             <p>Subtotal</p>
-            <p class="currency">$40.00</p>
+            <p class="currency" class="order-subtotal">$40.00</p>
           </div>
           <div class="label-price">
             <p>Taxes</p>
-            <p class="currency">$2.00</p>
+            <p class="currency" class="order-tax">$2.00</p>
           </div>
           <div class="label-price-total">
             <p>Total</p>
-            <p class="currency">$50.00</p>
+            <p class="currency" class="order-total">$50.00</p>
           </div>
         </div>
+        <!-- edit ends here -->
         <button type="submit" class="checkout">
           <p>Place Order</p>
         </button>

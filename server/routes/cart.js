@@ -8,7 +8,7 @@ app.use(cookieParser());
 
 router.get('/', (req, res) => {
   const insertInfo = {
-    'user_id': 1, //should come from browser/req.body
+    'user_id': req.cookies['user_id'], //should come from browser/req.body
     'cart_id': 1, // should come from browser/req.body
   };
   userQueries.getCarts(insertInfo)
