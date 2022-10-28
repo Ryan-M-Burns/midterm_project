@@ -199,7 +199,7 @@ const placeOrder = (insertInfo) => {
 const orderConfirmation = (insertInfo) => {
   let inputArr = [];
   let orderNum;
-  db.query('INSERT INTO orders(price, cart_id) SELECT price, carts.id FROM carts WHERE carts.id = $1;', [insertInfo['cart_id']]);
+  db.query('INSERT INTO orders(price, cart_id) SELECT price, carts.id FROM carts WHERE user.id = $1;', [insertInfo['user_id']]);
   return db.query(
     'SELECT cart_items.*, orders.id FROM cart_items JOIN carts ON carts.id = cart_items.cart_id JOIN orders ON carts.id = orders.cart_id WHERE orders.cart_id = $1;',
     [insertInfo['cart_id']]
@@ -226,7 +226,7 @@ const orderConfirmation = (insertInfo) => {
           [dataThree['quantity'], dataThree['menu_item_id'], dataThree['note'], dataThree['orders.id']]);
       }
       db.query(
-        'DELETE FROM carts WHERE carts.id = $1;',
+        'DELETE FROM cart_items WHERE cart_id = $1;',
         [insertInfo['cart_id']]
       );
     })
