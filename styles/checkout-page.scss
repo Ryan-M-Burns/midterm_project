@@ -139,6 +139,7 @@
 
 .website-body {
   display:flex;
+  flex-flow:column;
 
   .account-details,
   .shipping-details,

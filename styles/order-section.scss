@@ -4,10 +4,10 @@
   border: 2px solid rgb(0 0 0 / 17%);
   margin-left: 20px;
   padding: 15px;
-  width: 350px;
-  max-width: 350px;
-  height: 400px;
-  max-height: 400px;
+  width: 450px;
+  max-width: 450px;
+  height: 600px;
+  max-height: 600px;
   display: flex;
   flex-flow: column;
   align-content: space-between;
@@ -29,8 +29,8 @@
 }
 
 .order-summary {
-  height: 300px;
-  max-height: 300px;
+  height: 500px;
+  max-height: 500px;
   overflow: auto;
   border-bottom: 2px solid rgb(0 0 0 / 17%);
 }
@@ -38,9 +38,8 @@
 .order-items {
   color: rgb(0 0 0 / 66%);
   display: flex;
-  flex-flow: row;
   align-content: center;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   justify-content: space-between;
   padding: 10px 5px;
@@ -49,6 +48,7 @@
     display: flex;
     align-content: center;
     align-items: center;
+    min-width: 60%;
     padding: 10;
     font-size: 16px;
     min-height: 30px;
@@ -67,25 +67,30 @@
       margin-right: 10px;
     }
 
-    p {
-      width: 40%;
+    .food-name-incart {
       margin: 0;
     }
+  }
 
-    .foodpic-div {
+  .foodpic-div {
+    height: 80px;
+    min-width: 20%;
+    display:flex;
+    overflow-x: hidden;
+
+
+    .food-picture-incart {
       display: flex;
-      width: 15%;
-
-      .food-picture-incart {
-        max-height: 80%;
-        max-width: 100%;
-      }
+      height:100%;
+      justify-content: center;
     }
   }
 
   .price-delete {
     display: flex;
     align-items: center;
+    min-width: 20%;
+    justify-content: right;
 
     span {
       padding-left: 5px;
