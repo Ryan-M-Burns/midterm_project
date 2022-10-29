@@ -4,18 +4,19 @@ const addToCart = (e) => {
   const quantity = $(".order-quantity").val().trim();
   const preferences = $('#preferences-text').val();
   const postData = { quantity, menu_id, preferences, user_id };
-  console.log(postData);
-  $.post(`/cart/${user_id}`, postData, renderCart(user_id));
+  $.post(`/cart/${user_id}`, postData, renderCart);
 };
 
-const renderCart = (id) => $.get(`/cart/${id}`, generateCart);
+const renderCart = () => {
+  const id = (document.cookie).replace('user_id=', '');
+  $.get(`/cart/${id}`,  generateCart);
+}
 
 const generateCart = (data) => {
-  console.log('infoInput', data);
+  console.log('data', data);
   const $orderSummary = $('.order-summary');
   $orderSummary.empty();
-
-  for (const item of data) {
+  for (const item of data.cart) {
     const menuItem = generateCartItems(item);
     $orderSummary.append(menuItem);
   }
@@ -24,7 +25,6 @@ const generateCart = (data) => {
 };
 
 const generateCartItems = (infoInput) => {
-
     return `<div class="order-items">
       <div class="quantity-item">
         <div>
@@ -43,5 +43,6 @@ const generateCartItems = (infoInput) => {
         </button>
       </div>
     </div>`;
-
 };
+
+renderCart();
