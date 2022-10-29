@@ -1,17 +1,25 @@
-const renderPopout = (e) => {
-  const id = $(e.target).closest('.expand-food').attr('id');
-  console.log(id);
-  $.get(`/menu/${id}`, generatePopout);
-};
-
-const generatePopout = (data) => {
+const renderPopout = e => {
   const $popoutBox = $('.popout-section');
+  const menuItem = e;
   $popoutBox.empty();
-  $popoutBox.append(createPopout(data[0]));
+  $popoutBox.append(generatePopout(menuItem));
   $popoutBox.css("visibility", "visible");
 };
 
-const createPopout = (menuItem) => {
+
+// const createPopoutElement = (arr) => $.get('/menu', menu, getMenuItem(menu, arr));
+
+// const getMenuItem = (data, itemObject) => {
+//   const $popoutBox = $('.popout-section');
+//   const menuSection = data[itemObject[0]];
+//   const menuItem = menuSection.find((item) => (item.name === itemObject[1]));
+//   $popoutBox.empty();
+//   $popoutBox.append(generatePopout(menuItem));
+//   $popoutBox.css("visibility", "visible");
+// };
+
+const generatePopout = (menuItem) => {
+  console.log("menuItem", JSON.stringify(menuItem));
   return `
   <div class="popout">
     <div class="food-info-popout">
@@ -41,7 +49,6 @@ const createPopout = (menuItem) => {
             <i class="fa-solid fa-circle-arrow-right"></i>
           </button>
         </div>
-
         <button type="button" class="add-to-order-button">
           <p>Add to order: $<span class="add-to-order-popout">${(menuItem.price / 100).toFixed(2)}</span></p>
           <input class="hidden-values" type="hidden" id="${menuItem.id}" value="${(menuItem.price / 100).toFixed(2)}"></input>
@@ -49,4 +56,9 @@ const createPopout = (menuItem) => {
       </div>
     </div>
   </div>`;
+};
+
+const convertToUpperSnakeCase = (str) => {
+  let result = str.toUpperCase().split(' ');
+  return result.join('_');
 };

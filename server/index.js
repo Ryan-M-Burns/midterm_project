@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
-app.set("view engine", "ejs");
+
 
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
@@ -36,6 +36,7 @@ app.get('/login/:id', (req, res) => {
   // send the user somewhere
   res.redirect('/');
 });
+
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own

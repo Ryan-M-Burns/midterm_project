@@ -8,9 +8,13 @@ $(document).ready(function(){
     $(".checkout-order-summary").append(orderSummary);
     $(".full-price").append(orderTotalToShow);
   });
+  $(document).on("click", ".orderPLaced", function(){
+    const user_id = document.cookie.split("=")[1];
+    $.post('/order', {'val': user_id}, function(){
+      alert("message will be sent to your contact_phone!");
+    })
+  })
 })
-
-
 
 //helper function
 const order = (infoInputs) => {
@@ -68,7 +72,7 @@ const ordertotal = (infoInputs) => {
     </div>
     <div class="label-price-total">
       <p>Total</p>
-      <p class="currency" class="order-total">$${totalPrice}</p>
+      <p class="currency" class="order-total">$${totalPrice.toFixed(2)}</p>
     </div>
   </div>
   `;

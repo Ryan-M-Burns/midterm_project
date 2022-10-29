@@ -2,6 +2,7 @@ const express = require('express');
 const db = require('../../db/connection');
 const router  = express.Router();
 const userQueries = require('../../db/queries/dbhelpers');
+const twilio = require('../routes/twilio')
 
 router.get('/:1', (req, res) => {
   const userId = req.cookies['user_id']; // user_id = 1;
@@ -30,22 +31,24 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const insertInfo = {
-    'quantity': 15, //should come from browser/req.body
-    'cart_id': 1,  // should come from browser/req.body
-    'menu_item_id': 7, // should come from browser/req.body
-    'note': null,
-    'user_id': 1
-  };
+  console.log("req.body", req.body)
+  userQueries.getcartIdByUserId(req.body['val'])
+  .then((cart_id) => {
+    const insertInfo = {
+      'cart_id': cart_id[0]['id'],
+      'user_id': req.body['val']
+    };
   return userQueries.orderConfirmation(insertInfo)
-    .then((infoReceived) => {
-      res.json({ infoReceived })
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
+  })
+  .then((infoReceived) => {
+    res.json({ infoReceived })
+    twilio.sendOrderPlaced();
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
 });
 
 module.exports = router;
