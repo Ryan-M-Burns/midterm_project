@@ -40,9 +40,10 @@
   <script type="text/javascript" src="/scripts/cartManager.js"></script>
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/menuManager.js"></script>
-  <script type="text/javascript" src="/scripts/modelMenuManager.js"></script>
+  <script type="text/javascript" src="/scripts/modalMenuManager.js"></script>
   <script type="text/javascript" src="/scripts/order-summary.js"></script>
   <script type="text/javascript" src="/scripts/orderCheckOut.js"></script>
+  <script type="text/javascript" src="/scripts/viewManager.js"></script>
 
 </head>
 
@@ -55,26 +56,26 @@
   <!-- Nav Bar -->
   <header>
     <section>
-      <button type="submit" class="back-to">
-        <p class><i class="fa-solid fa-arrow-left"></i>Back to Restaurants</p>
+      <button type="button" class="back-to" id="BTRS">
+        <p id="BTR-text">Back to Restaurants</p>
       </button>
-      <button type="submit" class="back-to-home">
+      <button type="button" class="back-to-home">
         <img src="/images/OmitThePlates_logo.png" alt="Logo" width="225" height="70">
       </button>
       <div>
         <span>
-          <button type="submit" class="cart">
+          <button type="button" class="cart">
             <output name="items" class="item-count" for="cart">0
               <i class="fa-solid fa-cart-shopping"></i>
             </output>
           </button>
-          <button type="submit" class="help">
+          <button type="button" class="help">
             <i class="fa-solid fa-circle-question"></i>
           </button>
         </span>
         <form method="POST" action="/menu">
           <input placeholder="Search menu items..." name="search">
-          <button type="submit" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button type="button" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
     </section>

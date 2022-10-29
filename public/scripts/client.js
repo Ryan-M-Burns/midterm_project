@@ -9,6 +9,7 @@ $(() => {
   const $checkout = $('.order-section');
   const $display1 = $('#display1');
   const $display2 = $('#display2');
+  const $header = $('header');
   // events go here
   $carousel.on('click', '.scroll-left', leftScroll);
   $carousel.on('click', '.scroll-right', rightScroll);
@@ -17,10 +18,11 @@ $(() => {
   $popout.on('click', '.toggle-more', increaseQuantity);
   $popout.on('click', '.add-to-order-button', addToCart);
 
+
   // display change events
   $popout.on('click', '.close', () => $popout.css("visibility", "hidden"));
   $display1.on('click', '.checkout', goToCheckout);
-  $display2.on('click', '.back-to-homepage', goToHome);
+  $header.on('click', '#BTR', goToHome);
 
 });
 // research nodemon docs
