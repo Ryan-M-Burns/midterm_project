@@ -3,7 +3,6 @@ const addToCart = (e) => {
   const menu_id = $(e.currentTarget).closest('.add-to-order-button').find('.hidden-values').attr('id');
   const quantity = $(".order-quantity").val().trim();
   const preferences = $('#preferences-text').val();
-
   const postData = { quantity, menu_id, preferences, user_id };
   console.log(postData);
   $.post(`/cart/${user_id}`, postData, renderCart(user_id));
@@ -13,6 +12,7 @@ const generateCart = (infoInputs) => {
   console.log('infoInput', infoInputs);
   const $cartContainer = $('.order-summary');
   $cartContainer.empty();
+  $('.popout-section').css("visibility", "hidden");
 };
 const generateCartItems = (infoInput) => {
   const $cartContainer = $('.order-summary');
