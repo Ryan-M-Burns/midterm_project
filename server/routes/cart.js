@@ -7,53 +7,47 @@ const app = express();
 app.use(cookieParser());
 
 router.get('/:id', (req, res) => {
-  const insertInfo = req.cookies['user_id'];
-
-  userQueries.getCartItems(insertInfo)
-    .then((varInputs) => {
-      res.json({ varInputs });
+  const userID = Number(req.cookies['user_id']);
+  userQueries.getCartItems(userID)
+    .then(cart => {
+      res.json({ cart });
     })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
+    .catch(e => res.send(e));
 });
-//[cookie, id, quantity]
 
 router.post('/:id', (req, res) => {
-  console.log('req.body', req.body);
-  const insertInfo = {
-    'cart_id': req.body.cart_id,
-    'menu_item_id': req.body.menu_id,
-    'note': req.body_note,
-    'quantity': req.body.quantity,
-    'user_id': req.body.user_id
-  };
-
-  return userQueries.addCartItems(insertInfo)
-    .then((varInput) => {
-      res.json({ varInput });
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
+  const userID = Number(req.cookies['user_id']);
+  userQueries.getCartIdByUserId(userID)
+    .then(cartID => {
+      const insertInfo = {
+        cart_id: cartID.cart,
+        menu_item_id: req.body.menu_id,
+        note: req.body_note,
+        quantity: req.body.quantity,
+        user_id: req.body.user_id
+      };
+      return userQueries.addCartItems(insertInfo)
+        .then((varInput) => {
+          res.json({ varInput });
+        })
+        .catch(err => {
+          res
+            .status(500)
+            .json({ error: err.message });
+        });
     });
 });
 
 
 router.get('/', (req, res) => {
+  const userID = req.cookies['user_id'];
+
   const insertInfo = {
-    'user_id': req.cookies['user_id'], //should come from browser/req.body
-    'cart_id': 1, // should come from browser/req.body
+    'user_id': userID,
+    'cart_id': getCartIdByUserId[userID]
   };
   userQueries.getCarts(insertInfo)
     .then((varInputs) => {
-      // const cartAllItems = [];
-      // for (const varInput of varInputs) {
-      //   console.log("varInput", varInput);
-      // }
       res.json({ varInputs });
     })
     .catch(err => {
@@ -70,7 +64,7 @@ router.post('/', (req, res) => {
   userQueries.getMenuIdByName(selectedName)
     .then((val1) => {
       getMenuId = val1[0]['id'];
-      return userQueries.getcartIdByUserId(Number(req.cookies['user_id']));
+      return userQueries.getCartIdByUserId(Number(req.cookies['user_id']));
     })
     .then((val2) => {
       getCartId = val2[0]['id'];
@@ -83,6 +77,7 @@ router.post('/', (req, res) => {
         'note': null,
         'user_id': Number(req.cookies['user_id'])
       };
+
       return userQueries.addCartItems(insertInfo)
         .then((varInput) => {
           res.json({ varInput });
@@ -102,7 +97,7 @@ router.post('/delete', (req, res) => {
   userQueries.getMenuIdByName(selectedName)
     .then((val1) => {
       getMenuId = val1[0]['id'];
-      return userQueries.getcartIdByUserId(Number(req.cookies['user_id']));
+      return userQueries.getCartIdByUserId(Number(req.cookies['user_id']));
     })
     .then((val2) => {
       getCartId = val2[0]['id'];
