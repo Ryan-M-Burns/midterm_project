@@ -68,7 +68,18 @@
     }
 
     p {
+      width: 40%;
       margin: 0;
+    }
+
+    .foodpic-div {
+      display: flex;
+      width: 15%;
+
+      .food-picture-incart {
+        max-height: 80%;
+        max-width: 100%;
+      }
     }
   }
 
