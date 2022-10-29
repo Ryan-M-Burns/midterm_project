@@ -43,16 +43,19 @@
   <script type="text/javascript" src="/scripts/order-summary.js"></script>
   <script type="text/javascript" src="/scripts/orderCheckOut.js"></script>
   <script type="text/javascript" src="/scripts/viewManager.js"></script>
+  <script type="text/javascript" src="/scripts/tips.js"></script>
 
 </head>
 
 <body>
   <!-- Menu Item Popout -->
+  <!-- Dynamically Generated -->
   <section class="popout-section" scroll="no">
 
   </section>
 
   <!-- Nav Bar -->
+  <!-- Static -->
   <header>
     <section>
       <button type="button" class="back-to" id="BTRS">
@@ -81,12 +84,8 @@
   </header>
   <main>
 
-
-
-
-
-
     <!-- Display 1 -->
+    <!-- Static -->
     <div id="display1">
       <section class="website-body">
         <!-- Fixed Restaurant Banner -->
@@ -107,28 +106,34 @@
         </div>
 
         <!-- Menu Carousel -->
+        <!-- Dynamically Generated -->
         <div class="dynamic-menu">
 
         </div>
       </section>
 
       <!-- Order Summary -->
+      <!-- Static -->
       <section class="order-section">
         <div class="cart-container">
           <div class="cart-header">
             <p>Your Order</p>
           </div>
+
+          <!-- Dynamically Generated -->
           <div class="order-summary">
+
           </div>
+
+          <!-- Static -->
           <button type="button" class="checkout">
             <p>Checkout</p>
           </button>
         </div>
     </div>
 
-
-
     <!-- Display 2 -->
+    <!-- Static -->
     <div id="display2">
       <section class="website-body">
         <!-- Fixed Restaurant Banner -->
@@ -147,7 +152,6 @@
             </label>
           </div>
         </div>
-
         <div class="account-details">
           <h2>Account Details</h2>
         </div>
@@ -158,6 +162,7 @@
           <h2>Payment Details</h2>
         </div>
       </section>
+
       <!-- Checkout Summary -->
       <section class="order-section">
         <div class="checkout-cart-container">
@@ -166,7 +171,7 @@
             <h4>This is a Pickup Order</h4>
           </div>
           <div class="checkout-order-summary">
-
+            <!-- Dynamically Generated -->
             <div class="order-items">
               <div class="quantity-item">
                 <div>
@@ -343,19 +348,21 @@
               </div>
             </div>
           </div>
+
+          <!-- Static -->
           <div class="full-price">
             <h3>Tip the Restaurant?</h3>
             <div>
-              <button type="button" class="tip-button1">
+              <button type="button" id="tip-button1">
                 <p>10%</p>
               </button>
-              <button type="button" class="tip-button2">
+              <button type="button" id="tip-button2">
                 <p>15%</p>
               </button>
-              <button type="button" class="tip-button3">
+              <button type="button" id="tip-button3">
                 <p>20%</p>
               </button>
-              <button type="button" class="tip-button4">
+              <button type="button" id="tip-button4">
                 <p>Other</p>
               </button>
             </div>
@@ -377,8 +384,7 @@
               <p class="currency" class="order-total">$50.00</p>
             </div>
           </div>
-          <!-- edit ends here -->
-          <button type="submit" class="checkout">
+          <button type="button" class="place-order">
             <p>Place Order</p>
           </button>
         </div>

@@ -18,8 +18,9 @@ $(() => {
   $popout.on('click', '.toggle-more', increaseQuantity);
   $popout.on('click', '.add-to-order-button', addToCart);
 
-
+  //$checkout.on("reset", () => $("#tweet-text").val("").trigger("input"));
   // display change events
+  $('#tip-button4').on('click', toggleTipBox);
   $popout.on('click', '.close', () => $popout.css("visibility", "hidden"));
   $display1.on('click', '.checkout', goToCheckout);
   $header.on('click', '#BTR', goToHome);
