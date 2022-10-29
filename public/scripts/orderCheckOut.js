@@ -50,20 +50,22 @@ const orderListItems = (infoInputs) => {
   for (const infoInput of infoInputs) {
     const cartItem = `
     <div class="order-items">
-    <div class="quantity-item">
-          <div>
-            <span>${infoInput.quantity}</span><span>x</span>
+      <div class="quantity-item">
+        <div>
+          <span>${infoInput.quantity}</span><span>x</span>
         </div>
-          <p>${infoInput['name']}</p>
-        </div>
-      <div class="food-name" id=${infoInput.menu_item_id}>${infoInput.name}</div>
-      <div class="foodpic-div">
-        <img src="${infoInput.image_url}" alt="food" class="food-picture">
+        <p class=food-name-incart>${infoInput.name}</p>
       </div>
-      <div class="food-price">$${(infoInput.quantity * infoInput.price / 100).toFixed(2)}</div>
+      <div class="foodpic-div">
+        <img src="${infoInput.image_url}" alt="food" class="food-picture-incart">
+      </div>
+      <div class="price-delete">
+
+      <span>$${(infoInput.quantity * infoInput.price / 100).toFixed(2)}</span>
         <button type="button" class="remove-item">
-        <i class="fa-solid fa-trash-can" class="deleteCartItems"></i>
+        <i class="fa-solid fa-trash-can"></i>
         </button>
+      </div>
     </div>`;
     cart_section += cartItem;
   }
