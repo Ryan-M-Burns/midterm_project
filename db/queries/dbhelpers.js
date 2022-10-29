@@ -129,6 +129,23 @@ const getCarts = (insertInfo) => {
     })
 };
 
+const getCartItems = (insertInfo) => {
+  return db.query(
+    `SELECT cart_items.*, users.id as user_id
+    FROM cart_items
+    JOIN carts ON carts.id = cart_id
+    JOIN users ON users.id = user_id
+    WHERE user_id = $1;
+    `,
+    [insertInfo])
+    .then((data) => {
+      return data.rows;
+    })
+    .catch((err) => {
+      console.log("err", err.message);
+    });
+};
+
 const removeCartItems = (insertInfo) => {
   db.query('SELECT quantity FROM cart_items WHERE cart_id = $1 AND menu_item_id = $2 AND ( note = $3 OR $3 IS NULL);', [insertInfo['cart_id'], insertInfo['menu_item_id'], insertInfo['note']])
   .then((data) => {
@@ -236,6 +253,7 @@ module.exports = {
   getMenuItems,
   getCarts,
   addCartItems,
+  getCartItems,
   getCartPrice,
   removeCartItems,
   deleteCartItems,

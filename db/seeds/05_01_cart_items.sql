@@ -1,30 +1,30 @@
 INSERT INTO cart_items (cart_id, quantity, menu_item_id) VALUES (
   1,
-  100,
+  10,
   1
 );
 INSERT INTO cart_items (cart_id, quantity, menu_item_id) VALUES (
   1,
-  200,
+  5,
   2
 );
 INSERT INTO cart_items (cart_id, quantity, menu_item_id) VALUES (
   1,
-  50,
+  15,
   3
 );
 INSERT INTO cart_items (cart_id, quantity, menu_item_id) VALUES (
   2,
-  10,
+  2,
   4
 );
 INSERT INTO cart_items (cart_id, quantity, menu_item_id) VALUES (
   2,
-  20,
+  4,
   5
 );
 INSERT INTO cart_items (cart_id, quantity, menu_item_id) VALUES (
   2,
-  30,
+  20,
   6
 );

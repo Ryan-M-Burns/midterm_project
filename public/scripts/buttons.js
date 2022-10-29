@@ -12,7 +12,8 @@ const rightScroll = (e) => {
 
 const decreaseQuantity = (e) => {
   const $textArea = $(e.currentTarget).find('.order-quantity').text();
-  console.log("$textArea", $textArea);
+  const amount = $textArea.val;
+  console.log('amount', amount, '$textArea', $textArea)
 };
 
 const increaseQuantity = (e) => {

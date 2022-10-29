@@ -51,11 +51,11 @@ const ordertotal = (infoInputs) => {
   totalPrice = (Number(totalSubPrice) + Number((totalSubPrice * 0.12)));
   orderTotalSection += `
   <h3>Tip the Restaurant?</h3>
-    <div >
-      <button type="button" class="tip-button1"><p>10%</p></button>
-      <button type="button" class="tip-button2"><p>15%</p></button>
-      <button type="button" class="tip-button3"><p>20%</p></button>
-      <button type="button" class="tip-button4"><p>Other</p></button>
+    <div>
+      <button type="button" id="tip-button1"><p>10%</p></button>
+      <button type="button" id="tip-button2"><p>15%</p></button>
+      <button type="button" id="tip-button3"><p>20%</p></button>
+      <button type="button" id="tip-button4"><p>Other</p></button>
     </div>
     <textarea name="custom-tip" id="custom-tip" placeholder="Please enter tip % amount"></textarea>
     <div class="label-price">
