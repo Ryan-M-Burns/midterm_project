@@ -39,56 +39,56 @@ router.post('/:id', (req, res) => {
 });
 
 
-router.get('/', (req, res) => {
-  const userID = req.cookies['user_id'];
+// router.get('/', (req, res) => {
+//   const userID = req.cookies['user_id'];
 
-  const insertInfo = {
-    'user_id': userID,
-    'cart_id': getCartIdByUserId[userID]
-  };
-  userQueries.getCarts(insertInfo)
-    .then((varInputs) => {
-      res.json({ varInputs });
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
-});
+//   const insertInfo = {
+//     'user_id': userID,
+//     'cart_id':
+//   };
+//   userQueries.getCarts(insertInfo)
+//     .then((varInputs) => {
+//       res.json({ varInputs });
+//     })
+//     .catch(err => {
+//       res
+//         .status(500)
+//         .json({ error: err.message });
+//     });
+// });
 
-router.post('/', (req, res) => {
-  let getMenuId;
-  let getCartId;
-  const selectedName = Object.keys(req.body)[0];
-  userQueries.getMenuIdByName(selectedName)
-    .then((val1) => {
-      getMenuId = val1[0]['id'];
-      return userQueries.getCartIdByUserId(Number(req.cookies['user_id']));
-    })
-    .then((val2) => {
-      getCartId = val2[0]['id'];
-    })
-    .then(() => {
-      const insertInfo = {
-        'quantity': 1, //should come from browser/req.body
-        'cart_id': getCartId,
-        'menu_item_id': getMenuId,
-        'note': null,
-        'user_id': Number(req.cookies['user_id'])
-      };
+// router.post('/', (req, res) => {
+//   let getMenuId;
+//   let getCartId;
+//   const selectedName = Object.keys(req.body)[0];
+//   userQueries.getMenuIdByName(selectedName)
+//     .then((val1) => {
+//       getMenuId = val1[0]['id'];
+//       return userQueries.getCartIdByUserId(Number(req.cookies['user_id']));
+//     })
+//     .then((val2) => {
+//       getCartId = val2[0]['id'];
+//     })
+//     .then(() => {
+//       const insertInfo = {
+//         'quantity': 1, //should come from browser/req.body
+//         'cart_id': getCartId,
+//         'menu_item_id': getMenuId,
+//         'note': null,
+//         'user_id': Number(req.cookies['user_id'])
+//       };
 
-      return userQueries.addCartItems(insertInfo)
-        .then((varInput) => {
-          res.json({ varInput });
-        })
-        .catch(err => {
-          res
-            .status(500)
-            .json({ error: err.message });
-        });
-    });
-});
+//       return userQueries.addCartItems(insertInfo)
+//         .then((varInput) => {
+//           res.json({ varInput });
+//         })
+//         .catch(err => {
+//           res
+//             .status(500)
+//             .json({ error: err.message });
+//         });
+//     });
+// });
 
 router.post('/delete', (req, res) => {
   let getMenuId;

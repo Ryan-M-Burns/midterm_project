@@ -40,9 +40,8 @@
   <script type="text/javascript" src="/scripts/menuManager.js"></script>
   <script type="text/javascript" src="/scripts/modalMenuManager.js"></script>
   <script type="text/javascript" src="/scripts/orderSummary.js"></script>
-  <script type="text/javascript" src="/scripts/orderCheckOut.js"></script>
-  <script type="text/javascript" src="/scripts/viewManager.js"></script>
   <script type="text/javascript" src="/scripts/tips.js"></script>
+  <script type="text/javascript" src="/scripts/viewManager.js"></script>
 
 </head>
 
@@ -233,6 +232,7 @@
           <div class="full-price">
             <h3>Tip the Restaurant?</h3>
             <div>
+              <div>
               <button type="button" id="tip-button1">
                 <p>10%</p>
               </button>
@@ -249,19 +249,19 @@
             <textarea name="custom-tip" id="custom-tip" placeholder="Please enter tip % amount"></textarea>
             <div class="label-price">
               <p>Tip</p>
-              <p class="currency" class="order-tips">$0.00</p>
+              <p class="currency" id="order-tip">$0.00</p>
             </div>
             <div class="label-price">
               <p>Subtotal</p>
-              <p class="currency" class="order-subtotal">$40.00</p>
+              <p class="currency" id="order-subtotal">$40.00</p>
             </div>
             <div class="label-price">
               <p>Taxes</p>
-              <p class="currency" class="order-tax">$2.00</p>
+              <p class="currency" id="order-tax">$2.00</p>
             </div>
             <div class="label-price-total">
               <p>Total</p>
-              <p class="currency" class="order-total">$50.00</p>
+              <p class="currency" id="order-total">$50.00</p>
             </div>
           </div>
           <button type="button" class="place-order">

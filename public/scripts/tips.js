@@ -3,3 +3,4 @@ const toggleTipBox = () => {
   $tipBox.toggle(400);
   $tipBox.focus();
 };
+
