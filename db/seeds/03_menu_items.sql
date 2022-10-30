@@ -182,7 +182,7 @@ INSERT INTO menu_items (image_url, price, name, description, preparation_time, r
 (
   'https://img.cdn4dd.com/p/fit=cover,width=150,height=150,format=auto,quality=50/media/photosV2/ba53f6b8-81ee-4479-9b09-03446e7377e9-retina-large.jpg',
   1850,
-  'CHIEKN WINGS',
+  'CHICKEN WINGS',
   'Salt & pepper or Louisiana hot, celery, creamy parmesan dip.',
   '00:06:30',
   1,
