@@ -14,9 +14,9 @@ $(() => {
 
   // tip handlers
   $tipArea.hide();
-  $('#tip-button1').on('click', addTip(0.1));
-  $('#tip-button2').on('click', addTip(0.15));
-  $('#tip-button3').on('click', addTip(0.2));
+  $('#tip-button1').on('click', addTip10);
+  $('#tip-button2').on('click', addTip15);
+  $('#tip-button3').on('click', addTip20);
   $('#tip-button4').on('click', toggleTipBox);
   $('#custom-tip').on('keypress', customTip);
 
@@ -28,7 +28,6 @@ $(() => {
   $popout.on('click', '.toggle-more', increaseQuantity);
   $popout.on('click', '.add-to-order-button', addToCart);
 
-  //$checkout.on("reset", () => $("#tweet-text").val("").trigger("input"));
   // display change events
   $popout.on('click', '.close', () => $popout.css("visibility", "hidden"));
   $display1.on('click', '.checkout', goToCheckout);
