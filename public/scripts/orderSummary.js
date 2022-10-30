@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
   $(".checkout-order-summary").empty();
   $.get('/order', function(infoReceived) {
     const datas = infoReceived['infoReceived']; // object key infoReceived : array that stores objects
@@ -7,18 +7,18 @@ $(document).ready(function(){
     $(".checkout-order-summary").append(orderSummary);
     $(".full-price").append(orderTotalToShow);
   });
-  $(document).on("click", ".orderPLaced", function(){
+  $(document).on("click", ".orderPLaced", function() {
     const user_id = document.cookie.split("=")[1];
-    $.post('/order', {'val': user_id}, function(){
+    $.post('/order', { 'val': user_id }, function() {
       alert("message will be sent to your contact_phone!");
-    })
-  })
-})
+    });
+  });
+});
 
 //helper function
 const order = (infoInputs) => {
   let order_section = ``;
-  for(const infoInput of infoInputs) {
+  for (const infoInput of infoInputs) {
     const orderItem = `
     <div class="order-items">
     <div class="quantity-item">
@@ -41,10 +41,35 @@ const order = (infoInputs) => {
     order_section += orderItem;
   }
   return order_section;
-}
+};
+
+
+const toggleTipBox = () => {
+  const $tipBox = $("#custom-tip-box");
+  $tipBox.toggle("fast", "linear");
+};
+
+const customTip = (e) => {
+
+  if (e.keyCode == 13) {
+    e.preventDefault();
+    const tip = parseFloat($('#custom-tip').val());
+    addTip(tip / 100);
+    return toggleTipBox();
+  }
+};
+
+const addTip = (tip) => {
+  const $tip = $('#order-tip');
+  const subtotal = Number($('#order-subtotal').text().replace('$', '').toFixed(2));
+  const tipAmount = subtotal * tip;
+
+  $tip.empty();
+  $tip.append(`$${tipAmount.toFixed(2)}`);
+  renderPrice(subtotal);
+};
 
 const ordertotal = (infoInputs) => {
-  let orderTotalSection = ``;
   let totalSubPrice = 0;
   for (const infoInput of infoInputs) {
     const valuecheck = infoInput['price'] * infoInput['quantity'];
@@ -53,14 +78,17 @@ const ordertotal = (infoInputs) => {
   subtotal = Number((totalSubPrice / 100).toFixed(2));
 
   renderPrice(subtotal);
-  return orderTotalSection;
-}
+};
 
 const renderPrice = (subtotal) => {
   const $subtotal = $("#order-subtotal");
+
   const $tax = $("#order-tax");
   const $total = $("#order-total");
+  debugger;
+  const tip = $("#order-tip").text().replace('$', '');
   const tax = (subtotal * 0.12).toFixed(2);
+
 
   $subtotal.empty();
   $subtotal.append(`$${subtotal.toFixed(2)}`);
@@ -69,5 +97,9 @@ const renderPrice = (subtotal) => {
   $tax.append(`$${tax}`);
 
   $total.empty();
-  $total.append(`$${(Number(subtotal) + Number(tax)).toFixed(2)}`);
+  $total.append(`$${(Number(tip) + Number(subtotal) + Number(tax)).toFixed(2)}`);
 };
+
+const addTip10 = () => addTip(.1);
+const addTip15 = () => addTip(.15);
+const addTip20 = () => addTip(.20);
