@@ -89,6 +89,10 @@
     font-size: 15px;
   }
 
+  .tip-buttons {
+    display:flex;
+
+
   #tip-button1,
   #tip-button2,
   #tip-button3,
@@ -130,19 +134,19 @@
       border-radius: 0 10px 10px 0;
     }
   }
-
+}
   #custom-tip {
-    text-align: center;
-    font-size: 15px;
+    text-align: left;
+    justify-content: center;
+    font-size: 17px;
     font-weight: 500;
     margin: 1% 10%;
-    height: 25px;
+    height: 30px;
     min-width: 80%;
     border: 1px solid rgb(0 0 0 / 17%);
     border-radius: 5px;
     resize: none;
     outline: none;
-    visibility: hidden;
     color: rgb(0 0 0 / 50%);
   }
 

@@ -230,23 +230,26 @@
 
           <!-- Static -->
           <div class="full-price">
-            <h3>Tip the Restaurant?</h3>
             <div>
-              <div>
-              <button type="button" id="tip-button1">
-                <p>10%</p>
-              </button>
-              <button type="button" id="tip-button2">
-                <p>15%</p>
-              </button>
-              <button type="button" id="tip-button3">
-                <p>20%</p>
-              </button>
-              <button type="button" id="tip-button4">
-                <p>Other</p>
-              </button>
+              <h3>Tip the Restaurant?</h3>
+              <div class="tip-buttons">
+                <button type="button" value='.1' id="tip-button1">
+                  <p>10%</p>
+                </button>
+                <button type="button" value='.15' id="tip-button2">
+                  <p>15%</p>
+                </button>
+                <button type="button" value='.2' id="tip-button3">
+                  <p>20%</p>
+                </button>
+                <button type="button" id="tip-button4">
+                  <p>Other</p>
+                </button>
+              </div>
+              <div id="custom-tip-box">
+                <textarea name="custom-tip" id="custom-tip" placeholder="Please enter tip % amount"></textarea>
+              </div>
             </div>
-            <textarea name="custom-tip" id="custom-tip" placeholder="Please enter tip % amount"></textarea>
             <div class="label-price">
               <p>Tip</p>
               <p class="currency" id="order-tip">$0.00</p>
