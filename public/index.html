@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>Omit the Plates</title>
 
   <!-- Meta Information -->
   <meta charset="UTF-8">
@@ -17,21 +17,17 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
 
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/header.css" />
-
-
-  <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/checkout-page.css" />
-  <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
-
-  <link rel="stylesheet" href="/styles/modal.css" />
-
-  <link rel="stylesheet" href="/styles/menu-carousel.css" />
-  <link rel="stylesheet" href="/styles/order-section.css" />
   <link rel="stylesheet" href="/styles/restaurant-banner.css" />
 
+  <link rel="stylesheet" href="/styles/checkout-page.css" />
+  <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
+  <link rel="stylesheet" href="/styles/modal.css" />
+  <link rel="stylesheet" href="/styles/menu-carousel.css" />
+  <link rel="stylesheet" href="/styles/order-section.css" />
 
   <!-- External Scripts -->
   <script src="https://kit.fontawesome.com/c2a9ff36d4.js" crossorigin="anonymous"></script>
@@ -48,9 +44,10 @@
 
 </head>
 
+
 <body>
+
   <!-- Menu Item Popout -->
-  <!-- Static -->
   <section class="popout-section" scroll="no">
     <div class="popout">
       <div class="food-info-popout">
@@ -72,6 +69,7 @@
           <textarea placeholder="Please let the restaurant know of any allergies, dietary, or religious restrictions!"
             name="text" id="preferences-text"></textarea>
         </div>
+
         <div class="add-to-order">
           <div class="change-quantity">
             <button type="button" class="toggle-less">
@@ -80,6 +78,7 @@
             <div class="order-quantity">
               <!-- Dynamically Generated -->
             </div>
+            <!-- Store Menu Item ID and Price for ease of access -->
             <input class="hidden-values" type="hidden" id="dummyID" value=""></input>
             <button type="button" class="toggle-more">
               <i class="fa-solid fa-circle-arrow-right"></i>
@@ -98,7 +97,6 @@
   </section>
 
   <!-- Nav Bar -->
-  <!-- Static -->
   <header>
     <section>
       <button type="button" class="back-to" id="BTRS">
@@ -125,10 +123,10 @@
       </div>
     </section>
   </header>
+
   <main>
 
     <!-- Display 1 -->
-    <!-- Static -->
     <div id="display1">
       <section class="website-body">
         <!-- Fixed Restaurant Banner -->
@@ -149,26 +147,20 @@
         </div>
 
         <!-- Menu Carousel -->
-        <!-- Dynamically Generated -->
         <div class="dynamic-menu">
-
+          <!-- Dynamically Generated -->
         </div>
       </section>
 
       <!-- Order Summary -->
-      <!-- Static -->
       <section class="order-section">
         <div class="cart-container">
           <div class="cart-header">
             <p>Your Order</p>
           </div>
-
-          <!-- Dynamically Generated -->
           <div class="order-summary">
-
+            <!-- Dynamically Generated -->
           </div>
-
-          <!-- Static -->
           <button type="button" class="checkout">
             <p>Checkout</p>
           </button>
@@ -176,7 +168,6 @@
     </div>
 
     <!-- Display 2 -->
-    <!-- Static -->
     <div id="display2">
       <section class="website-body">
         <!-- Fixed Restaurant Banner -->
@@ -307,8 +298,6 @@
           <div class="checkout-order-summary">
             <!-- Dynamically Generated -->
           </div>
-
-          <!-- Static -->
           <div class="full-price">
             <div>
               <h3>Tip the Restaurant?</h3>
