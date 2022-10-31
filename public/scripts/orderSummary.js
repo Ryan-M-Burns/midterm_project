@@ -108,13 +108,6 @@ const placeOrder = () => {
   $.post('/order', { 'val': user_id }, () => alert("Your order has been sent to the restaurant! Awaiting order confirmation..."));
 };
 
-
-// const orderConfirmed = () => {
-//   const user_id = (document.cookie).replace('user_id=', '');
-//   $.post('/order', { 'val': user_id }, () => alert("Order confirmed! Your estimated delivery time is 46 minutes."));
-// };
-
-
 const toggleTipBox = () => $("#custom-tip-box").toggle("fast", "linear");
 
 

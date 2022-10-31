@@ -18,17 +18,16 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log("req.body", req.body)
   userQueries.getCartIdByUserId(req.body['val'])
   .then((cart_id) => {
     const insertInfo = {
-      'cart_id': cart_id[0]['id'],
+      'cart_id': cart_id['id'],
       'user_id': req.body['val']
     };
   return userQueries.orderConfirmation(insertInfo)
   })
   .then((infoReceived) => {
-    res.json({ infoReceived })
+    res.json({ infoReceived });
     twilio.sendOrderPlaced();
   })
   .catch(err => {
