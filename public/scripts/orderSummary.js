@@ -1,58 +1,123 @@
-$(document).ready(function(){
-  $(".checkout-order-summary").empty();
-  $(".full-price").empty();
-  $.get('/order', function(infoReceived) {
-    const datas = infoReceived['infoReceived']; // object key infoReceived : array that stores objects
-    const orderSummary = order(datas);
-    const orderTotalToShow = ordertotal(datas);
-    $(".checkout-order-summary").append(orderSummary);
-    $(".full-price").append(orderTotalToShow);
-  });
-  $(document).on("click", ".orderPLaced", function(){
-    const user_id = document.cookie.split("=")[1];
-    $.post('/order', {'val': user_id}, function(){
-      alert("message will be sent to your contact_phone!");
-    })
-  })
-})
+const renderCheckoutCart = () => {
+  const user_id = (document.cookie).replace('user_id=', '');
+  $.get(`/cart/${user_id}`, generateCheckoutCart);
+};
 
-//helper function
-const order = (infoInputs) => {
-  let order_section = ``;
-  for(const infoInput of infoInputs) {
-    const orderItem = `
-      <div class="order-items">
-        <div class="quantity-item">
-          <div>
-            <span>${infoInput['quantity']}</span><span>x</span>
-        </div>
-          <p>${infoInput['name']}</p>
-        </div>
-        <div class="price-delete">
-        <span>$${(infoInput['price'] * infoInput['quantity'] / 100).toFixed(2)}</span>
-        <button type="button" class="remove-item">
-          <i class="fa-solid fa-trash-can"></i>
-        </button>
-        </div>
-      </div> `;
-    order_section += orderItem;
-  }
-  return order_section;
-}
 
-const ordertotal = (infoInputs) => {
-  let orderTotalSection = ``;
-  let totalSubPrice = 0;
-  for (const infoInput of infoInputs) {
-    const valuecheck = infoInput['price'] * infoInput['quantity'];
-    totalSubPrice += valuecheck;
+const generateCheckoutCart = (data) => {
+  const $checkoutSummary = $('.checkout-order-summary');
+  let subtotal = 0;
+
+  $checkoutSummary.empty();
+
+  for (const item of data.cart) {
+    const menuItem = generateCheckoutItem(item);
+    $checkoutSummary.append(menuItem);
+
+    subtotal += generateSummarySubtotal(item);
   }
-  totalSubPrice = (totalSubPrice / 100).toFixed(2);
-  totalPrice = (Number(totalSubPrice) + Number((totalSubPrice * 0.12)));
-  orderTotalSection += `
-      <p class="currency" class="order-subtotal">$${totalSubPrice}</p>
-      <p class="currency" class="order-tax">$${(totalSubPrice * 0.12).toFixed(2)}</p>
-      <p class="currency" class="order-total">$${totalPrice.toFixed(2)}</p>
-`;
-  return orderTotalSection;
-}
+
+  renderPrice(subtotal / 100);
+};
+
+
+const generateCheckoutItem = (infoInput) => {
+
+  return `
+  <div class="order-items">
+    <div class="quantity-item">
+      <div>
+        <span>${infoInput.quantity}</span><span>x</span>
+      </div>
+      <p class=food-name-incart>${infoInput.name}</p>
+    </div>
+
+    <div class="foodpic-div">
+      <img src="${infoInput.image_url}" alt="food" class="food-picture-incart">
+    </div>
+
+    <div class="price-delete">
+      <span>$${(infoInput.quantity * infoInput.price / 100).toFixed(2)}</span>
+      <button type="button" class="remove-checkout-item" id="${infoInput.id}">
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
+    </div>
+  </div>`;
+
+};
+
+
+const deleteCheckoutItem = (e) => {
+
+  const id = $(e.target).closest(".remove-checkout-item").attr("id");
+  const user_id = (document.cookie).replace('user_id=', '');
+
+  $.post(`/cart/${user_id}/delete`, { id }, () => renderCheckoutCart());
+};
+
+
+const customTip = (e) => {
+
+  if (e.keyCode == 13) {
+    e.preventDefault();
+    const tip = parseFloat($('#custom-tip').val());
+
+    addTip(tip / 100);
+
+    return toggleTipBox();
+  }
+
+};
+
+
+const generateSummarySubtotal = (data) => (data.price * data.quantity);
+
+
+const addTip = (tip) => {
+  const $tip = $('#order-tip');
+  const subtotal = Number($('#order-subtotal').text().replace('$', ''));
+  const tipAmount = subtotal * tip;
+
+  $tip.empty();
+  $tip.append(`$${tipAmount.toFixed(2)}`);
+
+  renderPrice(subtotal);
+};
+
+
+const renderPrice = (subtotal) => {
+  const $subtotal = $("#order-subtotal");
+  const $tax = $("#order-tax");
+  const $total = $("#order-total");
+  const tip = $("#order-tip").text().replace('$', '');
+  const tax = (subtotal * 0.12).toFixed(2);
+
+  $subtotal.empty();
+  $subtotal.append(`$${subtotal.toFixed(2)}`);
+
+  $tax.empty();
+  $tax.append(`$${tax}`);
+
+  $total.empty();
+  $total.append(`$${(Number(tip) + Number(subtotal) + Number(tax)).toFixed(2)}`);
+};
+
+
+const placeOrder = () => {
+  const user_id = (document.cookie).replace('user_id=', '');
+  $.post('/order', { 'val': user_id }, () => alert("Your order has been sent to the restaurant! Awaiting order confirmation..."));
+};
+
+
+// const orderConfirmed = () => {
+//   const user_id = (document.cookie).replace('user_id=', '');
+//   $.post('/order', { 'val': user_id }, () => alert("Order confirmed! Your estimated delivery time is 46 minutes."));
+// };
+
+
+const toggleTipBox = () => $("#custom-tip-box").toggle("fast", "linear");
+
+
+const addTip10 = () => addTip(.1);
+const addTip15 = () => addTip(.15);
+const addTip20 = () => addTip(.20);

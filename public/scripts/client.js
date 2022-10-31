@@ -1,29 +1,42 @@
+// client interface
 
-//client interface
-
-// Document ready
 $(() => {
-  const $body = $('body');
-  const $popout = $('.popout-section');
-  const $carousel = $('.dynamic-menu');
-  const $checkout = $('.order-section');
-  const $display1 = $('#display1');
-  const $display2 = $('#display2');
   const $header = $('header');
-  // events go here
+  const $cartButton = $('.cart-nav-button');
+  $header.on('click', '#BTR', goToHome);
+  $cartButton.on('click', goToCheckout);
+  $cartButton.on('click', renderCheckoutCart);
+
+  const $checkoutButton = $('.go-to-checkout');
+  $checkoutButton.on('click', goToCheckout);
+  $checkoutButton.on('click', renderCheckoutCart);
+
+  const $carousel = $('.dynamic-menu');
   $carousel.on('click', '.scroll-left', leftScroll);
   $carousel.on('click', '.scroll-right', rightScroll);
-  $carousel.on('click', '.expand-food', renderPopout);
-  $popout.on('click', '.toggle-less', decreaseQuantity);
-  $popout.on('click', '.toggle-more', increaseQuantity);
-  $popout.on('click', '.add-to-order-button', addToCart);
+  $carousel.on('click', '.expand-food', renderModal);
 
-  //$checkout.on("reset", () => $("#tweet-text").val("").trigger("input"));
-  // display change events
+  const $modal = $('.modal');
+  $modal.on('click', '.toggle-less', decreaseQuantity);
+  $modal.on('click', '.toggle-more', increaseQuantity);
+  $modal.on('click', '.add-to-order-button', addToCart);
+  $modal.on('click', '.close', () => $modal.parent().css('visibility', 'hidden'));
+
+  const $orderSummary = $('.order-summary');
+  $orderSummary.on('click', '.remove-item', deleteCartItem);
+  $orderSummary.on('click', '.remove-item', renderCart);
+
+  const $checkoutOrderSummary = $('.checkout-order-summary');
+  $checkoutOrderSummary.on('click', '.remove-checkout-item', deleteCheckoutItem);
+  $checkoutOrderSummary.on('click', '.remove-checkout-item', renderCheckoutCart);
+
+  $('.place-order').on('click', placeOrder);
+
+  $('#custom-tip-box').hide();
+  $('#tip-button1').on('click', addTip10);
+  $('#tip-button2').on('click', addTip15);
+  $('#tip-button3').on('click', addTip20);
   $('#tip-button4').on('click', toggleTipBox);
-  $popout.on('click', '.close', () => $popout.css("visibility", "hidden"));
-  $display1.on('click', '.checkout', goToCheckout);
-  $header.on('click', '#BTR', goToHome);
+  $('#custom-tip').on('keypress', customTip);
 
 });
-// research nodemon docs

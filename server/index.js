@@ -32,7 +32,6 @@ app.use(favicon(path.join(__dirname, '../public', 'images', 'favicon.ico')));
 // user login
 app.get('/login/:id', (req, res) => {
   res.cookie('user_id', req.params.id);
-  console.log('req.cookies', req.cookies)
   // send the user somewhere
   res.redirect('/');
 });

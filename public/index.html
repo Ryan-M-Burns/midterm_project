@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>Omit the Plates</title>
 
   <!-- Meta Information -->
   <meta charset="UTF-8">
@@ -18,15 +18,16 @@
   <!-- App CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
   <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/checkout-page.css" />
-  <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
-  <link rel="stylesheet" href="/styles/header.css" />
-  <link rel="stylesheet" href="/styles/item-popout.css" />
+
   <link rel="stylesheet" href="/styles/layout.css" />
-  <link rel="stylesheet" href="/styles/menu-carousel.css" />
-  <link rel="stylesheet" href="/styles/order-section.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
   <link rel="stylesheet" href="/styles/restaurant-banner.css" />
 
+  <link rel="stylesheet" href="/styles/checkout-page.css" />
+  <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
+  <link rel="stylesheet" href="/styles/modal.css" />
+  <link rel="stylesheet" href="/styles/menu-carousel.css" />
+  <link rel="stylesheet" href="/styles/order-section.css" />
 
   <!-- External Scripts -->
   <script src="https://kit.fontawesome.com/c2a9ff36d4.js" crossorigin="anonymous"></script>
@@ -34,57 +35,97 @@
   <!-- App JS -->
   <script src="/vendor/jquery-3.0.0.js"></script>
 
-  <script type="text/javascript" src="/scripts/buttons.js"></script>
   <script type="text/javascript" src="/scripts/cartManager.js"></script>
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/menuManager.js"></script>
   <script type="text/javascript" src="/scripts/modalMenuManager.js"></script>
   <script type="text/javascript" src="/scripts/orderSummary.js"></script>
-  <script type="text/javascript" src="/scripts/orderCheckOut.js"></script>
   <script type="text/javascript" src="/scripts/viewManager.js"></script>
-  <script type="text/javascript" src="/scripts/tips.js"></script>
 
 </head>
 
-<body>
-  <!-- Menu Item Popout -->
-  <!-- Dynamically Generated -->
-  <section class="popout-section" scroll="no">
 
+<body>
+
+  <!-- Menu Item Modal -->
+  <section class="modal-section" scroll="no">
+    <div class="modal">
+      <div class="food-info-modal">
+        <button type="button" class="close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="modal-body">
+          <div class="food-name-modal">
+            <!-- Dynamically Generated -->
+          </div>
+          <p class="rating"> <i class="fa-regular fa-thumbs-up"></i> 95%</p>
+          <h3 class="food-description">
+            <!-- Dynamically Generated -->
+          </h3>
+          <div class="modal-img-box">
+            <!-- Dynamically Generated -->
+          </div>
+          <h3>Preferences:</h3>
+          <textarea placeholder="Please let the restaurant know of any allergies, dietary, or religious restrictions!"
+            name="text" id="preferences-text"></textarea>
+        </div>
+
+        <div class="add-to-order">
+          <div class="change-quantity">
+            <button type="button" class="toggle-less">
+              <i class="fa-solid fa-circle-arrow-left"></i>
+            </button>
+            <div class="order-quantity">
+              <!-- Dynamically Generated -->
+            </div>
+            <!-- Store Menu Item ID and Price for ease of access -->
+            <input class="hidden-values" type="hidden" id="dummyID" value=""></input>
+            <button type="button" class="toggle-more">
+              <i class="fa-solid fa-circle-arrow-right"></i>
+            </button>
+          </div>
+          <button type="button" class="add-to-order-button">
+            <p>Add to Order: $
+              <span class="modal-add-button">
+                <!-- Dynamically Generated -->
+              </span>
+            </p>
+          </button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Nav Bar -->
-  <!-- Static -->
   <header>
     <section>
       <button type="button" class="back-to" id="BTRS">
-        <p id="BTR-text">Back to Restaurants</p>
+        <p id="BTR-text"><i class="fa-solid fa-arrow-left"></i> Back to Restaurants</p>
       </button>
       <button type="button" class="back-to-home">
         <img src="/images/OmitThePlates_logo.png" alt="Logo" width="225" height="70">
       </button>
       <div>
         <span>
-          <button type="button" class="cart">
-            <output name="items" class="item-count" for="cart">0
-              <i class="fa-solid fa-cart-shopping"></i>
+          <button type="button" class="cart-nav-button">
+            <output name="items" class="item-count">
             </output>
           </button>
           <button type="button" class="help">
             <i class="fa-solid fa-circle-question"></i>
           </button>
         </span>
-        <form method="POST" action="/menu">
+        <form>
           <input placeholder="Search menu items..." name="search">
           <button type="button" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
       </div>
     </section>
   </header>
+
   <main>
 
     <!-- Display 1 -->
-    <!-- Static -->
     <div id="display1">
       <section class="website-body">
         <!-- Fixed Restaurant Banner -->
@@ -105,34 +146,27 @@
         </div>
 
         <!-- Menu Carousel -->
-        <!-- Dynamically Generated -->
         <div class="dynamic-menu">
-
+          <!-- Dynamically Generated -->
         </div>
       </section>
 
       <!-- Order Summary -->
-      <!-- Static -->
       <section class="order-section">
         <div class="cart-container">
           <div class="cart-header">
             <p>Your Order</p>
           </div>
-
-          <!-- Dynamically Generated -->
           <div class="order-summary">
-
+            <!-- Dynamically Generated -->
           </div>
-
-          <!-- Static -->
-          <button type="button" class="checkout">
-            <p>Checkout</p>
+          <button type="button" class="go-to-checkout">
+            <!-- Dynamically Generated -->
           </button>
         </div>
     </div>
 
     <!-- Display 2 -->
-    <!-- Static -->
     <div id="display2">
       <section class="website-body">
         <!-- Fixed Restaurant Banner -->
@@ -182,7 +216,7 @@
                   </span>
                 </div>
               </div>
-              <i class='fas fa-angle-right' style='font-size:24px'></i>
+              <i class="fas fa-angle-right" style="font-size:24px"></i>
             </div>
             <div class="SecondSec-note">
               <div class="deliveryNoteIncludeIcon">
@@ -198,19 +232,19 @@
                   </span>
                 </div>
               </div>
-              <i class='fas fa-angle-right' style='font-size:24px'></i>
+              <i class="fas fa-angle-right" style="font-size:24px"></i>
             </div>
 
             <div class="deliveryPhone">
-                <div class="phoneIconNum">
-                  <i class="fa fa-phone" style="font-size:24px"></i>
-                  <div class="phoneDeliveryLeft">
+              <div class="phoneIconNum">
+                <i class="fa fa-phone" style="font-size:24px"></i>
+                <div class="phoneDeliveryLeft">
                   <span class="phoneNumberDelivery">
                     (778)999-0909
                   </span>
                 </div>
-                </div>
-              <i class='fas fa-angle-right' style='font-size:24px'></i>
+              </div>
+              <i class="fas fa-angle-right" style="font-size:24px"></i>
             </div>
 
             <div class="ThirdSec-gift">
@@ -225,7 +259,7 @@
                   </span>
                 </div>
               </div>
-              <i class='fas fa-angle-right' style='font-size:24px'></i>
+              <i class="fas fa-angle-right" style="font-size:24px"></i>
             </div>
           </div>
         </div>
@@ -237,14 +271,14 @@
                 <i class="fa fa-credit-card" style="font-size:36px"></i>
                 <span class="payment-method-text">Credit/Debit Card</span>
               </div>
-              <i class='fas fa-angle-right' style='font-size:24px'></i>
+              <i class="fas fa-angle-right" style="font-size:24px"></i>
             </div>
             <div class="payment-paypal">
               <div class="payment-paypal-left">
                 <i class="fa fa-cc-paypal" style="font-size:36px"></i>
                 <span class="payment-method-text">PayPal</span>
               </div>
-              <i class='fas fa-angle-right' style='font-size:24px'></i>
+              <i class="fas fa-angle-right" style="font-size:24px"></i>
             </div>
           </div>
         </div>
@@ -254,7 +288,7 @@
       </section>
 
       <!-- Checkout Summary -->
-      <section class="order-section">
+      <section class="checkout-order-section">
         <div class="checkout-cart-container">
           <div class="checkout-cart-header">
             <h1>Order Summary</h1>
@@ -262,216 +296,43 @@
           </div>
           <div class="checkout-order-summary">
             <!-- Dynamically Generated -->
-            <div class="order-items">
-              <div class="quantity-item">
-                <div>
-                  <span>10</span><span>x</span>
-                </div>
-                <p class="food-name-incart">SZECHUAN CHICKEN LETTUCE WRAPS</p>
-              </div>
-              <div class="foodpic-div">
-                <img
-                  src="https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/357e8eb1-f755-4936-b28d-8232910a2435-retina-large.jpg"
-                  alt="food" class="food-picture-incart">
-              </div>
-              <div class="price-delete">
-
-                <span>$212.50</span>
-                <button type="button" class="remove-item">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              </div>
-            </div>
-            <div class="order-items">
-              <div class="quantity-item">
-                <div>
-                  <span>10</span><span>x</span>
-                </div>
-                <p class="food-name-incart">SZECHUAN CHICKEN LETTUCE WRAPS</p>
-              </div>
-              <div class="foodpic-div">
-                <img
-                  src="https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/357e8eb1-f755-4936-b28d-8232910a2435-retina-large.jpg"
-                  alt="food" class="food-picture-incart">
-              </div>
-              <div class="price-delete">
-
-                <span>$212.50</span>
-                <button type="button" class="remove-item">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              </div>
-            </div>
-            <div class="order-items">
-              <div class="quantity-item">
-                <div>
-                  <span>10</span><span>x</span>
-                </div>
-                <p class="food-name-incart">SZECHUAN CHICKEN LETTUCE WRAPS</p>
-              </div>
-              <div class="foodpic-div">
-                <img
-                  src="https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/357e8eb1-f755-4936-b28d-8232910a2435-retina-large.jpg"
-                  alt="food" class="food-picture-incart">
-              </div>
-              <div class="price-delete">
-
-                <span>$212.50</span>
-                <button type="button" class="remove-item">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              </div>
-            </div>
-            <div class="order-items">
-              <div class="quantity-item">
-                <div>
-                  <span>10</span><span>x</span>
-                </div>
-                <p class="food-name-incart">SZECHUAN CHICKEN LETTUCE WRAPS</p>
-              </div>
-              <div class="foodpic-div">
-                <img
-                  src="https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/357e8eb1-f755-4936-b28d-8232910a2435-retina-large.jpg"
-                  alt="food" class="food-picture-incart">
-              </div>
-              <div class="price-delete">
-
-                <span>$212.50</span>
-                <button type="button" class="remove-item">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              </div>
-            </div>
-            <div class="order-items">
-              <div class="quantity-item">
-                <div>
-                  <span>10</span><span>x</span>
-                </div>
-                <p class="food-name-incart">SZECHUAN CHICKEN LETTUCE WRAPS</p>
-              </div>
-              <div class="foodpic-div">
-                <img
-                  src="https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/357e8eb1-f755-4936-b28d-8232910a2435-retina-large.jpg"
-                  alt="food" class="food-picture-incart">
-              </div>
-              <div class="price-delete">
-
-                <span>$212.50</span>
-                <button type="button" class="remove-item">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              </div>
-            </div>
-            <div class="order-items">
-              <div class="quantity-item">
-                <div>
-                  <span>10</span><span>x</span>
-                </div>
-                <p class="food-name-incart">SZECHUAN CHICKEN LETTUCE WRAPS</p>
-              </div>
-              <div class="foodpic-div">
-                <img
-                  src="https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/357e8eb1-f755-4936-b28d-8232910a2435-retina-large.jpg"
-                  alt="food" class="food-picture-incart">
-              </div>
-              <div class="price-delete">
-
-                <span>$212.50</span>
-                <button type="button" class="remove-item">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              </div>
-            </div>
-            <div class="order-items">
-              <div class="quantity-item">
-                <div>
-                  <span>5</span><span>x</span>
-                </div>
-                <p class="food-name-incart">RAINCOAST GREENS</p>
-              </div>
-              <div class="foodpic-div">
-                <img
-                  src="https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/c28b67ab-9faf-44f1-b60c-901e103c13d9-retina-large.jpg"
-                  alt="food" class="food-picture-incart">
-              </div>
-              <div class="price-delete">
-
-                <span>$96.25</span>
-                <button type="button" class="remove-item">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              </div>
-            </div>
-            <div class="order-items">
-              <div class="quantity-item">
-                <div>
-                  <span>15</span><span>x</span>
-                </div>
-                <p class="food-name-incart">PRAWN CRUNCH ROLL</p>
-              </div>
-              <div class="foodpic-div">
-                <img
-                  src="https://img.cdn4dd.com/p/fit=cover,width=600,format=auto,quality=50/media/photosV2/43866755-3377-4fa9-8776-ed587434f22c-retina-large.jpg"
-                  alt="food" class="food-picture-incart">
-              </div>
-              <div class="price-delete">
-
-                <span>$258.75</span>
-                <button type="button" class="remove-item">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              </div>
-            </div>
-
-            <div class="order-items">
-              <div class="quantity-item">
-                <div>
-                  <span>1</span><span>x</span>
-                </div>
-                <p>Rob's Crispy Chicken Sandwich</p>
-              </div>
-              <div class="price-delete">
-                <span>$19.99</span>
-                <button type="button" class="remove-item">
-                  <i class="fa-solid fa-trash-can"></i>
-                </button>
-              </div>
-            </div>
           </div>
-
-          <!-- Static -->
           <div class="full-price">
-            <h3>Tip the Restaurant?</h3>
             <div>
-              <button type="button" id="tip-button1">
-                <p>10%</p>
-              </button>
-              <button type="button" id="tip-button2">
-                <p>15%</p>
-              </button>
-              <button type="button" id="tip-button3">
-                <p>20%</p>
-              </button>
-              <button type="button" id="tip-button4">
-                <p>Other</p>
-              </button>
+              <h3>Tip the Restaurant?</h3>
+              <div class="tip-buttons">
+                <button type="button" value=".1" id="tip-button1">
+                  <p>10%</p>
+                </button>
+                <button type="button" value=".15" id="tip-button2">
+                  <p>15%</p>
+                </button>
+                <button type="button" value=".2" id="tip-button3">
+                  <p>20%</p>
+                </button>
+                <button type="button" id="tip-button4">
+                  <p>Other</p>
+                </button>
+              </div>
+              <div id="custom-tip-box">
+                <textarea name="custom-tip" id="custom-tip" placeholder="Please enter tip % amount"></textarea>
+              </div>
             </div>
-            <textarea name="custom-tip" id="custom-tip" placeholder="Please enter tip % amount"></textarea>
             <div class="label-price">
               <p>Tip</p>
-              <p class="currency" class="order-tips">$0.00</p>
+              <p class="currency" id="order-tip">$0.00</p>
             </div>
             <div class="label-price">
               <p>Subtotal</p>
-              <p class="currency" class="order-subtotal">$40.00</p>
+              <p class="currency" id="order-subtotal">$40.00</p>
             </div>
             <div class="label-price">
               <p>Taxes</p>
-              <p class="currency" class="order-tax">$2.00</p>
+              <p class="currency" id="order-tax">$2.00</p>
             </div>
             <div class="label-price-total">
               <p>Total</p>
-              <p class="currency" class="order-total">$50.00</p>
+              <p class="currency" id="order-total">$50.00</p>
             </div>
           </div>
           <button type="button" class="place-order">

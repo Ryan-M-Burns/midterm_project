@@ -1,7 +1,7 @@
 {
-  "name": "omit-the-plates-food-delivery-app",
+  "name": "omit-the-plates",
   "version": "1.0.0",
-  "description": "",
+  "description": "Completely original food ordering app with absolutely no reference to any popular upscale casual restaurant chain founded in North Vancouver...",
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "local": "./node_modules/.bin/nodemon -L --ignore public/",
     "db:reset": "node bin/resetdb.js"
   },
-  "author": "Lighthouse Labs",
+  "authors": "@Ryan-M-Burns ryan.m.burns123@gmail.com & Luke Li @onaroll2021",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",

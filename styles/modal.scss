@@ -1,4 +1,4 @@
-.popout-section {
+.modal-section {
   z-index: 10000;
   position: fixed;
   min-width: 100vw;
@@ -9,7 +9,7 @@
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.50);
 
-  .popout {
+  .modal {
     position: relative;
     margin: auto;
     padding: 10px;
@@ -32,24 +32,23 @@
     }
   }
 
-  .popout-body {
+  .modal-body {
     display: flex;
     padding: 0px 20px;
     flex-flow: column;
     color: rgb(0 0 0 / 75%);
-
     h2 {
       margin: 0;
       padding-top: 30px;
       font-size: 30px;
       font-weight: 700;
       text-align: left;
-      color: rgb(0 0 0 / 90%);
+      color: rgb(0 0 0 / 80%);
     }
 
     .rating {
       padding-left: 10px;
-      padding-bottom:10px;
+      padding-bottom: 10px;
       margin: 0;
       font-size: 14px;
       font-weight: 600;
@@ -64,7 +63,7 @@
       font-weight: 600;
     }
 
-    .popout-img-box {
+    .modal-img-box {
       min-width: 450px;
       max-width: 450px;
       min-height: 350px;
@@ -95,6 +94,9 @@
   }
 
   .order-quantity {
+    display:flex;
+    align-content: center;
+    justify-content: center;
     border: none;
     resize: none;
     outline: none;
@@ -109,54 +111,72 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
+  }
+}
 
-    .toggle-less,
-    .toggle-more {
-      cursor: pointer;
-      background: none;
-      border: none;
-      color: #f1803a;
+.change-quantity {
+  display: flex;
 
-      :hover {
-        color: #ea6410;
-      }
+  .toggle-less,
+  .toggle-more {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #f1803a;
+
+    :hover {
+      color: #ea6410;
     }
+  }
 
-    .order-quantity {
-      text-align: center;
-      font-size: 20px;
-      font-weight: 700;
-      color: rgb(0 0 0 / 75%);
-      caret-color: transparent;
-    }
+  .order-quantity {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(0 0 0 / 75%);
+  }
+}
 
-    .add-to-order-button {
-      cursor: pointer;
-      position:relative;
-      margin: 0 5px;
-      padding: 5px;
-      margin-top: 10px;
-      background-color: #f1803a;
-      color: white;
-      border: none;
-      font-size: 20px;
-      font-weight: 700;
-      justify-content: center;
-      align-content: center;
-      border-radius: 20px;
-      box-shadow: 0px 0px 5px 0px rgba(17, 17, 17, 0.15) inset;
 
-      :hover {
-        background-color: #ea6410;
-        box-shadow: 0px 0px 3px 4px #ea6410;
-      }
 
-      p {
-        margin: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 20px;
-      }
+.add-to-order-button {
+  cursor: pointer;
+  position: relative;
+  margin: 0 5px;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #f1803a;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  justify-content: center;
+  align-content: center;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px 0px rgba(17, 17, 17, 0.15) inset;
+
+  :hover {
+    background-color: #ea6410;
+    box-shadow: 0px 0px 0px 4px #ea6410;
+  }
+
+  p {
+    margin: 0;
+    padding-left: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+
+  .modal-add-button {
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    padding-right: 10px;
+    width: 100%;
+    height: 100%;
+    :hover {
+      box-shadow: 0px 0px 0px 0px #ea6410;
     }
   }
 }
