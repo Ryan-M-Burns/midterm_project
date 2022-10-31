@@ -1,24 +1,25 @@
 const renderCheckoutCart = () => {
   const user_id = (document.cookie).replace('user_id=', '');
+
   $.get(`/cart/${user_id}`, generateCheckoutCart);
 };
+
 
 const generateCheckoutCart = (data) => {
   const $checkoutSummary = $('.checkout-order-summary');
   let subtotal = 0;
+
   $checkoutSummary.empty();
 
   for (const item of data.cart) {
     const menuItem = generateCheckoutItem(item);
     $checkoutSummary.append(menuItem);
+
     subtotal += generateSubtotal(item);
   }
 
-  renderPrice(subtotal/100);
+  renderPrice(subtotal / 100);
 };
-
-
-
 
 
 const generateCheckoutItem = (infoInput) => {
@@ -104,11 +105,14 @@ const renderPrice = (subtotal) => {
 
 const placeOrder = () => {
   const user_id = (document.cookie).replace('user_id=', '');
-  $.post('/order', { 'val': user_id }, () => alert("message will be sent to your contact_phone!"))
-}
+  $.post('/order', { 'val': user_id }, () => alert("message will be sent to your contact_phone!"));
+};
+
 
 const toggleTipBox = () => $("#custom-tip-box").toggle("fast", "linear");
 
 const addTip10 = () => addTip(.1);
 const addTip15 = () => addTip(.15);
 const addTip20 = () => addTip(.20);
+
+$('#custom-tip-box').hide();

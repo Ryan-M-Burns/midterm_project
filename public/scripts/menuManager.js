@@ -1,7 +1,9 @@
 const renderMenu = (data) => {
-  menu = data.data;
+  const menu = data.data;
   const $menuArea = $(".dynamic-menu");
+
   $menuArea.empty();
+
   for (const section in menu) {
     let sectionName = toTitle(section);
     let $carousel = `
@@ -17,12 +19,15 @@ const renderMenu = (data) => {
           </button>
         </div>
       </div>`;
+
     $carousel += createMenuSection(menu[section]);
     $carousel += `</div>`
+
     $menuArea.append($carousel);
   }
 
 };
+
 
 const createMenuSection = (menuItems) => {
 
@@ -31,6 +36,7 @@ const createMenuSection = (menuItems) => {
       <div class="menu-items">`;
 
   for (const item of menuItems) {
+
     if (item.isactive) {
       const menuItem = `
           <button type="button" class="expand-food" id="${item.id}">
@@ -45,14 +51,16 @@ const createMenuSection = (menuItems) => {
 
       menuSection += menuItem;
     }
+
   }
+
   menuSection += `</div>
   </div>`;
 
   return menuSection;
 };
 
-// helper function
+
 const toTitle = (str) => {
   let result = '';
   let string = str.split('_');
@@ -67,11 +75,13 @@ const toTitle = (str) => {
   return result.trim();
 }
 
+
 const leftScroll = (e) => {
   const $carousel = $(e.target).closest('.carousel');
   const $menu = $carousel.find('.menu-items');
   $menu.animate({ scrollLeft: '-=486' }, 500);
 };
+
 
 const rightScroll = (e) => {
   const $carousel = $(e.target).closest('.carousel');
@@ -79,6 +89,8 @@ const rightScroll = (e) => {
   $menu.animate({ scrollLeft: '+=486' }, 500);
 };
 
+
 const loadMenu = () => $.get('/menu', renderMenu);
 
+// Initial page load render
 loadMenu();
