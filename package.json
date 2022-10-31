@@ -1,5 +1,5 @@
 {
-  "name": "omit-the-plates-food-delivery-app",
+  "name": "omit-the-plates",
   "version": "1.0.0",
   "description": "Completely original food ordering app with no reference to any popular upscale casual restaurant chain founded in North Vancouver...",
   "main": "server/index.js",
