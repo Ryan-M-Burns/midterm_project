@@ -1,19 +1,14 @@
-
-//client interface
+// client interface
 
 // Document ready
 $(() => {
-  const $body = $('body');
   const $popout = $('.popout-section');
   const $carousel = $('.dynamic-menu');
-  const $checkout = $('.order-section');
   const $display1 = $('#display1');
-  const $display2 = $('#display2');
   const $header = $('header');
-  const $tipArea = $("#custom-tip-box");
 
   // tip handlers
-  $tipArea.hide();
+  $("#custom-tip-box").hide();
   $('#tip-button1').on('click', addTip10);
   $('#tip-button2').on('click', addTip15);
   $('#tip-button3').on('click', addTip20);
@@ -34,4 +29,3 @@ $(() => {
   $header.on('click', '#BTR', goToHome);
 
 });
-// research nodemon docs
