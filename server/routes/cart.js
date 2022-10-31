@@ -17,10 +17,11 @@ router.get('/:id', (req, res) => {
 
 router.post('/:id', (req, res) => {
   const userID = Number(req.cookies['user_id']);
+  console.log('userID', userID)
   userQueries.getCartIdByUserId(userID)
     .then(cartID => {
       const insertInfo = {
-        cart_id: cartID.cart,
+        cart_id: cartID.id,
         menu_item_id: req.body.menu_id,
         note: req.body_note,
         quantity: req.body.quantity,
@@ -30,11 +31,7 @@ router.post('/:id', (req, res) => {
         .then((varInput) => {
           res.json({ varInput });
         })
-        .catch(err => {
-          res
-            .status(500)
-            .json({ error: err.message });
-        });
+        .catch(e => res.send(e));
     });
 });
 

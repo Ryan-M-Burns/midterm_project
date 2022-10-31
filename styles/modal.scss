@@ -94,6 +94,9 @@
   }
 
   .order-quantity {
+    display:flex;
+    align-content: center;
+    justify-content: center;
     border: none;
     resize: none;
     outline: none;

@@ -1,20 +1,19 @@
 const addToCart = (e) => {
   const user_id = (document.cookie).replace('user_id=', '');
-  const menu_id = $(e.currentTarget).closest('.add-to-order-button').find('.hidden-values').attr('id');
-  const quantity = $(".order-quantity").val().trim();
+  const menu_id = Number($('.hidden-values').attr('id'));
+  const quantity = Number($(".order-quantity").text());
   const preferences = $('#preferences-text').val();
   const postData = { quantity, menu_id, preferences, user_id };
   $.post(`/cart/${user_id}`, postData, renderCart);
 };
-
+//Works
 const renderCart = () => {
   const cookieVal = (document.cookie).replace('user_id=', '');
   const id = cookieVal || 1;
-  $.get(`/cart/${id}`,  generateCart);
-}
-
+  $.get(`/cart/${id}`, generateCart);
+};
+//Works
 const generateCart = (data) => {
-  console.log('data', data);
   const $orderSummary = $('.order-summary');
   $orderSummary.empty();
   for (const item of data.cart) {
@@ -24,9 +23,9 @@ const generateCart = (data) => {
 
   $('.popout-section').css("visibility", "hidden");
 };
-
+//Works
 const generateCartItems = (infoInput) => {
-    return `<div class="order-items">
+  return `<div class="order-items">
       <div class="quantity-item">
         <div>
           <span>${infoInput.quantity}</span><span>x</span>

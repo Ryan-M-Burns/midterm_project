@@ -17,12 +17,17 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/header.css" />
+
+
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/checkout-page.css" />
   <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
-  <link rel="stylesheet" href="/styles/header.css" />
+
   <link rel="stylesheet" href="/styles/modal.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
+
   <link rel="stylesheet" href="/styles/menu-carousel.css" />
   <link rel="stylesheet" href="/styles/order-section.css" />
   <link rel="stylesheet" href="/styles/restaurant-banner.css" />
@@ -34,7 +39,6 @@
   <!-- App JS -->
   <script src="/vendor/jquery-3.0.0.js"></script>
 
-  <script type="text/javascript" src="/scripts/buttons.js"></script>
   <script type="text/javascript" src="/scripts/cartManager.js"></script>
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script type="text/javascript" src="/scripts/menuManager.js"></script>
@@ -54,7 +58,7 @@
           <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="popout-body">
-          <div class="food-name">
+          <div class="food-name-modal">
             <!-- Dynamically Generated -->
           </div>
           <p class="rating"> <i class="fa-regular fa-thumbs-up"></i> 95%</p>
@@ -76,12 +80,17 @@
             <div class="order-quantity">
               <!-- Dynamically Generated -->
             </div>
+            <input class="hidden-values" type="hidden" id="dummyID" value=""></input>
             <button type="button" class="toggle-more">
               <i class="fa-solid fa-circle-arrow-right"></i>
             </button>
           </div>
           <button type="button" class="add-to-order-button">
-            <!-- Dynamically Generated -->
+            <p>Add to Order: $
+              <span class="add-to-order-popout">
+                <!-- Dynamically Generated -->
+              </span>
+            </p>
           </button>
         </div>
       </div>

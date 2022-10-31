@@ -84,8 +84,7 @@ const renderPrice = (subtotal) => {
   const $subtotal = $("#order-subtotal");
 
   const $tax = $("#order-tax");
-  const $total = $("#order-total");
-  debugger;
+  const $total = $("#order-total");10011
   const tip = $("#order-tip").text().replace('$', '');
   const tax = (subtotal * 0.12).toFixed(2);
 
