@@ -1,7 +1,7 @@
 {
   "name": "omit-the-plates",
   "version": "1.0.0",
-  "description": "Completely original food ordering app with no reference to any popular upscale casual restaurant chain founded in North Vancouver...",
+  "description": "Completely original food ordering app with absolutely no reference to any popular upscale casual restaurant chain founded in North Vancouver...",
   "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
