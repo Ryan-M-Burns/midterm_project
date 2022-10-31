@@ -131,11 +131,11 @@ const getCarts = (insertInfo) => {
 
 const getCartItems = (insertInfo) => {
   return db.query(`
-    SELECT cart_items.*, menu_items.*
+    SELECT *, menu_items.*
     FROM cart_items
     JOIN menu_items ON menu_items.id = menu_item_id
     JOIN carts ON carts.id = cart_id
-    WHERE user_id = $1
+    WHERE carts.user_id = $1
     ;`,
     [insertInfo])
     .then((data) => {
@@ -147,12 +147,13 @@ const getCartItems = (insertInfo) => {
 };
 
 const removeCartItems = (insertInfo) => {
+
   const query = `
   DELETE FROM cart_items
-  WHERE cart_id = $1
-  ;`;
+  WHERE id = $1;`;
+
   return db
-    .query(query, [insertInfo])
+    .query(query, [Number(insertInfo)])
     .then(res => res.rows)
     .catch(e => console.error(e));
 };

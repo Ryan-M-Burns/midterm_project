@@ -18,7 +18,8 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/:id/delete', (req, res) => {
-  return userQueries.removeCartItems(req.body.cart_id)
+
+  return userQueries.removeCartItems(req.body.id)
   .then(res => res.rows)
   .catch(e => console.error(e));
 });
@@ -28,14 +29,14 @@ router.post('/:id', (req, res) => {
 
   userQueries.getCartIdByUserId(userID)
     .then(cartID => {
+
       const insertInfo = {
         cart_id: cartID.id,
         menu_item_id: req.body.menu_id,
-        note: req.body_note,
+        note: req.body.note,
         quantity: req.body.quantity,
         user_id: req.body.user_id
       };
-
       userQueries.addCartItems(insertInfo)
         .then((varInput) => {
           res.json({ varInput });
@@ -43,11 +44,6 @@ router.post('/:id', (req, res) => {
     }).catch(e => res.send(e));
 
 });
-
-
-
-
-
 
 router.get('/', (req, res) => {
   const userID = req.cookies['user_id'];
@@ -99,23 +95,19 @@ router.post('/', (req, res) => {
     });
 });
 
-router.post('/update', (req, res) => {
-  const insertInfo = {
-    'quantity': 15, //should come from browser/req.body
-    'cart_id': 1,  // should come from browser/req.body
-    'menu_item_id': 1, // should come from browser/req.body
-    'note': null,
-    'user_id': 1
-  };
-  return userQueries.removeCartItems(insertInfo)
-    .then((infoReceived) => {
-      res.json({ infoReceived });
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
-});
+//Pseudo-code
+
+// router.post('/update', (req, res) => {
+// const cart = req.cart_id;
+
+//   if (qty = 0) {
+//     return userQueries.removeCartItems(cart_id)
+//       .then(res => res.rows)
+//   .catch(e => console.error(e));
+//   }
+//     return userQueries.updateCartItems(cart_id)
+//     .then(res => res.rows)
+//     .catch(e => console.error(e));
+// });
 
 module.exports = router;

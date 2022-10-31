@@ -47,14 +47,14 @@
 
 <body>
 
-  <!-- Menu Item Popout -->
-  <section class="popout-section" scroll="no">
-    <div class="popout">
-      <div class="food-info-popout">
+  <!-- Menu Item Modal -->
+  <section class="modal-section" scroll="no">
+    <div class="modal">
+      <div class="food-info-modal">
         <button type="button" class="close">
           <i class="fa-solid fa-xmark"></i>
         </button>
-        <div class="popout-body">
+        <div class="modal-body">
           <div class="food-name-modal">
             <!-- Dynamically Generated -->
           </div>
@@ -62,7 +62,7 @@
           <h3 class="food-description">
             <!-- Dynamically Generated -->
           </h3>
-          <div class="popout-img-box">
+          <div class="modal-img-box">
             <!-- Dynamically Generated -->
           </div>
           <h3>Preferences:</h3>
@@ -86,7 +86,7 @@
           </div>
           <button type="button" class="add-to-order-button">
             <p>Add to Order: $
-              <span class="add-to-order-popout">
+              <span class="modal-add-button">
                 <!-- Dynamically Generated -->
               </span>
             </p>
@@ -107,16 +107,15 @@
       </button>
       <div>
         <span>
-          <button type="button" class="cart">
-            <output name="items" class="item-count" for="cart">0
-              <i class="fa-solid fa-cart-shopping"></i>
+          <button type="button" class="cart-nav-button">
+            <output name="items" class="item-count">
             </output>
           </button>
           <button type="button" class="help">
             <i class="fa-solid fa-circle-question"></i>
           </button>
         </span>
-        <form method="POST" action="/menu">
+        <form>
           <input placeholder="Search menu items..." name="search">
           <button type="button" class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
@@ -161,8 +160,8 @@
           <div class="order-summary">
             <!-- Dynamically Generated -->
           </div>
-          <button type="button" class="checkout">
-            <p>Checkout</p>
+          <button type="button" class="go-to-checkout">
+            <!-- Dynamically Generated -->
           </button>
         </div>
     </div>
@@ -289,7 +288,7 @@
       </section>
 
       <!-- Checkout Summary -->
-      <section class="order-section">
+      <section class="checkout-order-section">
         <div class="checkout-cart-container">
           <div class="checkout-cart-header">
             <h1>Order Summary</h1>

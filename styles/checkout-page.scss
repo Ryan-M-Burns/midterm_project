@@ -37,6 +37,17 @@
   }
 }
 
+.remove-checkout-item {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #f1803a;
+
+  :hover {
+    color: #ea6410;
+  }
+}
+
 .checkout-order-summary {
   border-bottom: 2px solid rgb(0 0 0 / 17%);
   overflow-y: scroll;

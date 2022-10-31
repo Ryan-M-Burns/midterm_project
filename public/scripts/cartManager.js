@@ -16,20 +16,32 @@ const renderCart = () => {
 
 const generateCart = (data) => {
   const $orderSummary = $('.order-summary');
+  let subtotal = 0;
+  let numberOfItems = 0;
 
   $orderSummary.empty();
 
   for (const item of data.cart) {
     const menuItem = generateCartItems(item);
     $orderSummary.append(menuItem);
+
+    numberOfItems += item.quantity;
+
+    subtotal += generateSubtotal(item);
   }
 
-  $('.popout-section').css("visibility", "hidden");
+  $('.item-count').empty().append(`${numberOfItems} <i class="fa-solid fa-cart-shopping"></i>`);
+  $('.go-to-checkout').empty().append(`<p>Checkout: $${(subtotal / 100).toFixed(2)}</p>`);
+
+  $('.modal-section').css("visibility", "hidden");
 };
 
 
-const generateCartItems = (infoInput) => {
+const generateSubtotal = (data) => (data.price * data.quantity);
 
+
+const generateCartItems = (infoInput) => {
+  console.log('generateCartItems', infoInput)
   return `
     <div class="order-items">
       <div class="quantity-item">
@@ -45,7 +57,7 @@ const generateCartItems = (infoInput) => {
 
       <div class="price-delete">
         <span>$${(infoInput.quantity * infoInput.price / 100).toFixed(2)}</span>
-        <button type="button" class="remove-item" id=${infoInput.cart_id}>
+        <button type="button" class="remove-item" id="${infoInput.id}">
           <i class="fa-solid fa-trash-can"></i>
         </button>
       </div>
@@ -55,10 +67,10 @@ const generateCartItems = (infoInput) => {
 
 
 const deleteCartItem = (e) => {
-  const cart_id = $(e.target).closest(".remove-item").attr('id');
+  const id = $(e.target).closest(".remove-item").attr("id");
   const user_id = (document.cookie).replace('user_id=', '');
 
-  $.post(`/cart/${user_id}/delete`, { cart_id }, () => renderCart());
+  $.post(`/cart/${user_id}/delete`, { id }, () => renderCart());
 };
 
 // Initial page load render

@@ -1,4 +1,4 @@
-.popout-section {
+.modal-section {
   z-index: 10000;
   position: fixed;
   min-width: 100vw;
@@ -9,7 +9,7 @@
   visibility: hidden;
   background-color: rgba(0, 0, 0, 0.50);
 
-  .popout {
+  .modal {
     position: relative;
     margin: auto;
     padding: 10px;
@@ -32,7 +32,7 @@
     }
   }
 
-  .popout-body {
+  .modal-body {
     display: flex;
     padding: 0px 20px;
     flex-flow: column;
@@ -63,7 +63,7 @@
       font-weight: 600;
     }
 
-    .popout-img-box {
+    .modal-img-box {
       min-width: 450px;
       max-width: 450px;
       min-height: 350px;
@@ -157,13 +157,26 @@
 
   :hover {
     background-color: #ea6410;
-    box-shadow: 0px 0px 3px 4px #ea6410;
+    box-shadow: 0px 0px 0px 4px #ea6410;
   }
 
   p {
     margin: 0;
+    padding-left: 10px;
     width: 100%;
     height: 100%;
     border-radius: 20px;
+  }
+
+  .modal-add-button {
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    padding-right: 10px;
+    width: 100%;
+    height: 100%;
+    :hover {
+      box-shadow: 0px 0px 0px 0px #ea6410;
+    }
   }
 }

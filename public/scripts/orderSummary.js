@@ -1,6 +1,5 @@
 const renderCheckoutCart = () => {
   const user_id = (document.cookie).replace('user_id=', '');
-
   $.get(`/cart/${user_id}`, generateCheckoutCart);
 };
 
@@ -15,7 +14,7 @@ const generateCheckoutCart = (data) => {
     const menuItem = generateCheckoutItem(item);
     $checkoutSummary.append(menuItem);
 
-    subtotal += generateSubtotal(item);
+    subtotal += generateSummarySubtotal(item);
   }
 
   renderPrice(subtotal / 100);
@@ -39,7 +38,7 @@ const generateCheckoutItem = (infoInput) => {
 
     <div class="price-delete">
       <span>$${(infoInput.quantity * infoInput.price / 100).toFixed(2)}</span>
-      <button type="button" class="remove-item">
+      <button type="button" class="remove-checkout-item" id="${infoInput.id}">
         <i class="fa-solid fa-trash-can"></i>
       </button>
     </div>
@@ -49,10 +48,11 @@ const generateCheckoutItem = (infoInput) => {
 
 
 const deleteCheckoutItem = (e) => {
-  const cart_id = $(e.target).closest(".remove-item").attr('id');
+
+  const id = $(e.target).closest(".remove-checkout-item").attr("id");
   const user_id = (document.cookie).replace('user_id=', '');
 
-  $.post(`/cart/${user_id}/delete`, { cart_id }, () => renderCheckoutCart());
+  $.post(`/cart/${user_id}/delete`, { id }, () => renderCheckoutCart());
 };
 
 
@@ -70,7 +70,7 @@ const customTip = (e) => {
 };
 
 
-const generateSubtotal = (data) => (data.price * data.quantity);
+const generateSummarySubtotal = (data) => (data.price * data.quantity);
 
 
 const addTip = (tip) => {
@@ -105,14 +105,19 @@ const renderPrice = (subtotal) => {
 
 const placeOrder = () => {
   const user_id = (document.cookie).replace('user_id=', '');
-  $.post('/order', { 'val': user_id }, () => alert("message will be sent to your contact_phone!"));
+  $.post('/order', { 'val': user_id }, () => alert("Your order has been sent to the restaurant! Awaiting order confirmation..."));
 };
+
+
+// const orderConfirmed = () => {
+//   const user_id = (document.cookie).replace('user_id=', '');
+//   $.post('/order', { 'val': user_id }, () => alert("Order confirmed! Your estimated delivery time is 46 minutes."));
+// };
 
 
 const toggleTipBox = () => $("#custom-tip-box").toggle("fast", "linear");
 
+
 const addTip10 = () => addTip(.1);
 const addTip15 = () => addTip(.15);
 const addTip20 = () => addTip(.20);
-
-$('#custom-tip-box').hide();

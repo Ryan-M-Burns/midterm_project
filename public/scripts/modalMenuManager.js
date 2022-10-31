@@ -1,23 +1,24 @@
-const renderPopout = (e) => {
+const renderModal = (e) => {
   const id = $(e.target).closest('.expand-food').attr('id');
-  $.get(`/menu/${id}`, generatePopout);
+  $.get(`/menu/${id}`, generateModal);
 };
 
 
-const generatePopout = (data) => {
+const generateModal = (data) => {
   const menuItem = data[0];
+  const price = Number(menuItem.price / 100).toFixed(2);
   const $storeVals = $(".hidden-values");
 
   $(".food-name-modal").empty().append(`<h2>${menuItem.name}</h2>`);
   $(".food-description").empty().append(`${menuItem.description}`);
-  $(".popout-img-box").empty().append(`<img src="${menuItem.image_url}">`);
+  $(".modal-img-box").empty().append(`<img src="${menuItem.image_url}">`);
   $(".order-quantity").empty().append(`1`);
-  $(".add-to-order-popout").empty().append(`${(menuItem.price / 100).toFixed(2)}`);
+  $(".modal-add-button").empty().append(`${price}`);
 
   $storeVals.attr('id', `${menuItem.id}`);
-  $storeVals.attr('value', `${(menuItem.price / 100).toFixed(2)}`);
+  $storeVals.attr('value', `${price}`);
 
-  $(".popout-section").css("visibility", "visible");
+  $(".modal-section").css("visibility", "visible");
 };
 
 
@@ -30,7 +31,7 @@ const decreaseQuantity = () => {
 
     $val.empty().append(val);
 
-    $(".add-to-order-popout").text((val * price).toFixed(2));
+    $(".modal-add-button").text((val * price).toFixed(2));
   }
 
 };
@@ -43,5 +44,5 @@ const increaseQuantity = () => {
 
   $val.empty().append(val);
 
-  $(".add-to-order-popout").text((val * price).toFixed(2));
+  $(".modal-add-button").text((val * price).toFixed(2));
 };

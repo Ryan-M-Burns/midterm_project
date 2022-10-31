@@ -1,34 +1,38 @@
 // client interface
 
 $(() => {
+  const $header = $('header');
+  const $cartButton = $('.cart-nav-button');
+  $header.on('click', '#BTR', goToHome);
+  $cartButton.on('click', goToCheckout);
+  $cartButton.on('click', renderCheckoutCart);
 
-  $('header').on('click', '#BTR', goToHome);
-
-  const $display1 = $('#display1');
-  $display1.on('click', '.checkout', goToCheckout);
-  $display1.on('click', '.checkout', renderCheckoutCart);
+  const $checkoutButton = $('.go-to-checkout');
+  $checkoutButton.on('click', goToCheckout);
+  $checkoutButton.on('click', renderCheckoutCart);
 
   const $carousel = $('.dynamic-menu');
   $carousel.on('click', '.scroll-left', leftScroll);
   $carousel.on('click', '.scroll-right', rightScroll);
-  $carousel.on('click', '.expand-food', renderPopout);
+  $carousel.on('click', '.expand-food', renderModal);
 
-  const $popout = $('.popout-section');
-  $popout.on('click', '.toggle-less', decreaseQuantity);
-  $popout.on('click', '.toggle-more', increaseQuantity);
-  $popout.on('click', '.add-to-order-button', addToCart);
-  $popout.on('click', '.close', () => $popout.css('visibility', 'hidden'));
+  const $modal = $('.modal');
+  $modal.on('click', '.toggle-less', decreaseQuantity);
+  $modal.on('click', '.toggle-more', increaseQuantity);
+  $modal.on('click', '.add-to-order-button', addToCart);
+  $modal.on('click', '.close', () => $modal.parent().css('visibility', 'hidden'));
 
-  const $cart = $('.cart-container');
-  $cart.on('click', '.remove-item', deleteCartItem);
-  $cart.on('click', '.remove-item', renderCart);
+  const $orderSummary = $('.order-summary');
+  $orderSummary.on('click', '.remove-item', deleteCartItem);
+  $orderSummary.on('click', '.remove-item', renderCart);
 
-  const $checkout = $('.checkout-cart-container');
-  $checkout.on('click', '.remove-item', deleteCheckoutItem);
-  $checkout.on('click', '.remove-item', renderCheckoutCart);
+  const $checkoutOrderSummary = $('.checkout-order-summary');
+  $checkoutOrderSummary.on('click', '.remove-checkout-item', deleteCheckoutItem);
+  $checkoutOrderSummary.on('click', '.remove-checkout-item', renderCheckoutCart);
 
   $('.place-order').on('click', placeOrder);
 
+  $('#custom-tip-box').hide();
   $('#tip-button1').on('click', addTip10);
   $('#tip-button2').on('click', addTip15);
   $('#tip-button3').on('click', addTip20);
@@ -36,4 +40,3 @@ $(() => {
   $('#custom-tip').on('keypress', customTip);
 
 });
-
