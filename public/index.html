@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="/styles/checkout-page.css" />
   <link rel="stylesheet" href="/styles/delivery_pickup_button.css" />
   <link rel="stylesheet" href="/styles/header.css" />
-  <link rel="stylesheet" href="/styles/item-popout.css" />
+  <link rel="stylesheet" href="/styles/modal.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/menu-carousel.css" />
   <link rel="stylesheet" href="/styles/order-section.css" />
@@ -40,16 +40,52 @@
   <script type="text/javascript" src="/scripts/menuManager.js"></script>
   <script type="text/javascript" src="/scripts/modalMenuManager.js"></script>
   <script type="text/javascript" src="/scripts/orderSummary.js"></script>
-  <script type="text/javascript" src="/scripts/tips.js"></script>
   <script type="text/javascript" src="/scripts/viewManager.js"></script>
 
 </head>
 
 <body>
   <!-- Menu Item Popout -->
-  <!-- Dynamically Generated -->
+  <!-- Static -->
   <section class="popout-section" scroll="no">
-
+    <div class="popout">
+      <div class="food-info-popout">
+        <button type="button" class="close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="popout-body">
+          <div class="food-name">
+            <!-- Dynamically Generated -->
+          </div>
+          <p class="rating"> <i class="fa-regular fa-thumbs-up"></i> 95%</p>
+          <h3 class="food-description">
+            <!-- Dynamically Generated -->
+          </h3>
+          <div class="popout-img-box">
+            <!-- Dynamically Generated -->
+          </div>
+          <h3>Preferences:</h3>
+          <textarea placeholder="Please let the restaurant know of any allergies, dietary, or religious restrictions!"
+            name="text" id="preferences-text"></textarea>
+        </div>
+        <div class="add-to-order">
+          <div class="change-quantity">
+            <button type="button" class="toggle-less">
+              <i class="fa-solid fa-circle-arrow-left"></i>
+            </button>
+            <div class="order-quantity">
+              <!-- Dynamically Generated -->
+            </div>
+            <button type="button" class="toggle-more">
+              <i class="fa-solid fa-circle-arrow-right"></i>
+            </button>
+          </div>
+          <button type="button" class="add-to-order-button">
+            <!-- Dynamically Generated -->
+          </button>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Nav Bar -->
@@ -57,7 +93,7 @@
   <header>
     <section>
       <button type="button" class="back-to" id="BTRS">
-        <p id="BTR-text">Back to Restaurants</p>
+        <p id="BTR-text"><i class="fa-solid fa-arrow-left"></i> Back to Restaurants</p>
       </button>
       <button type="button" class="back-to-home">
         <img src="/images/OmitThePlates_logo.png" alt="Logo" width="225" height="70">
@@ -201,14 +237,14 @@
             </div>
 
             <div class="deliveryPhone">
-                <div class="phoneIconNum">
-                  <i class="fa fa-phone" style="font-size:24px"></i>
-                  <div class="phoneDeliveryLeft">
+              <div class="phoneIconNum">
+                <i class="fa fa-phone" style="font-size:24px"></i>
+                <div class="phoneDeliveryLeft">
                   <span class="phoneNumberDelivery">
                     (778)999-0909
                   </span>
                 </div>
-                </div>
+              </div>
               <i class='fas fa-angle-right' style='font-size:24px'></i>
             </div>
 
