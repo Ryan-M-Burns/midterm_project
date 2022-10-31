@@ -147,30 +147,16 @@ const getCartItems = (insertInfo) => {
 };
 
 const removeCartItems = (insertInfo) => {
-  db.query('SELECT quantity FROM cart_items WHERE cart_id = $1 AND menu_item_id = $2 AND ( note = $3 OR $3 IS NULL);', [insertInfo['cart_id'], insertInfo['menu_item_id'], insertInfo['note']])
-    .then((data) => {
-      if (Array.isArray(data.rows) && data.rows.length === 0) {
-        return null;
-      } else {
-        const verifyInfos = data.rows;
-        const verifyQuantity = verifyInfos[0]['quantity'];
-        return verifyQuantity;
-      }
-    })
-    .then((dataTwo) => {
-      if (Number(dataTwo) - Number(insertInfo['quantity']) > 0) {
-        const updateValue = Number(dataTwo) - Number(insertInfo['quantity']);
-        db.query('UPDATE cart_items SET quantity = $1 WHERE menu_item_id = $2 AND note IS NULL;', [updateValue, insertInfo['menu_item_id']]);
-      }
-      if (Number(dataTwo) - Number(insertInfo['quantity']) === 0) {
-        db.query('DELETE FROM cart_items WHERE menu_item_id = $1;', [insertInfo['menu_item_id']]);
-      }
-      if (Number(dataTwo) - Number(insertInfo['quantity']) < 0) {
-        console.log('error');
-      }
-    });
-  return getCarts(insertInfo);
+  const query = `
+  DELETE FROM cart_items
+  WHERE cart_id = $1
+  ;`;
+  return db
+    .query(query, [insertInfo])
+    .then(res => res.rows)
+    .catch(e => console.error(e));
 };
+
 
 const deleteCartItems = (insertInfo) => {
   let dataOutput = [];
