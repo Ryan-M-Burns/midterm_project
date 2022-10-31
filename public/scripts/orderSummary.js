@@ -61,9 +61,8 @@ const customTip = (e) => {
 
 const addTip = (tip) => {
   const $tip = $('#order-tip');
-  const subtotal = Number($('#order-subtotal').text().replace('$', '').toFixed(2));
+  const subtotal = Number($('#order-subtotal').text().replace('$', ''));
   const tipAmount = subtotal * tip;
-
   $tip.empty();
   $tip.append(`$${tipAmount.toFixed(2)}`);
   renderPrice(subtotal);
@@ -84,7 +83,7 @@ const renderPrice = (subtotal) => {
   const $subtotal = $("#order-subtotal");
 
   const $tax = $("#order-tax");
-  const $total = $("#order-total");10011
+  const $total = $("#order-total");
   const tip = $("#order-tip").text().replace('$', '');
   const tax = (subtotal * 0.12).toFixed(2);
 
