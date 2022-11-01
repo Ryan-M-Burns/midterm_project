@@ -4,6 +4,7 @@ $(() => {
   const $header = $('header');
   const $cartButton = $('.cart-nav-button');
   $header.on('click', '#BTR', goToHome);
+  $header.on('click', '#BTR', renderCart);
   $cartButton.on('click', goToCheckout);
   $cartButton.on('click', renderCheckoutCart);
 
