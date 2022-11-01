@@ -7,6 +7,7 @@ $(() => {
   $header.on('click', '#BTR', renderCart);
   $cartButton.on('click', goToCheckout);
   $cartButton.on('click', renderCheckoutCart);
+  $cartButton.on('click', () => $(window).scrollTop(0));
 
   const $checkoutButton = $('.go-to-checkout');
   $checkoutButton.on('click', goToCheckout);

@@ -105,8 +105,12 @@ const renderPrice = (subtotal) => {
 
 const placeOrder = () => {
   const user_id = (document.cookie).replace('user_id=', '');
-  $.post('/order', { 'val': user_id }, () => alert("Your order has been sent to the restaurant! Awaiting order confirmation..."));
-};
+
+  $.post('/order', { 'val': user_id }, ()=> {
+    renderCheckoutCart()
+    $("#order-tip").text('$0.00');
+  })};
+
 
 const toggleTipBox = () => $("#custom-tip-box").toggle("fast", "linear");
 

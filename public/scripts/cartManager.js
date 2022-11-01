@@ -1,9 +1,9 @@
 const addToCart = (e) => {
   const user_id = (document.cookie).replace('user_id=', '');
-  const menu_id = Number($('.hidden-values').attr('id'));
-  const quantity = Number($(".order-quantity").text());
+  const menu_item_id = $('.hidden-values').attr('id');
+  const quantity = $(".order-quantity").text();
   const preferences = $('#preferences-text').val();
-  const postData = { quantity, menu_id, preferences, user_id };
+  const postData = { quantity, menu_item_id, preferences, user_id };
   $.post(`/cart/${user_id}`, postData, renderCart);
 };
 
@@ -67,6 +67,7 @@ const generateCartItems = (infoInput) => {
 
 
 const deleteCartItem = (e) => {
+
   const id = $(e.target).closest(".remove-item").attr("id");
   const user_id = (document.cookie).replace('user_id=', '');
 

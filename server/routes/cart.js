@@ -18,8 +18,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/:id/delete', (req, res) => {
-
-  return userQueries.removeCartItems(req.body.id)
+  return userQueries.removeCartItems(Number(req.body.id))
   .then(res => res.rows)
   .catch(e => console.error(e));
 });
@@ -29,13 +28,12 @@ router.post('/:id', (req, res) => {
 
   userQueries.getCartIdByUserId(userID)
     .then(cartID => {
-
       const insertInfo = {
         cart_id: cartID.id,
-        menu_item_id: req.body.menu_id,
+        menu_item_id: req.body.menu_item_id,
         note: req.body.note,
         quantity: req.body.quantity,
-        user_id: req.body.user_id
+        user_id: userID
       };
       userQueries.addCartItems(insertInfo)
         .then((varInput) => {

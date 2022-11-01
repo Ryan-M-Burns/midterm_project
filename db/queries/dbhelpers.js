@@ -75,6 +75,7 @@ const getCartPrice = (insertInfo) => {
 };
 
 const addCartItems = (insertInfo) => {
+
   db.query('SELECT quantity FROM cart_items WHERE cart_id = $1 AND menu_item_id = $2 AND ( note = $3 OR $3 IS NULL);', [insertInfo['cart_id'], insertInfo['menu_item_id'], insertInfo['note']])
     .then((data) => {
       if (Array.isArray(data.rows) && data.rows.length === 0) {
@@ -131,7 +132,7 @@ const getCarts = (insertInfo) => {
 
 const getCartItems = (insertInfo) => {
   return db.query(`
-    SELECT *, menu_items.*
+    SELECT cart_items.*, menu_items.*
     FROM cart_items
     JOIN menu_items ON menu_items.id = menu_item_id
     JOIN carts ON carts.id = cart_id
@@ -150,7 +151,7 @@ const removeCartItems = (insertInfo) => {
 
   const query = `
   DELETE FROM cart_items
-  WHERE id = $1;`;
+  WHERE menu_item_id = $1;`;
 
   return db
     .query(query, [Number(insertInfo)])
