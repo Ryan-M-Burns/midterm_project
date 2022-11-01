@@ -7,6 +7,7 @@ const renderCheckoutCart = () => {
 const generateCheckoutCart = (data) => {
   const $checkoutSummary = $('.checkout-order-summary');
   let subtotal = 0;
+  let numberOfItems = 0;
 
   $checkoutSummary.empty();
 
@@ -14,8 +15,11 @@ const generateCheckoutCart = (data) => {
     const menuItem = generateCheckoutItem(item);
     $checkoutSummary.append(menuItem);
 
+    numberOfItems += item.quantity;
+
     subtotal += generateSummarySubtotal(item);
   }
+$('.item-count').empty().append(`${numberOfItems} <i class="fa-solid fa-cart-shopping"></i>`);
 
   renderPrice(subtotal / 100);
 };
