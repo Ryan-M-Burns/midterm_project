@@ -8,13 +8,13 @@ Overall we are very happy with our final product and wish we had a bit more time
 
 ## Screenshots
 
-!["Restaurant View"]()
+!["Restaurant View"](https://github.com/Ryan-M-Burns/midterm_project/blob/main/public/images/Screenshots/Restaurant%20Home%20Page.png)
 
-!["Dark Mode Restaurant View"]()
+!["Dark Mode Restaurant View"](https://github.com/Ryan-M-Burns/midterm_project/blob/main/public/images/Screenshots/Restaurant%20View%20Dark%20Mode.png)
 
-!["Menu Carousels"]()
+!["Menu Carousels"](https://github.com/Ryan-M-Burns/midterm_project/blob/main/public/images/Screenshots/Menu%20Carousels.png)
 
-!["Order Summary"]()
+!["Order Summary"](https://github.com/Ryan-M-Burns/midterm_project/blob/main/public/images/Screenshots/Order%20Summary.png)
 
 ## Getting Started
 
@@ -35,7 +35,7 @@ Twilio functionality is currently disabled.
 
 ###To enable Twilio
 
-1. Insert phone number into ./server/routes/twilio.js 
+1. Uncomment file and Insert phone number into ./server/routes/twilio.js 
 2. Uncomment the two lines in ./server/routes/order.js
 3. Enter twilio account SID and Auth Token into .env file
 
