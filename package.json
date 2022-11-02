@@ -9,7 +9,7 @@
     "local": "./node_modules/.bin/nodemon -L --ignore public/",
     "db:reset": "node bin/resetdb.js"
   },
-  "authors": "@Ryan-M-Burns ryan.m.burns123@gmail.com & Luke Li @onaroll2021",
+  "authors": "Luke Li @onaroll2021 & Ryan Burns @Ryan-M-Burns ryan.m.burns123@gmail.com",
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
