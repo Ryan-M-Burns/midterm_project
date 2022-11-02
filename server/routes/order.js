@@ -2,7 +2,7 @@ const express = require('express');
 const db = require('../../db/connection');
 const router = express.Router();
 const userQueries = require('../../db/queries/dbhelpers');
-const twilio = require('../routes/twilio');
+// const twilio = require('../routes/twilio');
 
 router.get('/', (req, res) => {
   const userId = req.cookies['user_id']; // user_id = 1;
@@ -28,10 +28,7 @@ router.post('/', (req, res) => {
     })
     .then((infoReceived) => {
       res.json({ infoReceived });
-      twilio.sendOrderPlaced();
-    })
-    .then(()=> {
-      setTimeout(() => twilio.sendOrderConfirmed(), 3000);
+      // twilio.sendOrderPlaced();
     })
     .catch(err => {
       res

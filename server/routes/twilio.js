@@ -10,7 +10,7 @@ const sendOrderPlaced = () => {
     {
       body: 'Your omitThePlates order has been placed! Waiting for the restaraunt to confirm',
       from: '++13608452813',
-      to: '+17787006668'
+      to: // Insert Phone Number Here
     }
     )
 client.messages
@@ -18,7 +18,7 @@ client.messages
     {
      body: 'There is a new order! Please prepare!',
      from: '++13608452813',
-     to: '+17787006668'
+     to: // Insert Phone Number Here
    }
    )
   .then((message) => console.log(message));
@@ -29,7 +29,7 @@ const sendOrderConfirmed = () => {
     .create({
       body: 'The restaurant has received the order and is preparing!',
       from: '++13608452813',
-      to: '+17787006668'
+      to: // Insert Phone Number Here
     })
     .then((message) => console.log(message));
 };
@@ -39,7 +39,7 @@ const sendOrderReady = () => {
     .create({
        body: 'Your omitThePlates order has been placed! Waiting for the restaraunt to confirm',
        from: '++13608452813',
-       to: '+17787006668'
+       to: // Insert Phone Number Here
      })
     .then((message) => console.log(message));
 };
@@ -49,7 +49,7 @@ const sendOrderPickup = () => {
     .create({
        body: 'Your order has been pickup! Thank you for your order and enjoy!',
        from: '++13608452813',
-       to: '+17787006668'
+       to: // Insert Phone Number Here
      })
     .then((message) => console.log(message));
 };
